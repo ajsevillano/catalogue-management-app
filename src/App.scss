@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
+// Components styles imports
+@import './components/header/Header';
+
+//General styles
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +12,10 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
