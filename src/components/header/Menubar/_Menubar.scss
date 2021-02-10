@@ -1,8 +1,25 @@
 .menubar {
-  background-color: brown;
   width: 94%;
   flex: 1;
   align-items: flex-end;
   display: flex;
   margin-left: auto;
+
+  nav {
+    display: flex;
+  }
+
+  nav a:first-child {
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: bold;
+  }
+  nav a:nth-child(2) {
+    padding-left: 30px;
+  }
+
+  nav a {
+    color: #0c1322;
+    text-decoration: none;
+    padding-bottom: 10px;
+  }
 }

@@ -1,7 +1,9 @@
 .title {
   width: 94%;
-  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
   flex: 2;
+  margin: 0 0 10px auto;
 
   h1 {
     font-size: 36px;

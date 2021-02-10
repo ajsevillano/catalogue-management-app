@@ -13,9 +13,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #00c85a;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #0f2c2b;
+  color: #133e35;
 }
 
 .App {

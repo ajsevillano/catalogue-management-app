@@ -4,8 +4,8 @@ function Menubar() {
   return (
     <div className="menubar">
       <nav>
-        <a href="/html/">HTML</a> |<a href="/css/">CSS</a> |
-        <a href="/js/">JavaScript</a> |<a href="/python/">Python</a>
+        <a href="">Todos los productos</a>{' '}
+        <a href="/css/">Todos los negocios</a>
       </nav>
     </div>
   );
