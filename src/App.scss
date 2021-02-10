@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-// Components styles imports
+// Components styles header
 @import './components/header/Header';
+@import './components/header/Menubar/Menubar';
 
 //General styles
 * {

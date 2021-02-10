@@ -1,11 +1,12 @@
 import React from 'react';
+import MenuBar from './Menubar/Menubar';
 
 function Header() {
   return (
     <>
       <div className="header">
-      jola</div>
-
+        <MenuBar />
+      </div>
     </>
   );
 }
