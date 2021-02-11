@@ -2,7 +2,7 @@ import React from 'react';
 
 function Table() {
   return (
-    <div className="table-catalogue-container">
+    <div className="wrapper">
       <div className="table-catalogue">
         <div className="table-header">
           <h2>Todos los productos</h2>

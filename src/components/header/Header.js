@@ -6,7 +6,7 @@ import Profile from './Profile/Profile';
 function Header() {
   return (
     <section className="header">
-      <div className="header-container">
+      <div className="header-container wrapper">
         <Profile />
         <Title />
         <MenuBar />
