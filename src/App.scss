@@ -26,4 +26,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  background-color: #1c4fb6;
+  height: 22.4vh;
 }
