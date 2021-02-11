@@ -1,9 +1,15 @@
 .header {
+  width: 100%;
+  background-color: #f8f9fb;
+}
+
+.header-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 22.4vh;
   min-height: 100%;
-  width: 100%;
-  background-color: #f8f9fb;
+  max-width: 80rem;
+  margin: 0 auto;
 }

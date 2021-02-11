@@ -1,10 +1,10 @@
 .title {
-  width: 94%;
+  width: 90%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   flex: 2;
-  margin: 0 0 10px auto;
+  margin: 0 0 10px 0;
 
   h1 {
     font-size: 36px;
@@ -12,7 +12,6 @@
   }
 
   button {
-    margin-right: 50px;
     width: 95px;
     color: #1d2330;
     font-family: 'Open Sans';

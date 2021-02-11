@@ -5,13 +5,13 @@ import Profile from './Profile/Profile';
 
 function Header() {
   return (
-    <>
-      <div className="header">
+    <div className="header">
+      <div className="header-container">
         <Profile />
         <Title />
         <MenuBar />
       </div>
-    </>
+    </div>
   );
 }
 

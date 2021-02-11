@@ -1,6 +1,15 @@
 .profile {
-  background-color: rgb(13, 77, 216);
   flex: 1;
-  width: 94%;
-  margin-left: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+
+  border: 2px solid white;
 }
