@@ -4,7 +4,7 @@ function Title() {
   return (
     <div className="title">
       <h1>Productos</h1>
-      <button tabindex="1">Descargar</button>
+      <button tabIndex="1">Descargar</button>
     </div>
   );
 }
