@@ -20,5 +20,17 @@
     background-color: transparent;
     border-radius: 4px;
     padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:active {
+      background: #e2e4e8;
+    }
+    &:hover {
+      border: 1px solid #7f848a;
+    }
+    &:focus {
+      border: 1px solid #7f848a;
+      outline: none;
+    }
   }
 }
