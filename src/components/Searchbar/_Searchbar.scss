@@ -9,7 +9,8 @@
   margin: 0 auto;
 
   input {
-    width: 90%;
+    width: 98%;
+    margin-right: 20px;
     border: 1px solid #e1e4e8;
     border-radius: 4px;
     outline: none;
@@ -22,4 +23,15 @@
       color: #acb4bc;
     }
   }
+
+  .icon-faEllipsis {
+    color: #acb4bc;
+  }
+}
+
+.search-bar {
+  flex: 1 1;
+  width: 90%;
+  display: flex;
+  align-items: center;
 }
