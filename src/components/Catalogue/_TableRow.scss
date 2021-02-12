@@ -73,3 +73,13 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+//Mobile styles
+@media screen and (max-width: 768px) {
+  .last-edited {
+    display: none;
+  }
+  .categoria {
+    display: none;
+  }
+}

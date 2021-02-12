@@ -15,7 +15,7 @@ function TableRow({ id }) {
         <h2>Cerveza Cruzcampo</h2> <p>Botellín de 1/3</p>
       </div>
       <p>Cruzcampo</p>
-      <p>Vinos</p>
+      <p className="categoria">Vinos</p>
       <div className="last-edited">
         <h2>Última edición</h2>
         <p>12/02/21 a las 21:30</p>
