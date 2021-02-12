@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
+import axios from 'axios';
 
 function Table() {
-  return (
-    <div id="table" className="wrapper">
-      <div className="table-catalogue">
-        <div className="table-header">
-          <h2>Categoría: Vinos Todos los productos</h2>
-          <p>total: (170)</p>
-        </div>
-        <TableRow id={1} />
-        <TableRow id={2} />
-        <TableRow id={3} />
-        <TableRow id={4} />
-      </div>
-    </div>
-  );
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const products = await axios.get(
+        'http://api.uniondistribuidora.com/products'
+      );
+      setProductsData(products.data);
+      return products;
+    }
+    fetchData();
+  }, []);
+
+  return <div id="table" className="wrapper"></div>;
 }
 
 export default Table;
