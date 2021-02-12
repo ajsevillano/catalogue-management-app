@@ -22,10 +22,17 @@
   .name,
   .last-edited {
     flex: 2;
+
+    p {
+      color: #acb4bc;
+    }
   }
 
   .item-id {
     flex: 0.5;
+    p {
+      color: #acb4bc;
+    }
   }
 
   .img-container {

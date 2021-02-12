@@ -20,8 +20,8 @@ function Table() {
     <div id="table" className="wrapper">
       <div className="table-catalogue">
         <div className="table-header">
-          <h2>Categoría: Vinos Todos los productos</h2>
-          <p>total: (170)</p>
+          <h2>Todos los productos</h2>
+          <p>total: {productsData.length}</p>
         </div>
         {productsData.map((product) => (
           <TableRow

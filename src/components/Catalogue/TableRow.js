@@ -13,7 +13,7 @@ function TableRow({ id, name, status }) {
       </div>
       <div className="item-id">
         <h2>ID</h2>
-        <p>{id}</p>
+        <p>#{id}</p>
       </div>
       <div className="name">
         <h2>{name}</h2> <p>Botellín de 1/3</p>
