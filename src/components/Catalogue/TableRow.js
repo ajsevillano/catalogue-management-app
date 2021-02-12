@@ -1,13 +1,15 @@
 import React from 'react';
-import ImgProduct from '../../assets/img/id1.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function TableRow({ id, name }) {
+function TableRow({ id, name, status }) {
   return (
     <div className="row">
       <div className="img-container">
-        <img src={ImgProduct} alt="" />
+        <img
+          src={`http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id${id}.jpg`}
+          alt=""
+        />
       </div>
       <div className="item-id">
         <h2>ID</h2>
@@ -24,7 +26,11 @@ function TableRow({ id, name }) {
       </div>
       <div className="checkbox-container">
         <label className="switch" htmlFor={`checkbox${id}`}>
-          <input type="checkbox" id={`checkbox${id}`} />
+          <input
+            type="checkbox"
+            id={`checkbox${id}`}
+            defaultChecked={status == 1 ? true : false}
+          />
           <div className="slider round"></div>
         </label>
       </div>

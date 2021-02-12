@@ -24,7 +24,12 @@ function Table() {
           <p>total: (170)</p>
         </div>
         {productsData.map((product) => (
-          <TableRow key={product.id} id={product.id} name={product.nombre} />
+          <TableRow
+            key={product.id}
+            id={product.id}
+            name={product.nombre}
+            status={product.activo}
+          />
         ))}
       </div>
     </div>
