@@ -9,7 +9,10 @@ function Table() {
           <h2>Todos los productos</h2>
           <p>total: (170)</p>
         </div>
-        <TableRow />
+        <TableRow id={1} />
+        <TableRow id={2} />
+        <TableRow id={3} />
+        <TableRow id={4} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import ImgProduct from '../../assets/img/id1.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function TableRow() {
+function TableRow({ id }) {
   return (
     <div className="row">
       <img src={ImgProduct} alt="" />
@@ -14,26 +14,19 @@ function TableRow() {
       <div className="name">
         <h2>Cerveza Cruzcampo</h2> <p>Botellín de 1/3</p>
       </div>
-      <div className="marca">
-        <h2>Marca</h2>
-        <p>Cruzcampo</p>
-      </div>
-
-      <div className="category">
-        <h2>Categoría</h2>
-        <p>Vinos</p>
-      </div>
-
+      <p>Cruzcampo</p>
+      <p>Vinos</p>
       <div className="last-edited">
         <h2>Última edición</h2>
         <p>12/02/21 a las 21:30</p>
       </div>
-
-      <div className="estado">
-        <h2>Estado</h2>
-        <input type="checkbox" name="active" id="" />
+      <div className="checkbox-container">
+        <label className="switch" htmlFor={`checkbox${id}`}>
+          <input type="checkbox" id={`checkbox${id}`} />
+          <div className="slider round"></div>
+        </label>
       </div>
-      <FontAwesomeIcon icon={faStar} size="lg" />
+      <FontAwesomeIcon className="star" icon={faStar} size="lg" />
     </div>
   );
 }
