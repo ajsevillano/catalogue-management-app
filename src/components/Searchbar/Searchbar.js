@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 function Searchbar() {
+  const [filter, setFilter] = useState('');
+  const handleKeyPress = (event) => {
+    setFilter({ ...filter, nombre: event.target.value });
+  };
+
   return (
     <div className="search-bar-container wrapper">
+      <h2>{filter.nombre}</h2>
       <div className="search-bar">
-        <input type="text" placeholder="Buscar productos..." />
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          onChange={handleKeyPress}
+        />
         <FontAwesomeIcon
           className="icon-faEllipsis"
           icon={faEllipsisV}
