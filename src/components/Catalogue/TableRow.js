@@ -3,18 +3,20 @@ import ImgProduct from '../../assets/img/id1.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function TableRow({ id }) {
+function TableRow({ id, name }) {
   return (
     <div className="row">
-      <img src={ImgProduct} alt="" />
+      <div className="img-container">
+        <img src={ImgProduct} alt="" />
+      </div>
       <div className="item-id">
         <h2>ID</h2>
-        <p>#01</p>
+        <p>{id}</p>
       </div>
       <div className="name">
-        <h2>Cerveza Cruzcampo</h2> <p>Botellín de 1/3</p>
+        <h2>{name}</h2> <p>Botellín de 1/3</p>
       </div>
-      <p>Cruzcampo</p>
+      <p className="brand">Cruzcampo</p>
       <p className="categoria">Vinos</p>
       <div className="last-edited">
         <h2>Última edición</h2>

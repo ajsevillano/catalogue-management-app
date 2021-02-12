@@ -18,10 +18,27 @@
     font-weight: 600;
     font-size: 1rem;
   }
+
+  .name,
+  .last-edited {
+    flex: 2;
+  }
+
+  .img-container,
+  .item-id,
+  .categoria,
+  .brand {
+    flex: 1 1 0px;
+  }
+
+  .img-container {
+    display: flex;
+  }
 }
 
 .star {
   color: var(--primary-color);
+  flex: 1 1 0px;
 }
 
 .switch {

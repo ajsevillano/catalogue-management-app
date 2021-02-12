@@ -16,7 +16,19 @@ function Table() {
     fetchData();
   }, []);
 
-  return <div id="table" className="wrapper"></div>;
+  return (
+    <div id="table" className="wrapper">
+      <div className="table-catalogue">
+        <div className="table-header">
+          <h2>Categoría: Vinos Todos los productos</h2>
+          <p>total: (170)</p>
+        </div>
+        {productsData.map((product) => (
+          <TableRow key={product.id} id={product.id} name={product.nombre} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Table;
