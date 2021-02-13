@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
 import axios from 'axios';
+import Menubar from '../header/Menubar/Menubar';
 
 function Table() {
   const [productsData, setProductsData] = useState([]);
@@ -18,6 +19,7 @@ function Table() {
 
   return (
     <div id="table" className="wrapper">
+      <Menubar />
       <div className="table-catalogue">
         <div className="table-header">
           <h2>Todos los productos</h2>
