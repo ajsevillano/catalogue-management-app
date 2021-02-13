@@ -10,9 +10,10 @@
 
   nav a:first-child {
     border-bottom: 2px solid var(--primary-color);
+    color: #0c1322;
   }
   nav a:nth-child(2) {
-    padding-left: 30px;
+    padding-left: 40px;
   }
 
   nav a {
@@ -20,9 +21,5 @@
     text-decoration: none;
     padding-bottom: 10px;
     font-weight: 600;
-  }
-
-  .active {
-    color: #0c1322;
   }
 }

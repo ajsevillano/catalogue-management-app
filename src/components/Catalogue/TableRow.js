@@ -2,7 +2,10 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function TableRow({ id, name, status }) {
+function TableRow({ id, name, status, category, lastUpdate }) {
+  //Format the date from timestamp to human-friendly date string
+  const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
+
   return (
     <div className="row">
       <div className="img-container">
@@ -19,10 +22,10 @@ function TableRow({ id, name, status }) {
         <h2>{name}</h2> <p>Botellín de 1/3</p>
       </div>
       <p className="brand">Cruzcampo</p>
-      <p className="categoria">Vinos</p>
+      <p className="categoria">{category}</p>
       <div className="last-edited">
         <h2>Última edición</h2>
-        <p>12/02/21 a las 21:30</p>
+        <p>{formattedTime}</p>
       </div>
       <div className="checkbox-container">
         <label className="switch" htmlFor={`checkbox${id}`}>

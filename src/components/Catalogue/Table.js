@@ -6,6 +6,7 @@ import SortBar from '../Catalogue/SortByBar';
 
 function Table() {
   const [productsData, setProductsData] = useState([]);
+  // const categories = [vinos];
 
   useEffect(() => {
     async function fetchData() {
@@ -17,6 +18,10 @@ function Table() {
     }
     fetchData();
   }, []);
+
+  {
+    productsData.map((cat) => console.log(cat.tipo));
+  }
 
   return (
     <div id="table" className="wrapper">
@@ -33,6 +38,8 @@ function Table() {
             id={product.id}
             name={product.nombre}
             status={product.activo}
+            category={product.tipo}
+            lastUpdate={product.last_update}
           />
         ))}
       </div>
