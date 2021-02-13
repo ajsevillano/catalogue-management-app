@@ -6,7 +6,7 @@ function Menubar() {
       <nav>
         <a className="active" href="">
           Todos los productos
-        </a>{' '}
+        </a>
         <a href="/css/">Todos los negocios</a>
       </nav>
     </div>

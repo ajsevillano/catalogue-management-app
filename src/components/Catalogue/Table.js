@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
 import axios from 'axios';
-import Menubar from '../header/Menubar/Menubar';
+import Menubar from '../Menubar/Menubar';
 import SortBar from '../Catalogue/SortByBar';
 
 function Table() {

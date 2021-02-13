@@ -5,7 +5,7 @@ import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 function SortByBar() {
   return (
     <div className="sort-bar">
-      <p>Mostrando todos los productos</p>
+      <p>Inicio - Productos</p>
       <p className="sort-order">
         <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
         ordenar por <span>MÁS RECIENTES</span>

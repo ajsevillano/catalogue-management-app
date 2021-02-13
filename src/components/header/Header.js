@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuBar from './Menubar/Menubar';
+import MenuBar from '../Menubar/Menubar';
 import Title from './Title/Title';
 import Profile from './Profile/Profile';
 
