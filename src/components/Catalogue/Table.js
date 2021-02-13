@@ -2,11 +2,18 @@ import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
 import axios from 'axios';
 import Menubar from '../Menubar/Menubar';
-import SortBar from '../Catalogue/SortByBar';
+import SortBar from './SortByBar';
 
 function Table() {
   const [productsData, setProductsData] = useState([]);
-  // const categories = [vinos];
+  const categories = [
+    'vinos',
+    'cervezas',
+    'refrescos',
+    'lacteos',
+    'aguas',
+    'otros',
+  ];
 
   useEffect(() => {
     async function fetchData() {
@@ -19,13 +26,9 @@ function Table() {
     fetchData();
   }, []);
 
-  {
-    productsData.map((cat) => console.log(cat.tipo));
-  }
-
   return (
     <div id="table" className="wrapper">
-      <Menubar />
+      <Menubar categories={categories} />
       <SortBar />
       <div className="table-catalogue">
         <div className="table-header">

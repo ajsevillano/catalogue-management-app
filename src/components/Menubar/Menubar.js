@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Menubar() {
+function Menubar({ categories }) {
   return (
     <div className="menubar">
       <nav>
-        <a href="">Todos los productos</a>
-        <a href="/css/">Todos los negocios</a>
+        {categories && categories.map((category) => <a href="">{category}</a>)}
       </nav>
+      <h2></h2>
     </div>
   );
 }
