@@ -6,6 +6,9 @@ import SortBar from './SortByBar';
 
 function Table() {
   const [productsData, setProductsData] = useState([]);
+  const [fetchUrl, setFetchUrl] = useState([
+    'http://api.uniondistribuidora.com/products',
+  ]);
   const categories = [
     'Todos',
     'Vinos',
@@ -18,9 +21,7 @@ function Table() {
 
   useEffect(() => {
     async function fetchData() {
-      const products = await axios.get(
-        'http://api.uniondistribuidora.com/products'
-      );
+      const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       return products;
     }
