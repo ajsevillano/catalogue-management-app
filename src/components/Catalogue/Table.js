@@ -7,7 +7,8 @@ import SortBar from './SortByBar';
 function Table() {
   const [productsData, setProductsData] = useState([]);
   const categories = [
-    'vinos',
+    'Todos',
+    'Vinos',
     'cervezas',
     'refrescos',
     'lacteos',

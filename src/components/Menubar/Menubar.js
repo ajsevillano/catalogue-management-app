@@ -4,7 +4,12 @@ function Menubar({ categories }) {
   return (
     <div className="menubar">
       <nav>
-        {categories && categories.map((category) => <a href="">{category}</a>)}
+        {categories &&
+          categories.map((category) => (
+            <a key={category} href="">
+              {category}
+            </a>
+          ))}
       </nav>
       <h2></h2>
     </div>
