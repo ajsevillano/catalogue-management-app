@@ -4,21 +4,20 @@ import axios from 'axios';
 import Menubar from '../Menubar/Menubar';
 import SortBar from './SortByBar';
 
-function Table() {
+function Table({ fetchUrl }) {
   const [productsData, setProductsData] = useState([]);
-  const [fetchUrl, setFetchUrl] = useState([
-    'http://api.uniondistribuidora.com/products',
-  ]);
+
   const categories = [
     'Todos',
     'Vinos',
-    'cervezas',
-    'refrescos',
-    'lacteos',
-    'aguas',
-    'otros',
+    'Cervezas',
+    'Refrescos',
+    'Lacteos',
+    'Aguas',
+    'Otros',
   ];
 
+  //Fetch data when page loads
   useEffect(() => {
     async function fetchData() {
       const products = await axios.get(fetchUrl);

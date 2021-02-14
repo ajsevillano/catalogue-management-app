@@ -1,14 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function Menubar({ categories }) {
+  const MenuSelectHandler = (category) => {
+    alert(category);
+  };
+
   return (
     <div className="menubar">
       <nav>
         {categories &&
           categories.map((category) => (
-            <a key={category} href="">
+            <p
+              key={category}
+              href=""
+              onClick={() => MenuSelectHandler(category)}
+            >
               {category}
-            </a>
+            </p>
           ))}
       </nav>
       <h2></h2>
