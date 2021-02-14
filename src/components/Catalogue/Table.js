@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
-import axios from 'axios';
+
 import Menubar from '../Menubar/Menubar';
 import SortBar from './SortByBar';
 
-function Table({ fetchUrl }) {
-  const [productsData, setProductsData] = useState([]);
-
+function Table({ fetchUrl, setFetchUrl, productsData }) {
   const categories = [
     'Todos',
     'Vinos',
@@ -17,19 +15,9 @@ function Table({ fetchUrl }) {
     'Otros',
   ];
 
-  //Fetch data when page loads
-  useEffect(() => {
-    async function fetchData() {
-      const products = await axios.get(fetchUrl);
-      setProductsData(products.data);
-      return products;
-    }
-    fetchData();
-  }, []);
-
   return (
     <div id="table" className="wrapper">
-      <Menubar categories={categories} />
+      <Menubar categories={categories} setFetchUrl={setFetchUrl} />
       <SortBar />
       <div className="table-catalogue">
         <div className="table-header">

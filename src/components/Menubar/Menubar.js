@@ -1,8 +1,10 @@
 import React from 'react';
 
-function Menubar({ categories }) {
+function Menubar({ categories, setFetchUrl }) {
   const MenuSelectHandler = (category) => {
-    alert(category);
+    setFetchUrl(
+      `http://api.uniondistribuidora.com/products?category=${category}`
+    );
   };
 
   return (
@@ -10,11 +12,7 @@ function Menubar({ categories }) {
       <nav>
         {categories &&
           categories.map((category) => (
-            <p
-              key={category}
-              href=""
-              onClick={() => MenuSelectHandler(category)}
-            >
+            <p key={category} onClick={() => MenuSelectHandler(category)}>
               {category}
             </p>
           ))}
