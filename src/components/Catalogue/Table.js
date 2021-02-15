@@ -6,13 +6,13 @@ import SortBar from './SortByBar';
 
 function Table({ fetchUrl, setFetchUrl, productsData }) {
   const [categories, setCategories] = useState([
-    { name: 'Todos', isActive: 'si' },
-    { name: 'Vinos', isActive: 'si' },
-    { name: 'Cervezas', isActive: 'si' },
-    { name: 'Refrescos', isActive: 'si' },
-    { name: 'Lacteos', isActive: 'si' },
-    { name: 'Aguas', isActive: 'si' },
-    { name: 'Otros', isActive: 'si' },
+    { name: 'Todos', isActive: true },
+    { name: 'Vinos', isActive: false },
+    { name: 'Cervezas', isActive: false },
+    { name: 'Refrescos', isActive: false },
+    { name: 'Lacteos', isActive: false },
+    { name: 'Aguas', isActive: false },
+    { name: 'Otros', isActive: false },
   ]);
 
   return (
