@@ -14,12 +14,11 @@ function App() {
 
   //Fetch data when page loads
   useEffect(() => {
-    async function fetchData() {
+    setTimeout(async function fetchData() {
       const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       return products;
-    }
-    fetchData();
+    }, 250);
   }, [fetchUrl]);
   return (
     <div className="App">
