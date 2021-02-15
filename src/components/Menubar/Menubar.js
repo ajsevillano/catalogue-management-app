@@ -2,9 +2,11 @@ import React from 'react';
 
 function Menubar({ categories, setFetchUrl }) {
   const MenuSelectHandler = (category) => {
-    setFetchUrl(
-      `http://api.uniondistribuidora.com/products?category=${category}`
-    );
+    category == 'Todos'
+      ? setFetchUrl(`http://api.uniondistribuidora.com/products`)
+      : setFetchUrl(
+          `http://api.uniondistribuidora.com/products?category=${category}`
+        );
   };
 
   return (
