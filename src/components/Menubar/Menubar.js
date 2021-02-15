@@ -35,7 +35,6 @@ function Menubar({ categories, setCategories, setFetchUrl }) {
             </p>
           ))}
       </nav>
-      <h2></h2>
     </div>
   );
 }

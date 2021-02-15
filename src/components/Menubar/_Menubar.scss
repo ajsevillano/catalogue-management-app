@@ -1,27 +1,29 @@
 .menubar {
   width: 90%;
   flex: 1;
-  align-items: flex-end;
+
   display: flex;
 
   nav {
     display: flex;
+    justify-content: space-between;
+    width: 50%;
   }
 
   nav p:first-child {
-    border-bottom: 2px solid var(--primary-color);
     color: #0c1322;
-    padding: 0 0 10px 0px;
-  }
-  nav p:nth-child(2) {
-    padding-left: 40px;
+    // padding: 0 0 10px 0px;
   }
 
   nav p {
     color: #acb4bc;
     text-decoration: none;
-    padding: 0 0 10px 40px;
+    padding: 0 0 10px 0px;
     font-weight: 600;
     cursor: pointer;
+  }
+
+  .isActive {
+    border-bottom: 2px solid var(--primary-color);
   }
 }
