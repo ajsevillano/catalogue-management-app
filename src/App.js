@@ -18,17 +18,14 @@ function App() {
       const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       return products;
-    }, 250);
+    }, 150);
   }, [fetchUrl]);
   return (
     <div className="App">
       <Header />
       <section className="main">
         <Searchbar />
-        <TableCatalog
-          setFetchUrl={setFetchUrl}
-          productsData={productsData}
-        />
+        <TableCatalog setFetchUrl={setFetchUrl} productsData={productsData} />
       </section>
     </div>
   );

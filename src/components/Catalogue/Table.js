@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import TableRow from './TableRow';
+import Tablerownoresults from './TableRownoresults';
 
 import Menubar from '../Menubar/Menubar';
 import SortBar from './SortByBar';
+
+import ImgNada from '../../assets/img/noData.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
@@ -45,8 +48,11 @@ function Table({ setFetchUrl, productsData }) {
             <FontAwesomeIcon className="sort" icon={faSort} size="sm" />
           </p>
         </div>
-        {!productsData && 'skeleton'}
-        {productsData &&
+        {!productsData ? (
+          'skeleton'
+        ) : productsData.length == 0 ? (
+          <Tablerownoresults />
+        ) : (
           productsData.map((product) => (
             <TableRow
               key={product.id}
@@ -56,7 +62,8 @@ function Table({ setFetchUrl, productsData }) {
               category={product.tipo}
               lastUpdate={product.last_update}
             />
-          ))}
+          ))
+        )}
       </div>
     </div>
   );

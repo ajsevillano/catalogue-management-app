@@ -6,7 +6,7 @@
 
   nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     width: 50%;
   }
 
@@ -16,6 +16,11 @@
     padding: 0 0 10px 0px;
     font-weight: 600;
     cursor: pointer;
+    margin-left: 30px;
+  }
+
+  nav p:first-child {
+    margin-left: 0px;
   }
 
   .isActive {

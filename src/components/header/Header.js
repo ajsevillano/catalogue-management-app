@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MenuBar from '../Menubar/Menubar';
 import Title from './Title/Title';
 import Profile from './Profile/Profile';
 
 function Header() {
-  const categories = ['Todos los productos', 'Todos los negocios'];
+  const [categories, setCategories] = useState([
+    { name: 'Todos los productos', isActive: true },
+    { name: 'Todos los negocios', isActive: false },
+  ]);
   return (
     <section className="header">
       <div className="header-container wrapper">
