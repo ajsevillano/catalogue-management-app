@@ -7,8 +7,7 @@ import SortBar from './SortByBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 
-function Table({setFetchUrl, productsData }) {
-
+function Table({ setFetchUrl, productsData }) {
   //State categories
   const [categories, setCategories] = useState([
     { name: 'Todos', isActive: true },
@@ -19,7 +18,6 @@ function Table({setFetchUrl, productsData }) {
     { name: 'Aguas', isActive: false },
     { name: 'Otros', isActive: false },
   ]);
-
 
   return (
     <div id="table" className="wrapper">
@@ -33,7 +31,11 @@ function Table({setFetchUrl, productsData }) {
         <div className="table-header">
           <h2>Todos los productos</h2>
           <p>
-          {!productsData ? 'Cargando...' : `Total: ${productsData.length}`}
+            {!productsData
+              ? 'Cargando...'
+              : productsData.length == 0
+              ? 'No hay productos que mostrar'
+              : `Total: ${productsData.length}`}
           </p>
           <p className="sort-order">
             <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
@@ -41,17 +43,18 @@ function Table({setFetchUrl, productsData }) {
             <FontAwesomeIcon className="sort" icon={faSort} size="sm" />
           </p>
         </div>
-
-        {!productsData && 'skeleton'} {productsData && productsData.map((product) => (
-          <TableRow
-            key={product.id}
-            id={product.id}
-            name={product.nombre}
-            status={product.activo}
-            category={product.tipo}
-            lastUpdate={product.last_update}
-          />
-        ))}
+        {!productsData && 'skeleton'}{' '}
+        {productsData &&
+          productsData.map((product) => (
+            <TableRow
+              key={product.id}
+              id={product.id}
+              name={product.nombre}
+              status={product.activo}
+              category={product.tipo}
+              lastUpdate={product.last_update}
+            />
+          ))}
       </div>
     </div>
   );
