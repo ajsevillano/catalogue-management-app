@@ -10,11 +10,6 @@
     width: 50%;
   }
 
-  nav p:first-child {
-    color: #0c1322;
-    // padding: 0 0 10px 0px;
-  }
-
   nav p {
     color: #acb4bc;
     text-decoration: none;
@@ -25,5 +20,20 @@
 
   .isActive {
     border-bottom: 2px solid var(--primary-color);
+    color: #0c1322;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.25s;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
