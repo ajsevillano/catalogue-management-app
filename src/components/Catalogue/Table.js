@@ -7,7 +7,9 @@ import SortBar from './SortByBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 
-function Table({ setFetchUrl, productsData }) {
+function Table({setFetchUrl, productsData }) {
+
+  //State categories
   const [categories, setCategories] = useState([
     { name: 'Todos', isActive: true },
     { name: 'Vinos', isActive: false },
@@ -17,6 +19,7 @@ function Table({ setFetchUrl, productsData }) {
     { name: 'Aguas', isActive: false },
     { name: 'Otros', isActive: false },
   ]);
+
 
   return (
     <div id="table" className="wrapper">
@@ -29,7 +32,9 @@ function Table({ setFetchUrl, productsData }) {
       <div className="table-catalogue">
         <div className="table-header">
           <h2>Todos los productos</h2>
-          <p>total: {productsData.length}</p>
+          <p>
+          {!productsData ? 'Cargando...' : `Total: ${productsData.length}`}
+          </p>
           <p className="sort-order">
             <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
             ordenar por <span>MÁS RECIENTES</span>
@@ -37,7 +42,7 @@ function Table({ setFetchUrl, productsData }) {
           </p>
         </div>
 
-        {productsData.map((product) => (
+        {!productsData && 'skeleton'} {productsData && productsData.map((product) => (
           <TableRow
             key={product.id}
             id={product.id}

@@ -7,7 +7,7 @@ import TableCatalog from './components/Catalogue/Table';
 import axios from 'axios';
 
 function App() {
-  const [productsData, setProductsData] = useState([]);
+  const [productsData, setProductsData] = useState(null);
   const [fetchUrl, setFetchUrl] = useState([
     'http://api.uniondistribuidora.com/products',
   ]);
@@ -26,7 +26,6 @@ function App() {
       <section className="main">
         <Searchbar />
         <TableCatalog
-          fetchUrl={fetchUrl}
           setFetchUrl={setFetchUrl}
           productsData={productsData}
         />
