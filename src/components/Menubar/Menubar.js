@@ -11,14 +11,16 @@ function Menubar({ categories, setCategories, setFetchUrl }) {
         );
 
     setCategories(
-      categories.map((item) =>
-        item.isActive === true
+      categories.map((item) => {
+        return (item.isActive === true) & (category.name != item.name)
           ? { ...item, isActive: false }
           : item.name === category.name
           ? { ...item, isActive: true }
-          : item
-      )
+          : item;
+      })
     );
+
+    console.log(category.name);
   };
 
   return (

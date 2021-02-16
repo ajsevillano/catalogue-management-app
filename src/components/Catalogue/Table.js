@@ -43,7 +43,7 @@ function Table({ setFetchUrl, productsData }) {
             <FontAwesomeIcon className="sort" icon={faSort} size="sm" />
           </p>
         </div>
-        {!productsData && 'skeleton'}{' '}
+        {!productsData && 'skeleton'}
         {productsData &&
           productsData.map((product) => (
             <TableRow
