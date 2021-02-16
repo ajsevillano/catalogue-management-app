@@ -4,7 +4,7 @@ import TableRow from './TableRow';
 import Menubar from '../Menubar/Menubar';
 import SortBar from './SortByBar';
 
-function Table({ fetchUrl, setFetchUrl, productsData }) {
+function Table({ setFetchUrl, productsData }) {
   const [categories, setCategories] = useState([
     { name: 'Todos', isActive: true },
     { name: 'Vinos', isActive: false },
@@ -28,6 +28,7 @@ function Table({ fetchUrl, setFetchUrl, productsData }) {
           <h2>Todos los productos</h2>
           <p>total: {productsData.length}</p>
         </div>
+
         {productsData.map((product) => (
           <TableRow
             key={product.id}
