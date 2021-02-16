@@ -29,7 +29,9 @@ function Table({ setFetchUrl, productsData }) {
       <SortBar />
       <div className="table-catalogue">
         <div className="table-header">
-          <h2>Todos los productos</h2>
+          <h2>
+            {categories.map((item) => item.isActive == true && item.name)}
+          </h2>
           <p>
             {!productsData
               ? 'Cargando...'
