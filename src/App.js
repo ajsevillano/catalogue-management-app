@@ -18,7 +18,7 @@ function App() {
       const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       return products;
-    }, 550);
+    }, 250);
   }, [fetchUrl]);
   return (
     <div className="App">

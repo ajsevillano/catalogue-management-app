@@ -49,7 +49,12 @@ function Table({ setFetchUrl, productsData }) {
           </p>
         </div>
         {!productsData ? (
-          <TableRowSkeleton />
+          <>
+            <TableRowSkeleton />
+            <TableRowSkeleton />
+            <TableRowSkeleton />
+            <TableRowSkeleton />
+          </>
         ) : productsData.length == 0 ? (
           <Tablerownoresults />
         ) : (

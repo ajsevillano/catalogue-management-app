@@ -30,7 +30,7 @@ function TableRowSkeleton() {
         <div className="checkbox-skeleton"></div>
       </div>
       <FontAwesomeIcon
-        className="star-skeleton"
+        className="spinner-skeleton"
         icon={faSpinner}
         spin
         size="lg"
