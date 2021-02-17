@@ -19,9 +19,11 @@
 @import './components/buttons/ButtonPrimary';
 @import './components/buttons/ButtonSecundary';
 
+//Forms
+@import './components/forms/Checkbox';
 
- //General styles
-  * {
+//General styles
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,7 +35,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #133e35;
+  color: #181d27;
 }
 
 .App {

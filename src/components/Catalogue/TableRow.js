@@ -1,11 +1,12 @@
 import React from 'react';
+import Checkbox from '../forms/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function TableRow({ id, name, status, category, lastUpdate }) {
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
-
+  console.log(status);
   return (
     <div className="row">
       <div className="img-container">
@@ -28,15 +29,9 @@ function TableRow({ id, name, status, category, lastUpdate }) {
         <p>{formattedTime}</p>
       </div>
       <div className="checkbox-container">
-        <label className="switch" htmlFor={`checkbox${id}`}>
-          <input
-            type="checkbox"
-            id={`checkbox${id}`}
-            defaultChecked={status == 1 ? true : false}
-          />
-          <div className="slider round"></div>
-        </label>
+        <Checkbox id={id} status={status} />
       </div>
+
       <FontAwesomeIcon className="star" icon={faStar} size="lg" />
     </div>
   );
