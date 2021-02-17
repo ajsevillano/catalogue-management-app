@@ -13,8 +13,8 @@ function TableRowSkeleton() {
         <p className="p-item-id-skeleton"></p>
       </div>
       <div className="name-skeleton">
-        <h2 className="h2-skeleton-long"></h2>
-        <p className="p-skeleton-long"></p>
+        <h2 className="h2-name-skeleton"></h2>
+        <p className="p-name-skeleton"></p>
       </div>
       <div className="brand-skeleton">
         <p className="p-brand-skeleton"></p>

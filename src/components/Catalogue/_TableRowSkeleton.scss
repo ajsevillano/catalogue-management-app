@@ -19,14 +19,14 @@
     width: 50px;
   }
 
-  .h2-skeleton-long {
+  .h2-name-skeleton {
     min-width: 90px;
     min-height: 20px;
     background-color: rgb(221, 221, 221);
     width: 200px;
   }
 
-  .p-skeleton-long {
+  .p-name-skeleton {
     min-width: 50px;
     min-height: 15px;
     background-color: rgb(221, 221, 221);
@@ -112,61 +112,6 @@
     flex: 1 1 0px;
   }
 }
-
-//   .img-container {
-//     display: flex;
-//   }
-// }
-
-// .switch {
-//   display: inline-block;
-//   height: 22px;
-//   position: relative;
-//   width: 40px;
-// }
-
-// .switch input {
-//   display: none;
-// }
-
-// .slider {
-//   background-color: #ccc;
-//   bottom: 0;
-//   cursor: pointer;
-//   left: 0;
-//   position: absolute;
-//   right: 0;
-//   top: 0;
-//   transition: 0.4s;
-// }
-
-// //Bolita dentro
-// .slider:before {
-//   background-color: #fff;
-//   bottom: 4px;
-//   content: '';
-//   height: 14px;
-//   width: 14px;
-//   left: 4px;
-//   position: absolute;
-//   transition: 0.4s;
-// }
-
-// input:checked + .slider {
-//   background-color: var(--primary-color);
-// }
-
-// input:checked + .slider:before {
-//   transform: translateX(19px);
-// }
-
-// .slider.round {
-//   border-radius: 34px;
-// }
-
-// .slider.round:before {
-//   border-radius: 50%;
-// }
 
 // //Mobile styles
 // @media screen and (max-width: 768px) {
