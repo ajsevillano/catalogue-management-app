@@ -1,8 +1,8 @@
 .Button {
   button {
-    margin-left: auto;
     background-color: var(--primary-color);
-    width: 142px;
+    width: auto;
+    max-width: 200px;
     color: white;
     font-family: 'Open Sans';
     font-weight: 600;

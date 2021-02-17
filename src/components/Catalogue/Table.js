@@ -5,8 +5,6 @@ import Tablerownoresults from './TableRownoresults';
 import Menubar from '../Menubar/Menubar';
 import SortBar from './SortByBar';
 
-import ImgNada from '../../assets/img/noData.png';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,6 +17,7 @@ function Table({ setFetchUrl, productsData }) {
     { name: 'Refrescos', isActive: false },
     { name: 'Lacteos', isActive: false },
     { name: 'Aguas', isActive: false },
+    { name: 'Licores', isActive: false },
     { name: 'Otros', isActive: false },
   ]);
 

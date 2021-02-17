@@ -1,5 +1,7 @@
 import React from 'react';
 import Noresults from '../../assets/img/noData.png';
+import Button from '../button/Button';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function TableRownoresults() {
   return (
@@ -10,7 +12,7 @@ function TableRownoresults() {
         Parece que esta categoría aun no tiene productos, ¿Te gustaría añadir
         uno?
       </p>
-      <button>Añadir producto</button>
+      <Button icon={faPlus} size={'sm'} text={'Añadir productos'} />
     </div>
   );
 }
