@@ -14,8 +14,10 @@
 @import './components/Catalogue/TableRowSkeleton';
 @import './components/Catalogue/SortByBar';
 
-//General styles
-* {
+// UI Components
+@import './components/button/Button';
+ //General styles
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

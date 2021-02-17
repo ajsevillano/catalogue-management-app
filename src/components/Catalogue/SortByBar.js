@@ -1,15 +1,13 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import Button from '../button/Button';
 
 function SortByBar() {
   return (
     <div className="sort-bar">
       <p>Inicio - Productos</p>
-      <button tabIndex="2">
-        <FontAwesomeIcon className="sort" icon={faPlus} size="sm" /> Añadir
-        producto
-      </button>
+      <Button icon={faPlus} size={'sm'} text={'Añadir producto'} />
     </div>
   );
 }

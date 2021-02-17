@@ -1,0 +1,15 @@
+.Button {
+  button {
+    margin-left: auto;
+    background-color: var(--primary-color);
+    width: 142px;
+    color: white;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+}
