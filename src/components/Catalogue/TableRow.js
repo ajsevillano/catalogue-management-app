@@ -6,7 +6,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 function TableRow({ id, name, status, category, lastUpdate }) {
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
-  console.log(status);
+
   return (
     <div className="row">
       <div className="img-container">
@@ -28,8 +28,14 @@ function TableRow({ id, name, status, category, lastUpdate }) {
         <h2>Última edición</h2>
         <p>{formattedTime}</p>
       </div>
-      <div className="checkbox-container">
-        <Checkbox id={id} status={status} />
+      <div
+        className={
+          status == 1
+            ? 'status-container status-on'
+            : 'status-container status-off'
+        }
+      >
+        <p>{status == 1 ? 'publicado' : 'no publicado'}</p>
       </div>
 
       <FontAwesomeIcon className="star" icon={faStar} size="lg" />
