@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 import TableRowSkeleton from './TableRowSkeleton';
 
-function Table({ setFetchUrl, productsData }) {
+function Table({ setFetchUrl, productsData, setProductsData }) {
   //State categories
   const [categories, setCategories] = useState([
     { name: 'Todos', isActive: true },
@@ -28,6 +28,7 @@ function Table({ setFetchUrl, productsData }) {
         categories={categories}
         setCategories={setCategories}
         setFetchUrl={setFetchUrl}
+        setProductsData={setProductsData}
       />
       <SortBar />
       <div className="table-catalogue">
