@@ -19,8 +19,6 @@ function Menubar({ categories, setCategories, setFetchUrl }) {
           : item;
       })
     );
-
-    console.log(category.name);
   };
 
   return (

@@ -7,6 +7,7 @@ import SortBar from './SortByBar';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
+import TableRowSkeleton from './TableRowSkeleton';
 
 function Table({ setFetchUrl, productsData }) {
   //State categories
@@ -48,7 +49,7 @@ function Table({ setFetchUrl, productsData }) {
           </p>
         </div>
         {!productsData ? (
-          'skeleton'
+          <TableRowSkeleton />
         ) : productsData.length == 0 ? (
           <Tablerownoresults />
         ) : (

@@ -1,4 +1,4 @@
-.row {
+.row-skeleton {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,110 +8,172 @@
   border-bottom: 1px solid #eff2f6;
   border-right: 1px solid #eff2f6;
 
-  img {
-    width: 50px;
-    height: 50px;
-  }
-
-  h2 {
-    color: #0c1322;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-
-  .name,
-  .last-edited {
-    flex: 2;
-
-    p {
-      color: #acb4bc;
-      margin-top: 5px;
-    }
-  }
-
-  .item-id {
-    flex: 0.5;
-    p {
-      color: #acb4bc;
-      margin-top: 5px;
-    }
-  }
-
   .img-container {
     flex: 0.75;
   }
 
-  .brand,
-  .categoria {
+  .img-skeleton {
+    min-width: 50px;
+    min-height: 50px;
+    background-color: rgb(221, 221, 221);
+    width: 50px;
+  }
+
+  .h2-skeleton-long {
+    min-width: 90px;
+    min-height: 20px;
+    background-color: rgb(221, 221, 221);
+    width: 200px;
+  }
+
+  .p-skeleton-long {
+    min-width: 50px;
+    min-height: 15px;
+    background-color: rgb(221, 221, 221);
+    width: 100px;
+  }
+
+  .item-id-skeleton {
+    flex: 0.5;
+    p {
+      color: #acb4bc;
+      margin-top: 10px;
+    }
+  }
+
+  .name-skeleton,
+  .last-edited-skeleton {
+    flex: 2;
+
+    p {
+      color: #acb4bc;
+      margin-top: 10px;
+    }
+  }
+
+  .brand-skeleton,
+  .categoria-skeleton {
     flex: 1;
   }
 
-  .img-container {
-    display: flex;
+  .p-brand-skeleton {
+    min-width: 90px;
+    min-height: 15px;
+    background-color: rgb(221, 221, 221);
+    width: 90px;
+  }
+
+  .p-categoria-skeleton {
+    min-width: 80px;
+    min-height: 15px;
+    background-color: rgb(221, 221, 221);
+    width: 80px;
+  }
+
+  .h2-last-edited-skeleton {
+    min-width: 100px;
+    min-height: 20px;
+    background-color: rgb(221, 221, 221);
+    width: 110px;
+  }
+
+  .p-last-edited-skeleton {
+    min-width: 150px;
+    min-height: 15px;
+    background-color: rgb(221, 221, 221);
+    width: 150px;
+    margin-top: 5px;
+  }
+
+  .h2-item-id-skeleton {
+    min-width: 20px;
+    min-height: 15px;
+    background-color: rgb(221, 221, 221);
+    width: 20px;
+  }
+
+  .p-item-id-skeleton {
+    min-width: 30px;
+    min-height: 15px;
+    background-color: rgb(221, 221, 221);
+    width: 30px;
+  }
+
+  .checkbox-skeleton {
+    min-width: 40px;
+    min-height: 22px;
+    background-color: rgb(221, 221, 221);
+    width: 40px;
+    border-radius: 20px;
+  }
+
+  .star-skeleton {
+    color: #acb4bc;
+    flex: 1 1 0px;
   }
 }
 
-.star {
-  color: var(--primary-color);
-  flex: 1 1 0px;
-}
+//   .img-container {
+//     display: flex;
+//   }
+// }
 
-.switch {
-  display: inline-block;
-  height: 22px;
-  position: relative;
-  width: 40px;
-}
+// .switch {
+//   display: inline-block;
+//   height: 22px;
+//   position: relative;
+//   width: 40px;
+// }
 
-.switch input {
-  display: none;
-}
+// .switch input {
+//   display: none;
+// }
 
-.slider {
-  background-color: #ccc;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
-}
+// .slider {
+//   background-color: #ccc;
+//   bottom: 0;
+//   cursor: pointer;
+//   left: 0;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   transition: 0.4s;
+// }
 
-//Bolita dentro
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: '';
-  height: 14px;
-  width: 14px;
-  left: 4px;
-  position: absolute;
-  transition: 0.4s;
-}
+// //Bolita dentro
+// .slider:before {
+//   background-color: #fff;
+//   bottom: 4px;
+//   content: '';
+//   height: 14px;
+//   width: 14px;
+//   left: 4px;
+//   position: absolute;
+//   transition: 0.4s;
+// }
 
-input:checked + .slider {
-  background-color: var(--primary-color);
-}
+// input:checked + .slider {
+//   background-color: var(--primary-color);
+// }
 
-input:checked + .slider:before {
-  transform: translateX(19px);
-}
+// input:checked + .slider:before {
+//   transform: translateX(19px);
+// }
 
-.slider.round {
-  border-radius: 34px;
-}
+// .slider.round {
+//   border-radius: 34px;
+// }
 
-.slider.round:before {
-  border-radius: 50%;
-}
+// .slider.round:before {
+//   border-radius: 50%;
+// }
 
-//Mobile styles
-@media screen and (max-width: 768px) {
-  .last-edited {
-    display: none;
-  }
-  .categoria {
-    display: none;
-  }
-}
+// //Mobile styles
+// @media screen and (max-width: 768px) {
+//   .last-edited {
+//     display: none;
+//   }
+//   .categoria {
+//     display: none;
+//   }
+// }

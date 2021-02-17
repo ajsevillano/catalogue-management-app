@@ -1,40 +1,40 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 function TableRowSkeleton() {
   return (
-    <div className="row">
+    <div className="row-skeleton">
       <div className="img-container">
-        <img
-          src={`http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id${id}.jpg`}
-          alt=""
-        />
+        <div className="img-skeleton"></div>
       </div>
-      <div className="item-id">
-        <h2>ID</h2>
-        <p>#{id}</p>
+      <div className="item-id-skeleton">
+        <h2 className="h2-item-id-skeleton"></h2>
+        <p className="p-item-id-skeleton"></p>
       </div>
-      <div className="name">
-        <h2>{name}</h2> <p>Botellín de 1/3</p>
+      <div className="name-skeleton">
+        <h2 className="h2-skeleton-long"></h2>
+        <p className="p-skeleton-long"></p>
       </div>
-      <p className="brand">Cruzcampo</p>
-      <p className="categoria">{category}</p>
-      <div className="last-edited">
-        <h2>Última edición</h2>
-        <p>{formattedTime}</p>
+      <div className="brand-skeleton">
+        <p className="p-brand-skeleton"></p>
+      </div>
+      <div className="categoria-skeleton">
+        <p className="p-categoria-skeleton"></p>
+      </div>
+      <div className="last-edited-skeleton">
+        <h2 className="h2-last-edited-skeleton"></h2>
+        <p className="p-last-edited-skeleton"></p>
       </div>
       <div className="checkbox-container">
-        <label className="switch" htmlFor={`checkbox${id}`}>
-          <input
-            type="checkbox"
-            id={`checkbox${id}`}
-            defaultChecked={status == 1 ? true : false}
-          />
-          <div className="slider round"></div>
-        </label>
+        <div className="checkbox-skeleton"></div>
       </div>
-      <FontAwesomeIcon className="star" icon={faStar} size="lg" />
+      <FontAwesomeIcon
+        className="star-skeleton"
+        icon={faSpinner}
+        spin
+        size="lg"
+      />
     </div>
   );
 }
