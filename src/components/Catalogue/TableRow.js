@@ -3,7 +3,7 @@ import Checkbox from '../forms/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function TableRow({ id, name, status, category, lastUpdate }) {
+function TableRow({ id, name, brand, size, status, category, lastUpdate }) {
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
 
@@ -20,9 +20,9 @@ function TableRow({ id, name, status, category, lastUpdate }) {
         <p>#{id}</p>
       </div>
       <div className="name">
-        <h2>{name}</h2> <p>Botellín de 1/3</p>
+        <h2>{name}</h2> <p>{size}</p>
       </div>
-      <p className="brand">Cruzcampo</p>
+      <p className="brand">{brand}</p>
       <p className="categoria">{category}</p>
       <div className="last-edited">
         <h2>Última edición</h2>

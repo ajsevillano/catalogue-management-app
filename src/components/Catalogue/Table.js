@@ -64,6 +64,8 @@ function Table({ setFetchUrl, productsData, setProductsData }) {
               key={product.id}
               id={product.id}
               name={product.nombre}
+              brand={product.marca}
+              size={product.tamano}
               status={product.activo}
               category={product.tipo}
               lastUpdate={product.last_update}
