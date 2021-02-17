@@ -12,7 +12,8 @@ function App() {
     'http://api.uniondistribuidora.com/products',
   ]);
 
-  //Fetch data when page loads,add 250ms to debounce the fetch call
+  //Fetch data when page loads or fetchUrl change,
+  // add 150ms to debounce the fetch call.
   useEffect(() => {
     setTimeout(async function fetchData() {
       const products = await axios.get(fetchUrl);

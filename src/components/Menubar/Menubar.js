@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 function Menubar({ categories, setCategories, setFetchUrl, setProductsData }) {
   const MenuSelectHandler = (category) => {
+    //Clean the State before do a new call
+    setProductsData(null);
     //Because the API doesn't return a category=All,
     // I use this conditional to get the righ URL for showing all.
-    setProductsData(null);
     category.name == 'Todos'
       ? setFetchUrl(`http://api.uniondistribuidora.com/products`)
       : setFetchUrl(
