@@ -1,6 +1,6 @@
 import React from 'react';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import Button from '../button/Button';
+import Button from '../buttons/ButtonPrimary';
 
 function SortByBar() {
   return (

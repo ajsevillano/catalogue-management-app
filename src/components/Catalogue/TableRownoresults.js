@@ -1,6 +1,6 @@
 import React from 'react';
 import Noresults from '../../assets/img/noData.png';
-import Button from '../button/Button';
+import Button from '../buttons/ButtonPrimary';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function TableRownoresults() {
