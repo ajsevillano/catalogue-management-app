@@ -73,9 +73,8 @@
 
   //Name row
 
-  .name-skeleton,
-  .last-edited-skeleton {
-    flex: 2;
+  .name-skeleton {
+    flex: 2.2;
   }
 
   .h2-name-skeleton {
@@ -94,7 +93,7 @@
   //Brand row
   .brand-skeleton,
   .categoria-skeleton {
-    flex: 1;
+    flex: 1.2;
   }
 
   .p-brand-skeleton {
@@ -112,6 +111,10 @@
   }
 
   //Last edited row
+  .last-edited-skeleton {
+    flex: 2;
+  }
+
   .h2-last-edited-skeleton {
     min-width: 100px;
     min-height: 20px;
@@ -130,9 +133,9 @@
   //Checkbox row
 
   .checkbox-skeleton {
-    min-width: 40px;
-    min-height: 22px;
-    width: 40px;
+    min-width: 106.7px;
+    min-height: 32px;
+    width: 100px;
     border-radius: 20px;
   }
 

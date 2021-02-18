@@ -22,7 +22,15 @@
     font-size: 1rem;
   }
 
-  .name,
+  .name {
+    flex: 2.2;
+
+    p {
+      color: #acb4bc;
+      margin-top: 5px;
+    }
+  }
+
   .last-edited {
     flex: 2;
 
@@ -46,7 +54,7 @@
 
   .brand,
   .categoria {
-    flex: 1;
+    flex: 1.2;
   }
 
   .img-container {
