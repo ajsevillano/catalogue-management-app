@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-function Menubar({ categories, setCategories, setFetchUrl, setProductsData }) {
+function Menubar({ categories, setCategories, setFetchUrl, setLoading }) {
   const MenuSelectHandler = (category) => {
-    //Clean the State before do a new call
-    setProductsData(null);
-
+    setLoading(true);
     //Because the API doesn't return a category=All,
     // I use this conditional to get the righ URL for showing all.
     category.name == 'Todos'

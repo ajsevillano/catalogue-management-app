@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 import TableRowSkeleton from './TableRowSkeleton';
 
-function Table({ setFetchUrl, productsData, setProductsData }) {
+function Table({ loading, setFetchUrl, productsData, setLoading }) {
   //State categories
   const [categories, setCategories] = useState([
     { name: 'Todos', isActive: true },
@@ -28,20 +28,23 @@ function Table({ setFetchUrl, productsData, setProductsData }) {
         categories={categories}
         setCategories={setCategories}
         setFetchUrl={setFetchUrl}
-        setProductsData={setProductsData}
+        setLoading={setLoading}
       />
       <SortBar />
       <div className="table-catalogue">
         <div className="table-header">
           <h2>
-            {categories.map((item) => item.isActive == true && item.name)}
-          </h2>
-          <p>
-            {!productsData
+            {loading === true
               ? 'Cargando...'
+              : categories.map((item) => item.isActive == true && item.name)}
+          </h2>
+
+          <p>
+            {loading === true
+              ? ''
               : productsData.length == 0
               ? 'No hay productos que mostrar'
-              : `Total: ${productsData.length}`}
+              : `total: ${productsData.length} productos`}
           </p>
           <p className="sort-order">
             <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
@@ -49,7 +52,7 @@ function Table({ setFetchUrl, productsData, setProductsData }) {
             <FontAwesomeIcon className="sort" icon={faSort} size="sm" />
           </p>
         </div>
-        {!productsData ? (
+        {loading === true ? (
           <>
             <TableRowSkeleton />
             <TableRowSkeleton />
