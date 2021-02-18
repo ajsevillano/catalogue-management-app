@@ -9,8 +9,8 @@ function Header() {
     { name: 'Todos los negocios', isActive: false },
   ]);
   return (
-    <section className="header">
-      <div className="header-container wrapper">
+    <section id="header" className="header">
+      <div className="wrapper">
         <Profile />
         <Title />
         <MenuBar categories={categories} />
