@@ -9,7 +9,8 @@ function Searchbar() {
   };
 
   return (
-    <div className="search-bar-container wrapper">
+ 
+    <div className="search-bar">
       <h2>{filter.nombre}</h2>
       <div className="search-bar">
         <input
@@ -24,6 +25,7 @@ function Searchbar() {
         />
       </div>
     </div>
+
   );
 }
 

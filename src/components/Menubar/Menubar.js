@@ -23,6 +23,7 @@ function Menubar({ categories, setCategories, setFetchUrl, setLoading }) {
   };
 
   return (
+  
     <div className="menubar">
       <nav>
         {categories &&
@@ -41,6 +42,7 @@ function Menubar({ categories, setCategories, setFetchUrl, setLoading }) {
           ))}
       </nav>
     </div>
+
   );
 }
 

@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import Searchbar from './components/Searchbar/Searchbar';
 import TableCatalog from './components/Catalogue/Table';
 import AddProductBar from './components/Addproductbar/AddProductBar'
+import Menubar from './components/Menubar/Menubar'
 import axios from 'axios';
 
 function App() {
@@ -13,6 +14,16 @@ function App() {
   const [fetchUrl, setFetchUrl] = useState(
     'http://api.uniondistribuidora.com/products'
   );
+  const [categories, setCategories] = useState([
+    { name: 'Todos', isActive: true },
+    { name: 'Vinos', isActive: false },
+    { name: 'Cervezas', isActive: false },
+    { name: 'Refrescos', isActive: false },
+    { name: 'Lacteos', isActive: false },
+    { name: 'Aguas', isActive: false },
+    { name: 'Licores', isActive: false },
+    { name: 'Otros', isActive: false },
+  ]);
 
   //Fetch data when page loads or fetchUrl change,
   // add 150ms to debounce the fetch call.
@@ -29,11 +40,18 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <section className="main">
+      <section id="main" className="wrapper">
 
         <Searchbar />
-              <AddProductBar/>
+         <Menubar
+        categories={categories}
+        setCategories={setCategories}
+        setFetchUrl={setFetchUrl}
+        setLoading={setLoading}
+      />
+        <AddProductBar/>
         <TableCatalog
+        categories={categories}
           loading={loading}
           setFetchUrl={setFetchUrl}
           productsData={productsData}

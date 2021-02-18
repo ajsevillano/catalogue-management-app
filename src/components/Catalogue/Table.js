@@ -9,27 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 import TableRowSkeleton from './TableRowSkeleton';
 
-function Table({ loading, setFetchUrl, productsData, setLoading }) {
-  //State categories
-  const [categories, setCategories] = useState([
-    { name: 'Todos', isActive: true },
-    { name: 'Vinos', isActive: false },
-    { name: 'Cervezas', isActive: false },
-    { name: 'Refrescos', isActive: false },
-    { name: 'Lacteos', isActive: false },
-    { name: 'Aguas', isActive: false },
-    { name: 'Licores', isActive: false },
-    { name: 'Otros', isActive: false },
-  ]);
+function Table({ categories,loading, setFetchUrl, productsData, setLoading }) {
+
 
   return (
-    <div id="table" className="wrapper">
-      <Menubar
-        categories={categories}
-        setCategories={setCategories}
-        setFetchUrl={setFetchUrl}
-        setLoading={setLoading}
-      />
+
+     
 
       <div className="table-catalogue">
         <div className="table-header">
@@ -76,7 +61,7 @@ function Table({ loading, setFetchUrl, productsData, setLoading }) {
           ))
         )}
       </div>
-    </div>
+  
   );
 }
 
