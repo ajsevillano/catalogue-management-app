@@ -4,6 +4,7 @@ function Menubar({ categories, setCategories, setFetchUrl, setProductsData }) {
   const MenuSelectHandler = (category) => {
     //Clean the State before do a new call
     setProductsData(null);
+
     //Because the API doesn't return a category=All,
     // I use this conditional to get the righ URL for showing all.
     category.name == 'Todos'
@@ -31,7 +32,11 @@ function Menubar({ categories, setCategories, setFetchUrl, setProductsData }) {
             <p
               className={category.isActive == true ? 'isActive' : ''}
               key={index}
-              onClick={() => MenuSelectHandler(category)}
+              onClick={
+                category.isActive
+                  ? undefined
+                  : () => MenuSelectHandler(category)
+              }
             >
               {category.name}
             </p>

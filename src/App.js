@@ -21,6 +21,7 @@ function App() {
       return products;
     }, 150);
   }, [fetchUrl]);
+
   return (
     <div className="App">
       <Header />
