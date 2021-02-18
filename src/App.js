@@ -4,6 +4,7 @@ import './App.scss';
 import Header from './components/header/Header';
 import Searchbar from './components/Searchbar/Searchbar';
 import TableCatalog from './components/Catalogue/Table';
+import AddProductBar from './components/Addproductbar/AddProductBar'
 import axios from 'axios';
 
 function App() {
@@ -29,7 +30,9 @@ function App() {
     <div className="App">
       <Header />
       <section className="main">
+
         <Searchbar />
+              <AddProductBar/>
         <TableCatalog
           loading={loading}
           setFetchUrl={setFetchUrl}

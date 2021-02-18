@@ -3,7 +3,7 @@ import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
 
 import Menubar from '../Menubar/Menubar';
-import SortBar from './SortByBar';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
@@ -30,7 +30,7 @@ function Table({ loading, setFetchUrl, productsData, setLoading }) {
         setFetchUrl={setFetchUrl}
         setLoading={setLoading}
       />
-      <SortBar />
+
       <div className="table-catalogue">
         <div className="table-header">
           <h2>
