@@ -100,4 +100,19 @@
   .categoria {
     display: none;
   }
+
+  .brand {
+    display: none;
+  }
+
+  .row {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    .name {
+      flex: 1 auto;
+    }
+    .item-id {
+      flex: 1 auto;
+    }
+  }
 }
