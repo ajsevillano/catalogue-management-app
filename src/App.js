@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from 'axios';
 import './App.scss';
+
+//Components
 import Header from './components/header/Header';
 import Searchbar from './components/Searchbar/Searchbar';
 import TableCatalog from './components/Catalogue/Table';
 import AddProductBar from './components/Addproductbar/AddProductBar';
 import Menubar from './components/Menubar/Menubar';
-import axios from 'axios';
 
 function App() {
   const [orderText, setOrderText] = useState('Más recientes');

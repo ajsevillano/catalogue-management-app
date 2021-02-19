@@ -1,4 +1,6 @@
 import React from 'react';
+
+//Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
