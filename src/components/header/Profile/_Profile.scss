@@ -14,11 +14,11 @@
   }
 
   .bell-icon {
-    color: #86919d;
+    color: $grey-font;
     margin: 0 10px 5px auto;
   }
 
   p {
-    color: var(--primary-color);
+    color: $primary-color;
   }
 }

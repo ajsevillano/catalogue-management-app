@@ -13,12 +13,12 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     &::placeholder {
-      color: #86919d;
+      color: $grey-font;
     }
   }
 
   .icon-faEllipsis {
-    color: #86919d;
+    color: $grey-font;
   }
 }
 

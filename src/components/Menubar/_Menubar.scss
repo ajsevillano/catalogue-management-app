@@ -11,7 +11,7 @@
   }
 
   nav p {
-    color: #86919d;
+    color: $grey-font;
     text-decoration: none;
     padding: 0 0 10px 0px;
     font-weight: 600;
@@ -24,8 +24,8 @@
   }
 
   .isActive {
-    border-bottom: 2px solid var(--primary-color);
-    color: #0c1322;
+    border-bottom: 2px solid $primary-color;
+    color: $dark-font;
     opacity: 1;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;

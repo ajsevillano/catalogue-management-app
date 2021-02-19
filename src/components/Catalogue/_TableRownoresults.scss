@@ -14,7 +14,7 @@
   }
 
   h2 {
-    color: #86919d;
+    color: $grey-font;
     font-weight: 600;
     font-size: 1.4rem;
   }
@@ -22,17 +22,17 @@
   p {
     font-weight: 600;
     font-size: 0.9rem;
-    color: #86919d;
+    color: $grey-font;
     margin-top: 15px;
   }
 
   button {
-    background-color: var(--primary-color);
+    background-color: $primary-color;
     width: 142px;
     color: white;
     font-family: 'Open Sans';
     font-weight: 600;
-    border: 1px solid var(--primary-color);
+    border: 1px solid $primary-color;
     border-radius: 4px;
     padding: 10px;
     cursor: pointer;

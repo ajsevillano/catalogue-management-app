@@ -16,14 +16,14 @@
   align-items: flex-start;
 
   h2 {
-    color: #0c1322;
+    color: $dark-font;
     font-weight: 600;
     font-size: 1rem;
   }
 
   p {
     margin-left: 10px;
-    color: #86919d;
+    color: $grey-font;
   }
 
   .sort {
@@ -32,7 +32,7 @@
 
   .faCog {
     margin-right: 10px;
-    color: var(--primary-color);
+    color: $primary-color;
   }
 
   .sort-order {

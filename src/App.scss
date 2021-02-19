@@ -1,3 +1,8 @@
+//Color Variables
+$grey-font: #86919d;
+$dark-font: #0c1322;
+$primary-color: #00c85a;
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 // Components styles header
@@ -14,7 +19,6 @@
 @import './components/Catalogue/TableRownoresults';
 @import './components/Catalogue/TableRowSkeleton';
 
-
 // UI Components
 //Buttons
 @import './components/buttons/ButtonPrimary';
@@ -30,13 +34,9 @@
   box-sizing: border-box;
 }
 
-:root {
-  --primary-color: #00c85a;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
-  color: #181d27;
+  color: $dark-font;
 }
 
 .App {
