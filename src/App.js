@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.scss';
 
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 //Components
 import Header from './components/header/Header';
 import Searchbar from './components/Searchbar/Searchbar';
@@ -40,31 +42,33 @@ function App() {
   }, [fetchUrl]);
 
   return (
-    <div className="App">
-      <Header />
-      <section id="main" className="wrapper">
-        <Searchbar />
-        <Menubar
-          categories={categories}
-          setCategories={setCategories}
-          setFetchUrl={setFetchUrl}
-          setLoading={setLoading}
-          orderText={orderText}
-          setOrderText={setOrderText}
-        />
-        <AddProductBar />
-        <TableCatalog
-          categories={categories}
-          loading={loading}
-          setFetchUrl={setFetchUrl}
-          productsData={productsData}
-          setProductsData={setProductsData}
-          setLoading={setLoading}
-          orderText={orderText}
-          setOrderText={setOrderText}
-        />
-      </section>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <section id="main" className="wrapper">
+          <Searchbar />
+          <Menubar
+            categories={categories}
+            setCategories={setCategories}
+            setFetchUrl={setFetchUrl}
+            setLoading={setLoading}
+            orderText={orderText}
+            setOrderText={setOrderText}
+          />
+          <AddProductBar />
+          <TableCatalog
+            categories={categories}
+            loading={loading}
+            setFetchUrl={setFetchUrl}
+            productsData={productsData}
+            setProductsData={setProductsData}
+            setLoading={setLoading}
+            orderText={orderText}
+            setOrderText={setOrderText}
+          />
+        </section>
+      </div>
+    </Router>
   );
 }
 
