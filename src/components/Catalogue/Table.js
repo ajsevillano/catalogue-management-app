@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+//Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +9,22 @@ import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
 import TableRowSkeleton from './TableRowSkeleton';
 
-function Table({ categories, loading, productsData }) {
+function Table({
+  categories,
+  loading,
+  productsData,
+  setProductsData,
+  orderText,
+  setOrderText,
+}) {
+  function updateOrder() {
+    const reverseData = [...productsData].reverse();
+    setProductsData(reverseData);
+    setOrderText(
+      orderText == 'Más recientes' ? 'Más antiguos' : 'Más recientes'
+    );
+  }
+
   return (
     <div className="table-catalogue">
       <div className="table-header">
@@ -27,7 +43,7 @@ function Table({ categories, loading, productsData }) {
         </p>
         <p className="sort-order">
           <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
-          ordenar por <span>MÁS RECIENTES</span>
+          ordenar por <span onClick={updateOrder}>{orderText}</span>
           <FontAwesomeIcon className="sort" icon={faSort} size="sm" />
         </p>
       </div>

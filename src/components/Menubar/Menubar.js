@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-function Menubar({ categories, setCategories, setFetchUrl, setLoading }) {
+function Menubar({
+  categories,
+  setCategories,
+  setFetchUrl,
+  setLoading,
+  orderText,
+  setOrderText,
+}) {
   const MenuSelectHandler = (category) => {
     setLoading(true);
+    setOrderText('Más recientes');
     //Because the API doesn't return a category=All,
     // I use this conditional to get the righ URL for showing all.
     category.name == 'Todos'
@@ -23,7 +31,6 @@ function Menubar({ categories, setCategories, setFetchUrl, setLoading }) {
   };
 
   return (
-  
     <div className="menubar">
       <nav>
         {categories &&
@@ -42,7 +49,6 @@ function Menubar({ categories, setCategories, setFetchUrl, setLoading }) {
           ))}
       </nav>
     </div>
-
   );
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Checkbox from '../forms/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 

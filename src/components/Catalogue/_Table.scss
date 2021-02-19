@@ -40,6 +40,13 @@
   }
 }
 
+span {
+  &:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
 //Mobile styles
 @media screen and (max-width: 768px) {
   .table-header {

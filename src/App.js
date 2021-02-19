@@ -4,11 +4,12 @@ import './App.scss';
 import Header from './components/header/Header';
 import Searchbar from './components/Searchbar/Searchbar';
 import TableCatalog from './components/Catalogue/Table';
-import AddProductBar from './components/Addproductbar/AddProductBar'
-import Menubar from './components/Menubar/Menubar'
+import AddProductBar from './components/Addproductbar/AddProductBar';
+import Menubar from './components/Menubar/Menubar';
 import axios from 'axios';
 
 function App() {
+  const [orderText, setOrderText] = useState('Más recientes');
   const [productsData, setProductsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [fetchUrl, setFetchUrl] = useState(
@@ -41,22 +42,25 @@ function App() {
     <div className="App">
       <Header />
       <section id="main" className="wrapper">
-
         <Searchbar />
-         <Menubar
-        categories={categories}
-        setCategories={setCategories}
-        setFetchUrl={setFetchUrl}
-        setLoading={setLoading}
-      />
-        <AddProductBar/>
+        <Menubar
+          categories={categories}
+          setCategories={setCategories}
+          setFetchUrl={setFetchUrl}
+          setLoading={setLoading}
+          orderText={orderText}
+          setOrderText={setOrderText}
+        />
+        <AddProductBar />
         <TableCatalog
-        categories={categories}
+          categories={categories}
           loading={loading}
           setFetchUrl={setFetchUrl}
           productsData={productsData}
           setProductsData={setProductsData}
           setLoading={setLoading}
+          orderText={orderText}
+          setOrderText={setOrderText}
         />
       </section>
     </div>
