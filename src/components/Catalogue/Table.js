@@ -33,7 +33,6 @@ function Table({
             ? 'Cargando...'
             : categories.map((item) => item.isActive == true && item.name)}
         </h2>
-
         <p>
           {loading === true
             ? ''
