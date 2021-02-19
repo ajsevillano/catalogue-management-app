@@ -3,7 +3,16 @@ import Checkbox from '../forms/Checkbox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-function TableRow({ id, name, brand, size, status, category, lastUpdate }) {
+function TableRow({
+  id,
+  name,
+  brand,
+  size,
+  status,
+  category,
+  lastUpdate,
+  favorite,
+}) {
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
 
@@ -38,7 +47,11 @@ function TableRow({ id, name, brand, size, status, category, lastUpdate }) {
         <p>{status == 1 ? 'publicado' : 'no publicado'}</p>
       </div>
 
-      <FontAwesomeIcon className="star" icon={faStar} size="lg" />
+      <FontAwesomeIcon
+        className={favorite == 1 ? 'star' : 'star-off'}
+        icon={faStar}
+        size="lg"
+      />
     </div>
   );
 }
