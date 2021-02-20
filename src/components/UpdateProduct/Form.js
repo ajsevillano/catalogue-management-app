@@ -1,12 +1,21 @@
 import React from 'react';
 
-const Form = () => {
+const Form = ({ id }) => {
   return (
     <div className="update-product-form">
       <div className="first-row">
+        <div className="id-holder">
+          <label htmlFor="id">Id</label>
+          <input type="text" id="id" name="id" value={`#${id}`} readOnly />
+        </div>
         <div className="name-holder">
           <label htmlFor="name">Nombre del producto</label>
-          <input id="name" type="text" placeholder="Nombre" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            defaultValue="Botella de vino"
+          />
         </div>
 
         <div className="type-holder">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //Components
-
+import Header from '../components/header/Header';
 import Searchbar from '../components/Searchbar/Searchbar';
 import TableCatalog from '../components/Catalogue/Table';
 import AddProductBar from '../components/Addproductbar/AddProductBar';
@@ -39,6 +39,7 @@ const ProductsCatalog = () => {
   }, [fetchUrl]);
   return (
     <>
+      <Header title={'Productos'} />
       <section id="main" className="wrapper">
         <Searchbar />
         <Menubar

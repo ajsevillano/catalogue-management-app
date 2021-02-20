@@ -2,10 +2,10 @@ import React from 'react';
 import Button from '../../buttons/ButtonSecundary';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
-function Title() {
+function Title({ title }) {
   return (
     <div className="title">
-      <h1>Productos</h1>
+      <h1>{title}</h1>
       <Button icon={faDownload} size={'sm'} text={'Descargar'} />
     </div>
   );
