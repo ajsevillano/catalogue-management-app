@@ -12,10 +12,21 @@ const UpdateProduct = ({ match }) => {
         <div className="update-product-container">
           <div className="update-product-side-menu">
             <h1>Imágenes</h1>
+            <p>Productoid2.jpg / 240kb</p>
+            <div class="img-container">
+              <img
+                width="200px"
+                height="200px"
+                src="http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id1.jpg"
+                alt=""
+              ></img>
+            </div>
           </div>
           <div className="update-product-main-content">
             <h1>Información general</h1>
-            <p>Última edición: Hoy a las 12:34:38</p>
+            <p>
+              Última edición: <span>Hoy a las 12:34:38</span>
+            </p>
             <Form id={match.params.id} />
           </div>
         </div>

@@ -11,9 +11,14 @@
   flex: 0.5;
   padding: 20px 0 20px 0;
   h1 {
-    color: $dark-font;
+    color: $primary-color;
     font-weight: 600;
-    font-size: 1.625rem;
+    font-size: 1.2rem;
+  }
+  p {
+    color: #86919d;
+    margin-bottom: 17px;
+    font-size: 0.8rem;
   }
 }
 
@@ -30,6 +35,10 @@
 
   p {
     color: $grey-font;
+  }
+
+  span {
+    color: $primary-color;
   }
 }
 

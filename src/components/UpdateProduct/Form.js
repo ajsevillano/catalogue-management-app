@@ -29,8 +29,19 @@ const Form = ({ id }) => {
         </div>
       </div>
 
-      <label htmlFor="marca">Marca del producto</label>
-      <input id="marca" type="text" />
+      <div className="first-row">
+        <div className="name-holder">
+          <label htmlFor="marca">Marca del producto</label>
+          <input id="marca" type="text" />
+        </div>
+        <div className="type-holder">
+          <label htmlFor="type">Estado</label>
+          <select id="status" name="status">
+            <option value="vinos">Activado</option>
+            <option value="cervezas">Desactivado</option>
+          </select>
+        </div>
+      </div>
     </div>
   );
 };
