@@ -5,10 +5,9 @@ import Header from '../components/header/Header';
 import Form from '../components/UpdateProduct/Form';
 
 const UpdateProduct = ({ match }) => {
-  console.log(match);
   return (
     <>
-      <Header title={'Producto #1'} />
+      <Header title={`Producto #${match.params.id}`} />
       <section id="main" className="wrapper">
         <div className="update-product-container">
           <div className="update-product-side-menu">
