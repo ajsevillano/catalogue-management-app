@@ -1,5 +1,12 @@
 a {
   text-decoration: none;
+  &:link {
+    color: #86919d;
+  }
+
+  &:visited {
+    color: #86919d;
+  }
 }
 
 .row {
@@ -14,6 +21,10 @@ a {
 
   &:hover {
     background-color: #f8f9fa;
+  }
+
+  &:active {
+    background-color: #e6e6ec;
   }
 
   img {
