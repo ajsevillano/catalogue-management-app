@@ -19,6 +19,9 @@ $primary-color: #00c85a;
 @import './components/Catalogue/TableRownoresults';
 @import './components/Catalogue/TableRowSkeleton';
 
+// Pages styles
+@import './pages/UpdateProduct';
+
 // UI Components
 //Buttons
 @import './components/buttons/ButtonPrimary';
