@@ -7,7 +7,7 @@ import {
   faUpload,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Form = ({ id }) => {
+const Form = ({ id, tipo }) => {
   return (
     <div className="update-product-form">
       <div className="first-row">
@@ -50,12 +50,7 @@ const Form = ({ id }) => {
       </div>
       <div className="name-holder">
         <label htmlFor="size">Tamaño del producto</label>
-        <input
-          type="text"
-          id="size"
-          name="size"
-          defaultValue="Botella de 1 Litro"
-        />
+        <input type="text" id="size" name="size" defaultValue={tipo} />
       </div>
       <Button
         icon={faCloudUploadAlt}

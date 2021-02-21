@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 //Components
 import Header from '../components/header/Header';
 import Form from '../components/UpdateProduct/Form';
 
 const UpdateProduct = ({ match }) => {
+  const [productData, setProductData] = useState(null);
+  const fetchUrl = `http://api.uniondistribuidora.com/products/${match.params.id}`;
+  useEffect(() => {
+    setTimeout(async function fetchData() {
+      const product = await axios.get(fetchUrl);
+      setProductData(product.data);
+      return product;
+    }, 250);
+  }, []);
+  const todo = productData && productData.map((item) => item.tipo);
+
   return (
     <>
       <Header title={`Producto #${match.params.id}`} />
@@ -27,7 +39,7 @@ const UpdateProduct = ({ match }) => {
             <p>
               Última edición: <span className="">Hoy a las 12:34:38</span>
             </p>
-            <Form id={match.params.id} />
+            <Form id={match.params.id} tipo={todo} />
           </div>
         </div>
       </section>
