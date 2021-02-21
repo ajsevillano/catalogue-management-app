@@ -1,4 +1,7 @@
 import React from 'react';
+import Button from '../buttons/ButtonPrimary';
+//Font awesome
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({ id }) => {
   return (
@@ -32,7 +35,7 @@ const Form = ({ id }) => {
       <div className="first-row">
         <div className="name-holder">
           <label htmlFor="marca">Marca del producto</label>
-          <input id="marca" type="text" />
+          <input id="marca" type="text" defaultValue="Cruzcampo" />
         </div>
         <div className="type-holder">
           <label htmlFor="type">Estado</label>
@@ -42,6 +45,16 @@ const Form = ({ id }) => {
           </select>
         </div>
       </div>
+      <div className="name-holder">
+        <label htmlFor="size">Nombre del producto</label>
+        <input
+          type="text"
+          id="size"
+          name="size"
+          defaultValue="Botella de 1 Litro"
+        />
+      </div>
+      <Button icon={faPlus} size={'sm'} text={'Actualizar el producto'} />
     </div>
   );
 };

@@ -19,7 +19,7 @@ function TableRow({
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
 
   return (
-    <Link to={`/UpdateProduct/${id}`}>
+    <Link to={`/updateproduct/${id}`}>
       <div className="row">
         <div className="img-container">
           <img
