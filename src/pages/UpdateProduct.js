@@ -13,7 +13,7 @@ const UpdateProduct = ({ match }) => {
           <div className="update-product-side-menu">
             <h1>Imágenes</h1>
             <p>Productoid2.jpg / 240kb</p>
-            <div class="img-container">
+            <div className="img-container">
               <img
                 width="208px"
                 height="208px"

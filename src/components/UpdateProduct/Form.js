@@ -1,7 +1,11 @@
 import React from 'react';
 import Button from '../buttons/ButtonPrimary';
 //Font awesome
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCloudUploadAlt,
+  faPlus,
+  faUpload,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({ id }) => {
   return (
@@ -12,7 +16,7 @@ const Form = ({ id }) => {
           <input type="text" id="id" name="id" value={`#${id}`} readOnly />
         </div>
         <div className="name-holder">
-          <label htmlFor="name">Nombre del producto</label>
+          <label htmlFor="name">Nombre que se mostrará en la web</label>
           <input
             type="text"
             id="name"
@@ -20,7 +24,13 @@ const Form = ({ id }) => {
             defaultValue="Botella de vino"
           />
         </div>
+      </div>
 
+      <div className="second-row">
+        <div className="brand-holder">
+          <label htmlFor="marca">Marca del producto</label>
+          <input id="marca" type="text" defaultValue="Cruzcampo" />
+        </div>
         <div className="type-holder">
           <label htmlFor="type">Categoría</label>
           <select id="type" name="type">
@@ -30,23 +40,16 @@ const Form = ({ id }) => {
             <option value="refrescos">Refrescos</option>
           </select>
         </div>
-      </div>
-
-      <div className="first-row">
-        <div className="name-holder">
-          <label htmlFor="marca">Marca del producto</label>
-          <input id="marca" type="text" defaultValue="Cruzcampo" />
-        </div>
-        <div className="type-holder">
+        <div className="status-holder">
           <label htmlFor="type">Estado</label>
           <select id="status" name="status">
-            <option value="vinos">Activado</option>
-            <option value="cervezas">Desactivado</option>
+            <option value="vinos">Publicado</option>
+            <option value="cervezas">No publicado</option>
           </select>
         </div>
       </div>
       <div className="name-holder">
-        <label htmlFor="size">Nombre del producto</label>
+        <label htmlFor="size">Tamaño del producto</label>
         <input
           type="text"
           id="size"
@@ -54,7 +57,11 @@ const Form = ({ id }) => {
           defaultValue="Botella de 1 Litro"
         />
       </div>
-      <Button icon={faPlus} size={'sm'} text={'Actualizar el producto'} />
+      <Button
+        icon={faCloudUploadAlt}
+        size={'sm'}
+        text={'Actualizar el producto'}
+      />
     </div>
   );
 };

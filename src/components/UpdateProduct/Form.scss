@@ -38,13 +38,26 @@
       display: flex;
       flex-direction: column;
       flex: 2;
+    }
+  }
+
+  .second-row {
+    display: flex;
+
+    .brand-holder {
+      flex: 2;
       margin: 0 30px 0 0;
     }
 
     .type-holder {
       display: flex;
       flex-direction: column;
-      flex: 0.5;
+      flex: 1;
+      margin: 0 30px 0 0;
+    }
+
+    .status-holder {
+      flex: 1;
     }
   }
 }
