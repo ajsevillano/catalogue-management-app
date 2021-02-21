@@ -12,7 +12,7 @@ function Header({ title }) {
     <section id="header" className="header">
       <div className="wrapper">
         <Profile />
-        <Title title={title} />
+        <Title title={title} status={'publicado'} />
         <MenuBar categories={categories} />
       </div>
     </section>
