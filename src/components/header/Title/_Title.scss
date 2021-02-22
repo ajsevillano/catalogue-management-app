@@ -33,4 +33,13 @@
     background-color: #fedfdf;
     color: #e84343;
   }
+
+  .arrow {
+    color: $primary-color;
+    font-weight: 400;
+    width: 25px;
+    height: 25px;
+    margin: 5px 15px 0 0;
+    cursor: pointer;
+  }
 }
