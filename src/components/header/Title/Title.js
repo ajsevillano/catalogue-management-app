@@ -11,18 +11,24 @@ function Title({ title, status }) {
   return (
     <div className="title-container">
       <div className="title-status">
-        <h1>{title}</h1>
-
         {!status ? (
-          ''
+          <h1>{title}</h1>
+        ) : status.length == 0 ? (
+          <h1>Loading...</h1>
         ) : status == 1 ? (
-          <p className="active">
-            <FontAwesomeIcon icon={faCheck} /> PUBLICADO
-          </p>
+          <>
+            <h1>{title}</h1>
+            <p className="active">
+              <FontAwesomeIcon icon={faCheck} /> PUBLICADO
+            </p>
+          </>
         ) : (
-          <p className="inactive">
-            <FontAwesomeIcon icon={faTimes} /> NO PUBLICADO
-          </p>
+          <>
+            <h1>{title}</h1>
+            <p className="inactive">
+              <FontAwesomeIcon icon={faTimes} /> NO PUBLICADO
+            </p>
+          </>
         )}
       </div>
       <Button icon={faDownload} size={'sm'} text={'Descargar'} />

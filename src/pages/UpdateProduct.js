@@ -25,9 +25,10 @@ const UpdateProduct = ({ match }) => {
 
   return (
     <>
-      {productData.map((item, index) => {
-        return <Header status={item.activo} title={item.nombre} key={index} />;
-      })}
+      <Header
+        title={productData.map((item) => item.nombre)}
+        status={productData.map((item) => item.activo)}
+      />
       <section id="main" className="wrapper">
         <div className="update-product-container">
           <div className="update-product-side-menu">
