@@ -1,7 +1,11 @@
 import React from 'react';
 import Button from '../../buttons/ButtonSecundary';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faCheck } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDownload,
+  faCheck,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Title({ title, status }) {
   return (
@@ -9,13 +13,15 @@ function Title({ title, status }) {
       <div className="title-status">
         <h1>{title}</h1>
 
-        {status == 'publicado' && (
-          <p>
+        {status == 1 ? (
+          <p className="active">
             <FontAwesomeIcon icon={faCheck} /> PUBLICADO
           </p>
+        ) : (
+          <p className="inactive">
+            <FontAwesomeIcon icon={faTimes} /> NO PUBLICADO
+          </p>
         )}
-
-        {/* <p>{status == 'publicado' ?  : ''}</p> */}
       </div>
       <Button icon={faDownload} size={'sm'} text={'Descargar'} />
     </div>
