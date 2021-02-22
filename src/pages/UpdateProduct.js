@@ -22,7 +22,6 @@ const UpdateProduct = ({ match }) => {
       }
     }, 250);
   }, []);
-  const todo = productData.map((item) => item.tipo);
 
   return (
     <>
@@ -47,7 +46,18 @@ const UpdateProduct = ({ match }) => {
               Última edición: <span className="">Hoy a las 12:34:38</span>
             </p>
             {fetchError != 400 ? (
-              <Form id={match.params.id} tipo={todo} />
+              productData.map((item) => (
+                <Form
+                  id={match.params.id}
+                  type={item.tipo}
+                  brand={item.marca}
+                  tamano={item.size}
+                  name={item.nombre}
+                  status={item.activo}
+                  favorite={item.destacado}
+                  last_update={item.last_update}
+                />
+              ))
             ) : (
               <Tablerownoresults />
             )}
