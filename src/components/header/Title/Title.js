@@ -7,7 +7,7 @@ import {
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Title({ title, status }) {
+const Title = ({ title, status }) => {
   return (
     <div className="title-container">
       <div className="title-status">
@@ -34,6 +34,6 @@ function Title({ title, status }) {
       <Button icon={faDownload} size={'sm'} text={'Descargar'} />
     </div>
   );
-}
+};
 
 export default Title;

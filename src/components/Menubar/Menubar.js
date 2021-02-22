@@ -1,13 +1,12 @@
 import React from 'react';
 
-function Menubar({
+const Menubar = ({
   categories,
   setCategories,
   setFetchUrl,
   setLoading,
-  orderText,
   setOrderText,
-}) {
+}) => {
   const MenuSelectHandler = (category) => {
     setLoading(true);
     setOrderText('Más recientes');
@@ -47,6 +46,6 @@ function Menubar({
       </nav>
     </div>
   );
-}
+};
 
 export default Menubar;
