@@ -13,7 +13,9 @@ function Title({ title, status }) {
       <div className="title-status">
         <h1>{title}</h1>
 
-        {status == 1 ? (
+        {!status ? (
+          ''
+        ) : status == 1 ? (
           <p className="active">
             <FontAwesomeIcon icon={faCheck} /> PUBLICADO
           </p>
