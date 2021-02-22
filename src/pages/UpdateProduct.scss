@@ -3,8 +3,34 @@
   flex: 1 1;
   display: flex;
   align-items: flex-start;
+  transform: translateY(20px);
   height: 30vh; // Temporal
   min-height: 30vh; // Temporal
+}
+
+.fadein {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0.3s, opacity 0.3s;
+  -moz-transition: visibility 0.3s, opacity 0.3s;
+  -ms-transition: visibility 0.3s, opacity 0.3s;
+  -o-transition: visibility 0.3s, opacity 0.3s;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0.3s, opacity 0.3s;
+  -moz-transition: visibility 0.3s, opacity 0.3s;
+  -ms-transition: visibility 0.3s, opacity 0.3s;
+  -o-transition: visibility 0.3s, opacity 0.3s;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.fadein {
+  transition: 0.3s;
+  transform: translateY(0px);
 }
 
 .update-product-side-menu {

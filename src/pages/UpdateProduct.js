@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 //Components
@@ -7,11 +7,13 @@ import Form from '../components/UpdateProduct/Form';
 import Tablerownoresults from '../components/Catalogue/TableRownoresults';
 
 const UpdateProduct = ({ match }) => {
+  const inputEl = useRef(null);
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
 
   const fetchUrl = `http://api.uniondistribuidora.com/products/${match.params.id}`;
   useEffect(() => {
+    inputEl.current.className = 'update-product-container fadein';
     setTimeout(async function fetchData() {
       try {
         const product = await axios.get(fetchUrl);
@@ -20,7 +22,7 @@ const UpdateProduct = ({ match }) => {
       } catch (error) {
         setFetchError(error.response.status);
       }
-    }, 250);
+    }, 200);
   }, []);
 
   return (
@@ -30,7 +32,7 @@ const UpdateProduct = ({ match }) => {
         status={productData.map((item) => item.activo)}
       />
       <section id="main" className="wrapper">
-        <div className="update-product-container">
+        <div ref={inputEl} className="update-product-container hidden">
           <div className="update-product-side-menu">
             <h1>Imágenes</h1>
             <p>Productoid2.jpg / 240kb</p>
