@@ -7,7 +7,7 @@ import {
   faUpload,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Form = ({ id, tipo }) => {
+const Form = ({ id, type, brand, size, name }) => {
   return (
     <div className="update-product-form">
       <div className="first-row">
@@ -17,24 +17,19 @@ const Form = ({ id, tipo }) => {
         </div>
         <div className="name-holder">
           <label htmlFor="name">Nombre que se mostrará en la web</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            defaultValue="Botella de vino"
-          />
+          <input type="text" id="name" name="name" defaultValue={name} />
         </div>
       </div>
 
       <div className="second-row">
         <div className="brand-holder">
           <label htmlFor="marca">Marca del producto</label>
-          <input id="marca" type="text" defaultValue="Cruzcampo" />
+          <input id="marca" type="text" defaultValue={brand} />
         </div>
         <div className="type-holder">
           <label htmlFor="type">Categoría</label>
           <select id="type" name="type">
-            <option value="vinos">Vinos</option>
+            <option value={type}></option>
             <option value="cervezas">Cervezas</option>
             <option value="aguas">Aguas</option>
             <option value="refrescos">Refrescos</option>
@@ -43,14 +38,14 @@ const Form = ({ id, tipo }) => {
         <div className="status-holder">
           <label htmlFor="type">Estado</label>
           <select id="status" name="status">
-            <option value="vinos">Publicado</option>
-            <option value="cervezas">No publicado</option>
+            <option value="1">Publicado</option>
+            <option value="0">No publicado</option>
           </select>
         </div>
       </div>
       <div className="name-holder">
         <label htmlFor="size">Tamaño del producto</label>
-        <input type="text" id="size" name="size" defaultValue={tipo} />
+        <input type="text" id="size" name="size" defaultValue={size} />
       </div>
       <Button
         icon={faCloudUploadAlt}

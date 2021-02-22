@@ -25,7 +25,9 @@ const UpdateProduct = ({ match }) => {
 
   return (
     <>
-      <Header title={`Producto #${match.params.id}`} />
+      {productData.map((item, index) => {
+        return <Header status={item.estado} title={item.nombre} key={index} />;
+      })}
       <section id="main" className="wrapper">
         <div className="update-product-container">
           <div className="update-product-side-menu">
@@ -46,16 +48,17 @@ const UpdateProduct = ({ match }) => {
               Última edición: <span className="">Hoy a las 12:34:38</span>
             </p>
             {fetchError != 400 ? (
-              productData.map((item) => (
+              productData.map((item, index) => (
                 <Form
+                  key={index}
                   id={match.params.id}
                   type={item.tipo}
                   brand={item.marca}
-                  tamano={item.size}
+                  size={item.tamano}
                   name={item.nombre}
-                  status={item.activo}
-                  favorite={item.destacado}
-                  last_update={item.last_update}
+                  // status={item.activo}
+                  // favorite={item.destacado}
+                  // last_update={item.last_update}
                 />
               ))
             ) : (
