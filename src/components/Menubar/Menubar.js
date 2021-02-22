@@ -33,20 +33,17 @@ function Menubar({
   return (
     <div className="menubar">
       <nav>
-        {categories &&
-          categories.map((category, index) => (
-            <p
-              className={category.isActive == true ? 'isActive' : ''}
-              key={index}
-              onClick={
-                category.isActive
-                  ? undefined
-                  : () => MenuSelectHandler(category)
-              }
-            >
-              {category.name}
-            </p>
-          ))}
+        {categories.map((category, index) => (
+          <p
+            className={category.isActive == true ? 'isActive' : ''}
+            key={index}
+            onClick={
+              category.isActive ? undefined : () => MenuSelectHandler(category)
+            }
+          >
+            {category.name}
+          </p>
+        ))}
       </nav>
     </div>
   );

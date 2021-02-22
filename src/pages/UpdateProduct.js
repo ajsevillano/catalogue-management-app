@@ -4,18 +4,25 @@ import axios from 'axios';
 //Components
 import Header from '../components/header/Header';
 import Form from '../components/UpdateProduct/Form';
+import Tablerownoresults from '../components/Catalogue/TableRownoresults';
 
 const UpdateProduct = ({ match }) => {
-  const [productData, setProductData] = useState(null);
+  const [productData, setProductData] = useState([]);
+  const [fetchError, setFetchError] = useState([]);
+
   const fetchUrl = `http://api.uniondistribuidora.com/products/${match.params.id}`;
   useEffect(() => {
     setTimeout(async function fetchData() {
-      const product = await axios.get(fetchUrl);
-      setProductData(product.data);
-      return product;
+      try {
+        const product = await axios.get(fetchUrl);
+        setProductData(product.data);
+        return product;
+      } catch (error) {
+        setFetchError(error.response.status);
+      }
     }, 250);
   }, []);
-  const todo = productData && productData.map((item) => item.tipo);
+  const todo = productData.map((item) => item.tipo);
 
   return (
     <>
@@ -39,7 +46,11 @@ const UpdateProduct = ({ match }) => {
             <p>
               Última edición: <span className="">Hoy a las 12:34:38</span>
             </p>
-            <Form id={match.params.id} tipo={todo} />
+            {fetchError != 400 ? (
+              <Form id={match.params.id} tipo={todo} />
+            ) : (
+              <Tablerownoresults />
+            )}
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ import Menubar from '../components/Menubar/Menubar';
 
 const ProductsCatalog = () => {
   const [orderText, setOrderText] = useState('Más recientes');
-  const [productsData, setProductsData] = useState(null);
+  const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [fetchUrl, setFetchUrl] = useState(
     'http://api.uniondistribuidora.com/products'
