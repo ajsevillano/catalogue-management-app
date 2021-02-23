@@ -11,6 +11,12 @@ const UpdateProduct = ({ match }) => {
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
 
+  const formattedTime = () => {
+    return new Date(
+      productData.map((item) => item.last_update) * 1000
+    ).toLocaleString();
+  };
+
   const fetchUrl = `http://api.uniondistribuidora.com/products/${match.params.id}`;
   useEffect(() => {
     inputEl.current.className = 'update-product-container fadein';
@@ -48,7 +54,7 @@ const UpdateProduct = ({ match }) => {
           <div className="update-product-main-content">
             <h1>Información general</h1>
             <p>
-              Última edición: <span className="">Hoy a las 12:34:38</span>
+              Última edición: <span>{formattedTime()}</span>
             </p>
             {fetchError != 400 ? (
               productData.map((item, index) => (
@@ -59,9 +65,6 @@ const UpdateProduct = ({ match }) => {
                   brand={item.marca}
                   size={item.tamano}
                   name={item.nombre}
-                  // status={item.activo}
-                  // favorite={item.destacado}
-                  // last_update={item.last_update}
                 />
               ))
             ) : (
