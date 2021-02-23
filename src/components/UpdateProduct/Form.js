@@ -8,17 +8,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({ id, type, brand, size, name }) => {
-  const [defaultSelectValue, setDefaultSelectValue] = useState([
-    {
-      label: type,
-      value: type,
-    },
-    { label: 'C-3PO', value: 'C-3PO' },
-    { label: 'R2-D2', value: 'R2-D2' },
-  ]);
+  const [defaultSelectValue, setDefaultSelectValue] = useState(type);
 
   function handleChange(event) {
-    setDefaultSelectValue({ value: event.target.value });
+    setDefaultSelectValue(event.target.value);
   }
 
   return (
@@ -43,12 +36,13 @@ const Form = ({ id, type, brand, size, name }) => {
           <form action="">
             <label htmlFor="type">
               Categoría
-              <select>
-                {defaultSelectValue.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.label}
+              <select onChange={(e) => handleChange(e)}>
+                {
+                  <option value={defaultSelectValue}>
+                    {defaultSelectValue}
                   </option>
-                ))}
+                }
+                <option value="otros">Otros</option>
               </select>
             </label>
           </form>
