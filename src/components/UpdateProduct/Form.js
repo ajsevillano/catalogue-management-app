@@ -27,20 +27,10 @@ const Form = ({ id, type, brand, size, name, status }) => {
   });
 
   function handleChange(event) {
-    event.target.name == 'status'
-      ? event.target.value == 'Publicado'
-        ? setFormValues({
-            ...formValues,
-            [event.target.name]: '1',
-          })
-        : setFormValues({
-            ...formValues,
-            [event.target.name]: '0',
-          })
-      : setFormValues({
-          ...formValues,
-          [event.target.name]: event.target.value,
-        });
+    setFormValues({
+      ...formValues,
+      [event.target.name]: event.target.value,
+    });
   }
 
   return (
@@ -89,13 +79,13 @@ const Form = ({ id, type, brand, size, name, status }) => {
           <select name="status" onChange={(e) => handleChange(e)}>
             {status == 1 ? (
               <>
-                <option>Publicado</option>
-                <option>No publicado</option>
+                <option value="1">Publicado</option>
+                <option value="0">No publicado</option>
               </>
             ) : (
               <>
-                <option>No Publicado</option>
-                <option>Publicado</option>
+                <option value="0">No Publicado</option>
+                <option value="1">Publicado</option>
               </>
             )}
           </select>
