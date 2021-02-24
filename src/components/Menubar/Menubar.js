@@ -13,9 +13,9 @@ const Menubar = ({
     //Because the API doesn't return a category=All,
     // I use this conditional to get the righ URL for showing all.
     category.name == 'Todos'
-      ? setFetchUrl(`http://api.uniondistribuidora.com/products`)
+      ? setFetchUrl(`https://dev.ajsevillano.com/products`)
       : setFetchUrl(
-          `http://api.uniondistribuidora.com/products?category=${category.name}`
+          `https://dev.ajsevillano.com/products?category=${category.name}`
         );
 
     setCategories(

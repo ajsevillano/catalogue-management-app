@@ -17,7 +17,7 @@ const UpdateProduct = ({ match }) => {
     ).toLocaleString();
   };
 
-  const fetchUrl = `http://api.uniondistribuidora.com/products/${match.params.id}`;
+  const fetchUrl = `https://dev.ajsevillano.com/products/${match.params.id}`;
   useEffect(() => {
     inputEl.current.className = 'update-product-container fadein';
     setTimeout(async function fetchData() {

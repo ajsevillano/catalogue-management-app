@@ -13,7 +13,7 @@ const ProductsCatalog = () => {
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [fetchUrl, setFetchUrl] = useState(
-    'http://api.uniondistribuidora.com/products'
+    'https://dev.ajsevillano.com/products'
   );
   const [categories, setCategories] = useState([
     { name: 'Todos', isActive: true },

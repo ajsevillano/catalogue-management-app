@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../buttons/ButtonPrimary';
+import axios from 'axios';
 //Font awesome
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -35,8 +36,29 @@ const Form = ({ id, type, brand, size, name, status }) => {
 
   function updateProduct(e) {
     e.preventDefault();
-
-    console.table(formValues.name, formValues.brand, formValues.type);
+    const headers = {
+      'Content-Type': 'text/plain',
+    };
+    axios
+      .put(
+        'https://dev.ajsevillano.com/products',
+        {
+          id: formValues.id,
+          tipo: formValues.type,
+          marca: formValues.brand,
+          nombre: formValues.name,
+          activo: status,
+        },
+        { headers }
+      )
+      .then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   return (
