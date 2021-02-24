@@ -12,7 +12,7 @@ const Form = ({ id, type, brand, size, name, status }) => {
     name: name,
     status: status,
   });
-  const [categories, setCategories] = useState([
+  const categories = [
     { name: 'vinos' },
     { name: 'cervezas' },
     { name: 'refrescos' },
@@ -20,7 +20,7 @@ const Form = ({ id, type, brand, size, name, status }) => {
     { name: 'aguas' },
     { name: 'licores' },
     { name: 'otros' },
-  ]);
+  ];
 
   const filterCategories = categories.filter((number) => {
     return number.name != type;
@@ -33,36 +33,42 @@ const Form = ({ id, type, brand, size, name, status }) => {
     });
   }
 
+  function updateProduct(e) {
+    e.preventDefault();
+
+    console.table(formValues.name, formValues.brand, formValues.type);
+  }
+
   return (
     <div className="update-product-form">
-      <div className="first-row">
-        <div className="id-holder">
-          <label htmlFor="id">Id</label>
-          <input type="text" id="id" name="id" value={`#${id}`} readOnly />
+      <form onSubmit={updateProduct}>
+        <div className="first-row">
+          <div className="id-holder">
+            <label htmlFor="id">Id</label>
+            <input type="text" id="id" name="id" value={`#${id}`} readOnly />
+          </div>
+          <div className="name-holder">
+            <label htmlFor="name">Nombre que se mostrará en la web</label>
+            <input
+              type="text"
+              name="name"
+              onChange={(e) => handleChange(e)}
+              defaultValue={formValues.name}
+            />
+          </div>
         </div>
-        <div className="name-holder">
-          <label htmlFor="name">Nombre que se mostrará en la web</label>
-          <input
-            type="text"
-            name="name"
-            onChange={(e) => handleChange(e)}
-            defaultValue={formValues.name}
-          />
-        </div>
-      </div>
 
-      <div className="second-row">
-        <div className="brand-holder">
-          <label htmlFor="marca">Marca del producto</label>
-          <input
-            type="text"
-            name="brand"
-            onChange={(e) => handleChange(e)}
-            defaultValue={formValues.brand}
-          />
-        </div>
-        <div className="type-holder">
-          <form action="">
+        <div className="second-row">
+          <div className="brand-holder">
+            <label htmlFor="marca">Marca del producto</label>
+            <input
+              type="text"
+              name="brand"
+              onChange={(e) => handleChange(e)}
+              defaultValue={formValues.brand}
+            />
+          </div>
+          <div className="type-holder">
             <label htmlFor="type">
               Categoría
               <select name="type" onChange={(e) => handleChange(e)}>
@@ -72,39 +78,41 @@ const Form = ({ id, type, brand, size, name, status }) => {
                 ))}
               </select>
             </label>
-          </form>
+          </div>
+          <div className="status-holder">
+            <label htmlFor="status">Estado</label>
+            <select name="status" onChange={(e) => handleChange(e)}>
+              {status == 1 ? (
+                <>
+                  <option value="1">Publicado</option>
+                  <option value="0">No publicado</option>
+                </>
+              ) : (
+                <>
+                  <option value="0">No Publicado</option>
+                  <option value="1">Publicado</option>
+                </>
+              )}
+            </select>
+          </div>
         </div>
-        <div className="status-holder">
-          <label htmlFor="status">Estado</label>
-          <select name="status" onChange={(e) => handleChange(e)}>
-            {status == 1 ? (
-              <>
-                <option value="1">Publicado</option>
-                <option value="0">No publicado</option>
-              </>
-            ) : (
-              <>
-                <option value="0">No Publicado</option>
-                <option value="1">Publicado</option>
-              </>
-            )}
-          </select>
+        <div className="name-holder">
+          <label htmlFor="size">Tamaño del producto</label>
+          <input
+            type="text"
+            name="size"
+            defaultValue={formValues.size}
+            onChange={(e) => handleChange(e)}
+          />
         </div>
-      </div>
-      <div className="name-holder">
-        <label htmlFor="size">Tamaño del producto</label>
-        <input
-          type="text"
-          name="size"
-          defaultValue={formValues.size}
-          onChange={(e) => handleChange(e)}
+        <Button
+          type="submit"
+          value="Submit"
+          icon={faCloudUploadAlt}
+          size={'sm'}
+          text={'Actualizar el producto'}
         />
-      </div>
-      <Button
-        icon={faCloudUploadAlt}
-        size={'sm'}
-        text={'Actualizar el producto'}
-      />
+      </form>
     </div>
   );
 };
