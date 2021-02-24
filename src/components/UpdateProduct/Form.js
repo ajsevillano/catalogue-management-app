@@ -9,6 +9,19 @@ import {
 
 const Form = ({ id, type, brand, size, name }) => {
   const [defaultSelectValue, setDefaultSelectValue] = useState(type);
+  const [categories, setCategories] = useState([
+    { name: 'vinos', isActive: true },
+    { name: 'cervezas', isActive: false },
+    { name: 'refrescos', isActive: false },
+    { name: 'lacteos', isActive: false },
+    { name: 'aguas', isActive: false },
+    { name: 'licores', isActive: false },
+    { name: 'otros', isActive: false },
+  ]);
+
+  const filterCategories = categories.filter((number) => {
+    return number.name != type;
+  });
 
   function handleChange(event) {
     setDefaultSelectValue(event.target.value);
@@ -37,12 +50,10 @@ const Form = ({ id, type, brand, size, name }) => {
             <label htmlFor="type">
               Categoría
               <select onChange={(e) => handleChange(e)}>
-                {
-                  <option value={defaultSelectValue}>
-                    {defaultSelectValue}
-                  </option>
-                }
-                <option value="otros">Otros</option>
+                <option>{type}</option>
+                {filterCategories.map((category, index) => (
+                  <option key={index}>{category.name}</option>
+                ))}
               </select>
             </label>
           </form>
