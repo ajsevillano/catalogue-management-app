@@ -41,19 +41,21 @@ const Form = ({ id, type, brand, size, name, status }) => {
     };
     axios
       .put(
-        'https://dev.ajsevillano.com/products',
+        'http://dev.ajsevillano.com/products',
         {
           id: formValues.id,
           tipo: formValues.type,
           marca: formValues.brand,
+          tamano: formValues.size,
           nombre: formValues.name,
-          activo: status,
+          activo: formValues.status,
         },
         { headers }
       )
       .then(
         (response) => {
           console.log(response);
+          console.log(formValues.status);
         },
         (error) => {
           console.log(error);
@@ -106,8 +108,8 @@ const Form = ({ id, type, brand, size, name, status }) => {
             <select name="status" onChange={(e) => handleChange(e)}>
               {status == 1 ? (
                 <>
-                  <option value="1">Publicado</option>
-                  <option value="0">No publicado</option>
+                  <option value={1}>Publicado</option>
+                  <option value={0}>No publicado</option>
                 </>
               ) : (
                 <>
