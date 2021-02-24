@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import Button from '../buttons/ButtonPrimary';
 //Font awesome
-import {
-  faCloudUploadAlt,
-  faPlus,
-  faUpload,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 
-const Form = ({ id, type, brand, size, name }) => {
-  const [defaultSelectValue, setDefaultSelectValue] = useState(type);
+const Form = ({ id, type, brand, size, name, status }) => {
+  const [formValues, setFormValues] = useState({
+    id: id,
+    type: type,
+    brand: brand,
+    size: size,
+    name: name,
+    status: status,
+  });
   const [categories, setCategories] = useState([
-    { name: 'vinos', isActive: true },
-    { name: 'cervezas', isActive: false },
-    { name: 'refrescos', isActive: false },
-    { name: 'lacteos', isActive: false },
-    { name: 'aguas', isActive: false },
-    { name: 'licores', isActive: false },
-    { name: 'otros', isActive: false },
+    { name: 'vinos' },
+    { name: 'cervezas' },
+    { name: 'refrescos' },
+    { name: 'lacteos' },
+    { name: 'aguas' },
+    { name: 'licores' },
+    { name: 'otros' },
   ]);
 
   const filterCategories = categories.filter((number) => {
@@ -24,7 +27,20 @@ const Form = ({ id, type, brand, size, name }) => {
   });
 
   function handleChange(event) {
-    setDefaultSelectValue(event.target.value);
+    event.target.name == 'status'
+      ? event.target.value == 'Publicado'
+        ? setFormValues({
+            ...formValues,
+            [event.target.name]: '1',
+          })
+        : setFormValues({
+            ...formValues,
+            [event.target.name]: '0',
+          })
+      : setFormValues({
+          ...formValues,
+          [event.target.name]: event.target.value,
+        });
   }
 
   return (
@@ -36,20 +52,30 @@ const Form = ({ id, type, brand, size, name }) => {
         </div>
         <div className="name-holder">
           <label htmlFor="name">Nombre que se mostrará en la web</label>
-          <input type="text" id="name" name="name" defaultValue={name} />
+          <input
+            type="text"
+            name="name"
+            onChange={(e) => handleChange(e)}
+            defaultValue={formValues.name}
+          />
         </div>
       </div>
 
       <div className="second-row">
         <div className="brand-holder">
           <label htmlFor="marca">Marca del producto</label>
-          <input id="marca" type="text" defaultValue={brand} />
+          <input
+            type="text"
+            name="brand"
+            onChange={(e) => handleChange(e)}
+            defaultValue={formValues.brand}
+          />
         </div>
         <div className="type-holder">
           <form action="">
             <label htmlFor="type">
               Categoría
-              <select onChange={(e) => handleChange(e)}>
+              <select name="type" onChange={(e) => handleChange(e)}>
                 <option>{type}</option>
                 {filterCategories.map((category, index) => (
                   <option key={index}>{category.name}</option>
@@ -59,16 +85,30 @@ const Form = ({ id, type, brand, size, name }) => {
           </form>
         </div>
         <div className="status-holder">
-          <label htmlFor="type">Estado</label>
-          <select id="status" name="status">
-            <option value="1">Publicado</option>
-            <option value="0">No publicado</option>
+          <label htmlFor="status">Estado</label>
+          <select name="status" onChange={(e) => handleChange(e)}>
+            {status == 1 ? (
+              <>
+                <option>Publicado</option>
+                <option>No publicado</option>
+              </>
+            ) : (
+              <>
+                <option>No Publicado</option>
+                <option>Publicado</option>
+              </>
+            )}
           </select>
         </div>
       </div>
       <div className="name-holder">
         <label htmlFor="size">Tamaño del producto</label>
-        <input type="text" id="size" name="size" defaultValue={size} />
+        <input
+          type="text"
+          name="size"
+          defaultValue={formValues.size}
+          onChange={(e) => handleChange(e)}
+        />
       </div>
       <Button
         icon={faCloudUploadAlt}

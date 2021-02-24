@@ -65,6 +65,7 @@ const UpdateProduct = ({ match }) => {
                   brand={item.marca}
                   size={item.tamano}
                   name={item.nombre}
+                  status={item.activo}
                 />
               ))
             ) : (
