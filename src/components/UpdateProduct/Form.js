@@ -41,7 +41,7 @@ const Form = ({ id, type, brand, size, name, status }) => {
     };
     axios
       .put(
-        'http://dev.ajsevillano.com/products',
+        'https://dev.ajsevillano.com/products',
         {
           id: formValues.id,
           tipo: formValues.type,
@@ -55,7 +55,7 @@ const Form = ({ id, type, brand, size, name, status }) => {
       .then(
         (response) => {
           console.log(response);
-          console.log(formValues.status);
+          alert('Producto actualizado');
         },
         (error) => {
           console.log(error);
