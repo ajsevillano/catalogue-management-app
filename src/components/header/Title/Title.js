@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from '../../buttons/ButtonSecundary';
+import ButtonSecundary from '../../buttons/ButtonSecundary';
+import ButtonPrimary from '../../buttons/ButtonPrimary';
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,9 +8,10 @@ import {
   faCheck,
   faTimes,
   faArrowLeft,
+  faSave,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Title = ({ title, status }) => {
+const Title = ({ title, status, button }) => {
   const history = useHistory();
   function handleBackArrow() {
     history.push('/');
@@ -47,7 +49,11 @@ const Title = ({ title, status }) => {
           </>
         )}
       </div>
-      <Button icon={faDownload} size={'sm'} text={'Descargar'} />
+      {button == 'primary' ? (
+        <ButtonPrimary icon={faSave} size={'lg'} text={'Guardar'} />
+      ) : (
+        <ButtonSecundary icon={faDownload} size={'sm'} text={'Descargar'} />
+      )}
     </div>
   );
 };

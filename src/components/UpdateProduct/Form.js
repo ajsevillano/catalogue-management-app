@@ -54,8 +54,8 @@ const Form = ({ id, type, brand, size, name, status }) => {
       )
       .then(
         (response) => {
-          console.log(response);
           alert('Producto actualizado');
+          console.log(response);
         },
         (error) => {
           console.log(error);

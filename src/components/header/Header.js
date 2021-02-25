@@ -3,8 +3,8 @@ import MenuBar from '../Menubar/Menubar';
 import Title from './Title/Title';
 import Profile from './Profile/Profile';
 
-function Header({ status, title }) {
-  const [categories, setCategories] = useState([
+function Header({ status, title, button }) {
+  const [categories] = useState([
     { name: 'Todos los productos', isActive: true },
     { name: 'Todos los negocios', isActive: false },
   ]);
@@ -12,7 +12,7 @@ function Header({ status, title }) {
     <section id="header" className="header">
       <div className="wrapper">
         <Profile />
-        <Title title={title} status={status} />
+        <Title title={title} status={status} button={button} />
         <MenuBar categories={categories} />
       </div>
     </section>

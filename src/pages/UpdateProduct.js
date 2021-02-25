@@ -36,6 +36,7 @@ const UpdateProduct = ({ match }) => {
       <Header
         title={productData.map((item) => item.nombre)}
         status={productData.map((item) => item.activo)}
+        button={'primary'}
       />
       <section id="main" className="wrapper">
         <div ref={inputEl} className="update-product-container hidden">
