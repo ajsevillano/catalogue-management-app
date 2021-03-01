@@ -10,7 +10,9 @@ const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
-  console.log(productData);
+  const [fetchUrl, setFetchUrl] = useState([
+    `https://dev.ajsevillano.com/products/${match.params.id}`,
+  ]);
 
   const formattedTime = () => {
     return new Date(
@@ -18,7 +20,6 @@ const UpdateProduct = ({ match }) => {
     ).toLocaleString();
   };
 
-  const fetchUrl = `https://dev.ajsevillano.com/products/${match.params.id}`;
   useEffect(() => {
     inputEl.current.className = 'update-product-container fadein';
     setTimeout(async function fetchData() {
@@ -30,7 +31,7 @@ const UpdateProduct = ({ match }) => {
         setFetchError(error.response.status);
       }
     }, 200);
-  }, []);
+  }, [fetchUrl]);
 
   return (
     <>
@@ -68,7 +69,8 @@ const UpdateProduct = ({ match }) => {
                   size={item.tamano}
                   name={item.nombre}
                   status={item.activo}
-                  setProductData={setProductData}
+                  fetchUrl={fetchUrl}
+                  setFetchUrl={setFetchUrl}
                 />
               ))
             ) : (

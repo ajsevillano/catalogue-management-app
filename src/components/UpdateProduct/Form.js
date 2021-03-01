@@ -4,7 +4,16 @@ import axios from 'axios';
 //Font awesome
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 
-const Form = ({ id, type, brand, size, name, status, setProductData }) => {
+const Form = ({
+  id,
+  type,
+  brand,
+  size,
+  name,
+  status,
+  fetchUrl,
+  setFetchUrl,
+}) => {
   const [formValues, setFormValues] = useState({
     id: id,
     type: type,
@@ -55,9 +64,7 @@ const Form = ({ id, type, brand, size, name, status, setProductData }) => {
       .then(
         (response) => {
           alert('Producto actualizado');
-          setProductData([response.config.data]);
-
-          console.log(response.data.Time);
+          setFetchUrl([fetchUrl]);
         },
         (error) => {
           console.log(error);
