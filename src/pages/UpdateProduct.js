@@ -10,6 +10,7 @@ const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
+  console.log(productData);
 
   const formattedTime = () => {
     return new Date(
@@ -67,6 +68,7 @@ const UpdateProduct = ({ match }) => {
                   size={item.tamano}
                   name={item.nombre}
                   status={item.activo}
+                  setProductData={setProductData}
                 />
               ))
             ) : (
