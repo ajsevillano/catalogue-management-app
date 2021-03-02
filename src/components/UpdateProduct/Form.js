@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Button from '../buttons/ButtonPrimary';
 import axios from 'axios';
 //Font awesome
@@ -22,7 +22,7 @@ const Form = ({
     name: name,
     status: status,
   });
-  const categories = [
+  const [categories] = useState([
     { name: 'vinos' },
     { name: 'cervezas' },
     { name: 'refrescos' },
@@ -30,18 +30,14 @@ const Form = ({
     { name: 'aguas' },
     { name: 'licores' },
     { name: 'otros' },
-  ];
+  ]);
 
   const theSelect = useRef(null);
 
-  const filterCategories = categories.filter((category) => {
-    return category.name != type;
-  });
-
-  function handleChange(event) {
+  function handleChange(e) {
     setFormValues({
       ...formValues,
-      [event.target.name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -72,18 +68,6 @@ const Form = ({
           console.log(error);
         }
       );
-  }
-
-  function selectCategoriesValues() {
-    const firstValue = { name: type };
-    const final = [firstValue, ...filterCategories];
-    const result = final.map((category, index) => (
-      <option key={index} value={category.name}>
-        {category.name}
-      </option>
-    ));
-    console.log(result);
-    return result;
   }
 
   function selectStatusValues() {
@@ -142,8 +126,17 @@ const Form = ({
           <div className="type-holder">
             <label htmlFor="type">
               Categoría
-              <select name="type" onChange={(e) => handleChange(e)}>
+              {/* <select name="type" onChange={(e) => handleChange(e)}>
                 {selectCategoriesValues()}
+              </select> */}
+              <select
+                name="type"
+                value={formValues.type}
+                onChange={(e) => handleChange(e)}
+              >
+                {categories.map((items) => (
+                  <option key={items.name}>{items.name}</option>
+                ))}
               </select>
             </label>
           </div>
