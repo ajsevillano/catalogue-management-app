@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from '../buttons/ButtonPrimary';
 import axios from 'axios';
 //Font awesome
@@ -32,8 +32,10 @@ const Form = ({
     { name: 'otros' },
   ];
 
-  const filterCategories = categories.filter((number) => {
-    return number.name != type;
+  const theSelect = useRef(null);
+
+  const filterCategories = categories.filter((category) => {
+    return category.name != type;
   });
 
   function handleChange(event) {
@@ -72,6 +74,42 @@ const Form = ({
       );
   }
 
+  function selectCategoriesValues() {
+    const firstValue = { name: type };
+    const final = [firstValue, ...filterCategories];
+    const result = final.map((category, index) => (
+      <option key={index} value={category.name}>
+        {category.name}
+      </option>
+    ));
+    console.log(result);
+    return result;
+  }
+
+  function selectStatusValues() {
+    const selectOptions =
+      status == 1 ? (
+        <>
+          <option key={1} value="1">
+            Publicado
+          </option>
+          <option key={0} value="0">
+            No publicado
+          </option>
+        </>
+      ) : (
+        <>
+          <option key={0} value="0">
+            No publicado
+          </option>
+          <option key={1} value="1">
+            Publicado
+          </option>
+        </>
+      );
+    return selectOptions;
+  }
+
   return (
     <div className="update-product-form">
       <form onSubmit={updateProduct}>
@@ -105,27 +143,18 @@ const Form = ({
             <label htmlFor="type">
               Categoría
               <select name="type" onChange={(e) => handleChange(e)}>
-                <option>{type}</option>
-                {filterCategories.map((category, index) => (
-                  <option key={index}>{category.name}</option>
-                ))}
+                {selectCategoriesValues()}
               </select>
             </label>
           </div>
           <div className="status-holder">
             <label htmlFor="status">Estado</label>
-            <select name="status" onChange={(e) => handleChange(e)}>
-              {status == 1 ? (
-                <>
-                  <option value={1}>Publicado</option>
-                  <option value={0}>No publicado</option>
-                </>
-              ) : (
-                <>
-                  <option value="0">No Publicado</option>
-                  <option value="1">Publicado</option>
-                </>
-              )}
+            <select
+              ref={theSelect}
+              name="status"
+              onChange={(e) => handleChange(e)}
+            >
+              {selectStatusValues()}
             </select>
           </div>
         </div>
