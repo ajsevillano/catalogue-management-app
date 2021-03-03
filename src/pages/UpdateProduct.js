@@ -16,7 +16,9 @@ const UpdateProduct = ({ match }) => {
 
   const formattedTime = () => {
     return new Date(
-      productData.map((item) => item.last_update) * 1000
+      !productData
+        ? 'Loading...'
+        : productData.map((item) => item.last_update) * 1000
     ).toLocaleString();
   };
 

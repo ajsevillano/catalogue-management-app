@@ -32,8 +32,6 @@ const Form = ({
     { name: 'otros' },
   ]);
 
-  const theSelect = useRef(null);
-
   function handleChange(e) {
     setFormValues({
       ...formValues,
@@ -126,9 +124,6 @@ const Form = ({
           <div className="type-holder">
             <label htmlFor="type">
               Categoría
-              {/* <select name="type" onChange={(e) => handleChange(e)}>
-                {selectCategoriesValues()}
-              </select> */}
               <select
                 name="type"
                 value={formValues.type}
@@ -142,11 +137,7 @@ const Form = ({
           </div>
           <div className="status-holder">
             <label htmlFor="status">Estado</label>
-            <select
-              ref={theSelect}
-              name="status"
-              onChange={(e) => handleChange(e)}
-            >
+            <select name="status" onChange={(e) => handleChange(e)}>
               {selectStatusValues()}
             </select>
           </div>
