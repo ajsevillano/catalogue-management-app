@@ -13,6 +13,7 @@ const Form = ({
   status,
   fetchUrl,
   setFetchUrl,
+  notify,
 }) => {
   const [formValues, setFormValues] = useState({
     id: id,
@@ -59,7 +60,7 @@ const Form = ({
       )
       .then(
         (response) => {
-          alert('Producto actualizado');
+          notify();
           setFetchUrl([fetchUrl]);
         },
         (error) => {

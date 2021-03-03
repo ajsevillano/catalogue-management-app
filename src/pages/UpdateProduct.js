@@ -6,6 +6,10 @@ import Header from '../components/header/Header';
 import Form from '../components/UpdateProduct/Form';
 import Tablerownoresults from '../components/Catalogue/TableRownoresults';
 
+//Toastify components
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
   const [productData, setProductData] = useState([]);
@@ -13,6 +17,22 @@ const UpdateProduct = ({ match }) => {
   const [fetchUrl, setFetchUrl] = useState([
     `https://dev.ajsevillano.com/products/${match.params.id}`,
   ]);
+
+  //Toastify conf and notification
+  toast.configure();
+  const notify = () =>
+    toast.success(
+      `Producto ${productData.map((item) => item.nombre)} actualizado`,
+      {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      }
+    );
 
   const formattedTime = () => {
     return new Date(
@@ -37,6 +57,7 @@ const UpdateProduct = ({ match }) => {
 
   return (
     <>
+      <ToastContainer />
       <Header
         title={productData.map((item) => item.nombre)}
         status={productData.map((item) => item.activo)}
@@ -73,6 +94,8 @@ const UpdateProduct = ({ match }) => {
                   status={item.activo}
                   fetchUrl={fetchUrl}
                   setFetchUrl={setFetchUrl}
+                  notify={notify}
+                  ToastContainer={ToastContainer}
                 />
               ))
             ) : (
