@@ -15,6 +15,8 @@ const Form = ({
   setFetchUrl,
   notify,
 }) => {
+  const [buttonState, setButtonState] = useState(null);
+
   const [formValues, setFormValues] = useState({
     id: id,
     type: type,
@@ -42,6 +44,7 @@ const Form = ({
 
   function updateProduct(e) {
     e.preventDefault();
+    setButtonState('loading');
     const headers = {
       'Content-Type': 'text/plain',
     };
@@ -61,6 +64,8 @@ const Form = ({
       .then(
         (response) => {
           notify();
+          setButtonState(null);
+
           setFetchUrl([fetchUrl]);
         },
         (error) => {
@@ -153,12 +158,13 @@ const Form = ({
           />
         </div>
         <Button
+          buttonState={buttonState}
           type="submit"
           value="Submit"
           icon={faCloudUploadAlt}
           size={'sm'}
           text={'Actualizar el producto'}
-        />
+        ></Button>
       </form>
     </div>
   );
