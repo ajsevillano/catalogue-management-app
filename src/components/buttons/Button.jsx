@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-export default function Button({ icon, size, text, buttonLoading }) {
+export default function Button({ icon, size, text, buttonLoading, button }) {
   return (
-    <div className="Button-primary">
+    <div className={`Button-${button}`}>
       <button disabled={buttonLoading}>
         <FontAwesomeIcon
           spin={buttonLoading ? true : false}

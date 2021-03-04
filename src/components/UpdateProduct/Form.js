@@ -164,6 +164,7 @@ const Form = ({
           icon={faCloudUploadAlt}
           size={'sm'}
           text={'Actualizar el producto'}
+          button={'primary'}
         ></Button>
       </form>
     </div>

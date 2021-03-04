@@ -39,7 +39,7 @@ const ProductsCatalog = () => {
   }, [fetchUrl]);
   return (
     <>
-      <Header title={'Productos'} />
+      <Header title={'Productos'} button={'secundary'} />
       <section id="main" className="wrapper">
         <Searchbar />
         <Menubar

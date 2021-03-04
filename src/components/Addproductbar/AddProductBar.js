@@ -8,7 +8,12 @@ function AddProductbar() {
   return (
     <div className="sort-bar">
       <p>Inicio - Productos</p>
-      <Button icon={faPlus} size={'sm'} text={'Añadir producto'} />
+      <Button
+        icon={faPlus}
+        size={'sm'}
+        text={'Añadir producto'}
+        button={'primary'}
+      />
     </div>
   );
 }

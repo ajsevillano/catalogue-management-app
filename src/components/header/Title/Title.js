@@ -49,9 +49,14 @@ const Title = ({ title, status, button }) => {
         )}
       </div>
       {button == 'primary' ? (
-        <Button icon={faSave} size={'lg'} text={'Guardar'} />
+        <Button icon={faSave} size={'lg'} text={'Guardar'} button={button} />
       ) : (
-        <Button icon={faDownload} size={'sm'} text={'Descargar'} />
+        <Button
+          icon={faDownload}
+          size={'sm'}
+          text={'Descargar'}
+          button={button}
+        />
       )}
     </div>
   );
