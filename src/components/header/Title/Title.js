@@ -1,6 +1,5 @@
 import React from 'react';
-import ButtonSecundary from '../../buttons/ButtonSecundary';
-import ButtonPrimary from '../../buttons/ButtonPrimary';
+import Button from '../../buttons/Button';
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -50,9 +49,9 @@ const Title = ({ title, status, button }) => {
         )}
       </div>
       {button == 'primary' ? (
-        <ButtonPrimary icon={faSave} size={'lg'} text={'Guardar'} />
+        <Button icon={faSave} size={'lg'} text={'Guardar'} />
       ) : (
-        <ButtonSecundary icon={faDownload} size={'sm'} text={'Descargar'} />
+        <Button icon={faDownload} size={'sm'} text={'Descargar'} />
       )}
     </div>
   );

@@ -37,3 +37,29 @@
     }
   }
 }
+
+.Button-secundary {
+  button {
+    background-color: transparent;
+    width: auto;
+    max-width: 200px;
+    color: #1d2330;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    border: 1px solid #cad0d7;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:active {
+      background: #e2e4e8;
+    }
+    &:hover {
+      border: 1px solid #7f848a;
+    }
+    &:focus {
+      border: 1px solid #7f848a;
+      outline: none;
+    }
+  }
+}

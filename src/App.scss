@@ -25,8 +25,7 @@ $primary-color: #00c85a;
 
 // UI Components
 //Buttons
-@import './components/buttons/ButtonPrimary';
-@import './components/buttons/ButtonSecundary';
+@import './components/buttons/Button';
 
 //Forms
 @import './components/forms/Checkbox';

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Button from '../buttons/ButtonPrimary';
+import Button from '../buttons/Button';
 import axios from 'axios';
 //Font awesome
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
