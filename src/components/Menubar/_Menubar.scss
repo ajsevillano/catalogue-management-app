@@ -17,6 +17,9 @@
     font-weight: 600;
     cursor: pointer;
     margin-left: 30px;
+    &:hover {
+      border-bottom: 2px solid $grey-font;
+    }
   }
 
   nav p:first-child {

@@ -18,6 +18,7 @@ export default function Button({
           icon={buttonLoading ? faSpinner : icon}
           size={size}
         />
+        {'  '}
         {buttonLoading ? 'Actualizando...' : text}
       </button>
     </div>
