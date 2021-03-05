@@ -19,8 +19,7 @@
   flex-direction: row;
   background-color: white;
   width: 850px;
-  min-width: 850px;
-
+  min-width: 850x;
   border-radius: 10px;
 
   h1 {
@@ -49,6 +48,6 @@
 
 .modal-content {
   flex: 1;
-  margin: 25px;
+  margin: 25px 35px 0 35px;
   height: auto;
 }

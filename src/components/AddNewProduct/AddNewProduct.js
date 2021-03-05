@@ -2,6 +2,8 @@ import React from 'react';
 
 //Components
 import Checkbox from '../forms/Checkbox';
+import Button from '../buttons/Button';
+import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const AddNewProduct = () => {
   return (
@@ -31,6 +33,19 @@ const AddNewProduct = () => {
           <div className="checkbox-box">
             <Checkbox />
           </div>
+        </div>
+        <div className="button-container">
+          <Button
+            button={'secundary'}
+            text={'Cancelar'}
+            inlineStyle={{ marginRight: '20px' }}
+            icon={faTimes}
+          />
+          <Button
+            button={'primary'}
+            text={'Añadir producto'}
+            icon={faPaperPlane}
+          />
         </div>
       </form>
     </>

@@ -26,12 +26,23 @@
   display: flex;
   flex-direction: row;
   margin: 8px 0 15px 0;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  position: relative;
+  border-bottom: 1px solid #00c85a;
 
   label {
     margin-right: auto;
+    color: #86919d;
   }
 
   .checkbox-box {
     display: flex;
   }
+}
+
+.button-container {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: flex-end;
 }
