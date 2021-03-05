@@ -10,6 +10,8 @@ const AddNewProduct = () => {
   //States
   const [formValues, setFormValues] = useState({ type: 'vinos', activo: 1 });
   const [buttonLoading, setButtonLoading] = useState(false);
+  const [sentForm, setSentForm] = useState(false);
+
   const headers = { 'Content-Type': 'text/plain' };
 
   //Methods
@@ -32,6 +34,7 @@ const AddNewProduct = () => {
       .then(
         (response) => {
           setButtonLoading(false);
+          setSentForm(true);
           console.log(response);
         },
         (error) => {
@@ -55,7 +58,9 @@ const AddNewProduct = () => {
     });
     console.log(e.target.checked);
   }
-  return (
+  return sentForm == true ? (
+    <h1>Producto añadido</h1>
+  ) : (
     <>
       <h1>Añadir nuevo producto</h1>
       <form onSubmit={addProduct}>
