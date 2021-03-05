@@ -1,10 +1,13 @@
 import React from 'react';
+import ModalPicture from '../../assets/img/add-product.jpg';
 
 const Modal = ({ content }) => {
   return (
     <div className="modal-container">
       <div className="modal-box">
-        <div className="modal-img"></div>
+        <div className="modal-img">
+          <img src={ModalPicture} alt="Modal picture" />
+        </div>
         <div className="modal-content">{content}</div>
       </div>
     </div>

@@ -23,6 +23,7 @@ $primary-color: #00c85a;
 
 // Pages styles
 @import './pages/UpdateProduct';
+@import './components/AddNewProduct/AddNewProduct';
 
 // UI Components
 //Buttons
@@ -30,6 +31,8 @@ $primary-color: #00c85a;
 
 //Forms
 @import './components/forms/Checkbox';
+
+
 
 //General styles
 * {

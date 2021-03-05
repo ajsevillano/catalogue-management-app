@@ -11,27 +11,44 @@
 }
 
 .modal-box {
+  //Fo the animation
   position: relative;
-  background-color: white;
-  width: 50vw;
-  min-width: 350px;
-  height: 50vh;
-  align-items: center;
-  border-radius: 10px;
   top: 20px;
+
   display: flex;
   flex-direction: row;
+  background-color: white;
+  width: 850px;
+  min-width: 850px;
+
+  border-radius: 10px;
+
+  h1 {
+    color: #0c1322;
+    font-weight: 600;
+    font-size: 1.625rem;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    border-bottom: 1px solid $primary-color;
+  }
 }
 
 .modal-img {
   flex: 1;
   background-color: rgb(59, 56, 56);
-  height: 100%;
   border-radius: 10px 0 0 10px;
+  height: auto;
+
+  img {
+    max-width: 100%;
+    border-radius: 10px 0 0 10px;
+    min-height: 100%;
+  }
 }
 
 .modal-content {
   flex: 1;
-  display: flex;
-  justify-content: center;
+  margin: 25px;
+  height: auto;
 }
