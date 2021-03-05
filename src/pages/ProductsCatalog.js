@@ -7,6 +7,8 @@ import Searchbar from '../components/Searchbar/Searchbar';
 import TableCatalog from '../components/Catalogue/Table';
 import AddProductBar from '../components/Addproductbar/AddProductBar';
 import Menubar from '../components/Menubar/Menubar';
+import Modal from '../components/Modal/Modal';
+import AddNewProduct from '../components/AddNewProduct/AddNewProduct';
 
 const ProductsCatalog = () => {
   const [orderText, setOrderText] = useState('Más recientes');
@@ -39,6 +41,7 @@ const ProductsCatalog = () => {
   }, [fetchUrl]);
   return (
     <>
+      <Modal content={<AddNewProduct />} />
       <Header title={'Productos'} button={'secundary'} />
       <section id="main" className="wrapper">
         <Searchbar />
