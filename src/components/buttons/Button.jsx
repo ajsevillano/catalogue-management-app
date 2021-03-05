@@ -17,7 +17,7 @@ export default function Button({
           spin={buttonLoading ? true : false}
           icon={buttonLoading ? faSpinner : icon}
           size={size}
-        />{' '}
+        />
         {buttonLoading ? 'Actualizando...' : text}
       </button>
     </div>
