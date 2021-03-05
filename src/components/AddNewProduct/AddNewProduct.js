@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 //Components
 import Checkbox from '../forms/Checkbox';
@@ -7,12 +8,36 @@ import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const AddNewProduct = () => {
   //States
-  const [formValues, setFormValues] = useState({ tipo: 'vinos', activo: 1 });
+  const [formValues, setFormValues] = useState({ type: 'vinos', activo: 1 });
+  const [buttonLoading, setButtonLoading] = useState(false);
+  const headers = { 'Content-Type': 'text/plain' };
 
   //Methods
   function addProduct(e) {
     e.preventDefault();
+    setButtonLoading(true);
     console.log('en progreso');
+    axios
+      .post(
+        'https://dev.ajsevillano.com/products',
+        {
+          tipo: formValues.type,
+          marca: formValues.brand,
+          tamano: formValues.size,
+          nombre: formValues.name,
+          activo: formValues.activo,
+        },
+        { headers }
+      )
+      .then(
+        (response) => {
+          setButtonLoading(false);
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   function handleChange(e) {
@@ -36,21 +61,26 @@ const AddNewProduct = () => {
       <form onSubmit={addProduct}>
         <div className="input-container">
           <label htmlFor="name">Nombre que se mostrará en la web</label>
-          <input type="text" name="nombre" onChange={(e) => handleChange(e)} />
+          <input type="text" name="name" onChange={(e) => handleChange(e)} />
         </div>
         <div className="input-container">
           <label htmlFor="brand">Marca del producto</label>
-          <input type="text" name="marca" onChange={(e) => handleChange(e)} />
+          <input type="text" name="brand" onChange={(e) => handleChange(e)} />
         </div>
         <div className="input-container">
           <label htmlFor="size">Tamaño del producto</label>
-          <input type="text" name="tamano" onChange={(e) => handleChange(e)} />
+          <input type="text" name="size" onChange={(e) => handleChange(e)} />
         </div>
         <div className="input-container">
           <label htmlFor="type">Tipo de producto</label>
-          <select name="tipo" id="tipo" onChange={(e) => handleChange(e)}>
+          <select name="type" onChange={(e) => handleChange(e)}>
             <option value="vinos">Vinos</option>
             <option value="cervezas">Cervezas</option>
+            <option value="refrescos">Refrescos</option>
+            <option value="lacteos">Lacteos</option>
+            <option value="aguas">Aguas</option>
+            <option value="licores">Licores</option>
+            <option value="otros">Otros</option>
           </select>
         </div>
         <div className="checkbox-container">
