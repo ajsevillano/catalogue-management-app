@@ -1,7 +1,10 @@
 import React from 'react';
 import ModalPicture from '../../assets/img/add-product.jpg';
 
-const Modal = ({ content }) => {
+const Modal = ({ content, modalOpen }) => {
+  if (!modalOpen) {
+    return null;
+  }
   return (
     <div className="modal-container">
       <div className="modal-box">

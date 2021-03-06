@@ -11,7 +11,6 @@ const AddNewProduct = () => {
   const [formValues, setFormValues] = useState({ type: 'vinos', activo: 1 });
   const [buttonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
-
   const headers = { 'Content-Type': 'text/plain' };
 
   //Methods

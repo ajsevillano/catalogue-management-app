@@ -14,6 +14,7 @@ const ProductsCatalog = () => {
   const [orderText, setOrderText] = useState('Más recientes');
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [fetchUrl, setFetchUrl] = useState(
     'https://dev.ajsevillano.com/products'
   );
@@ -28,6 +29,10 @@ const ProductsCatalog = () => {
     { name: 'Otros', isActive: false },
   ]);
 
+  const handleModalButton = () => {
+    setModalOpen(true);
+  };
+
   //Fetch data when page loads or fetchUrl change,
   // add 150ms to debounce the fetch call.
   useEffect(() => {
@@ -41,7 +46,7 @@ const ProductsCatalog = () => {
   }, [fetchUrl]);
   return (
     <>
-      <Modal content={<AddNewProduct />} />
+      <Modal modalOpen={modalOpen} content={<AddNewProduct />} />
       <Header title={'Productos'} button={'secundary'} />
       <section id="main" className="wrapper">
         <Searchbar />
@@ -53,7 +58,7 @@ const ProductsCatalog = () => {
           orderText={orderText}
           setOrderText={setOrderText}
         />
-        <AddProductBar />
+        <AddProductBar handleModalButton={handleModalButton} />
         <TableCatalog
           categories={categories}
           loading={loading}
