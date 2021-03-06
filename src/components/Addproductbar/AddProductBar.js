@@ -2,14 +2,14 @@ import React from 'react';
 //Font awesome
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 //Components
-import ButtonOpenModal from '../buttons/ButtonOpenModal';
+import Button from '../buttons/Button';
 
-function AddProductbar({ handleModalButton }) {
+function AddProductbar({ handleOnClick }) {
   return (
     <div className="sort-bar">
       <p>Inicio - Productos</p>
-      <ButtonOpenModal
-        handleModalButton={handleModalButton}
+      <Button
+        handleOnClick={handleOnClick}
         icon={faPlus}
         size={'sm'}
         text={'Añadir producto'}

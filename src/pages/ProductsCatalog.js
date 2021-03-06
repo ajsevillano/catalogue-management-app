@@ -29,7 +29,7 @@ const ProductsCatalog = () => {
     { name: 'Otros', isActive: false },
   ]);
 
-  const handleModalButton = () => {
+  const handleOnClick = () => {
     setModalOpen(true);
   };
 
@@ -58,7 +58,7 @@ const ProductsCatalog = () => {
           orderText={orderText}
           setOrderText={setOrderText}
         />
-        <AddProductBar handleModalButton={handleModalButton} />
+        <AddProductBar handleOnClick={handleOnClick} />
         <TableCatalog
           categories={categories}
           loading={loading}

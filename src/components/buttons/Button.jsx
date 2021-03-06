@@ -9,10 +9,14 @@ export default function Button({
   buttonLoading,
   button,
   inlineStyle,
+  handleOnClick,
 }) {
   return (
     <div className={`Button-${button}`} style={inlineStyle}>
-      <button disabled={buttonLoading}>
+      <button
+        onClick={!handleOnClick ? null : handleOnClick}
+        disabled={buttonLoading}
+      >
         <FontAwesomeIcon
           spin={buttonLoading ? true : false}
           icon={buttonLoading ? faSpinner : icon}
