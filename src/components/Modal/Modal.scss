@@ -12,16 +12,16 @@
 }
 
 .modal-box {
-  //Fo the animation
-  position: relative;
-  top: 20px;
-
   display: flex;
   flex-direction: row;
   background-color: white;
   width: 850px;
   min-width: 850x;
   border-radius: 10px;
+
+  //Animation
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
 
   h1 {
     color: #0c1322;
@@ -51,4 +51,22 @@
   flex: 1;
   margin: 25px 35px 0 35px;
   height: auto;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+  }
 }

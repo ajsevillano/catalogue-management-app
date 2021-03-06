@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 //Components
@@ -44,6 +44,7 @@ const ProductsCatalog = () => {
       return products;
     }, 250);
   }, [fetchUrl]);
+
   return (
     <>
       <Modal modalOpen={modalOpen} content={<AddNewProduct />} />
