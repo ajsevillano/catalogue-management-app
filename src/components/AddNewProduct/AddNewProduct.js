@@ -8,7 +8,13 @@ import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const AddNewProduct = ({ setModalOpen }) => {
   //States
-  const [formValues, setFormValues] = useState({ type: 'vinos', activo: 1 });
+  const [formValues, setFormValues] = useState({
+    type: 'vinos',
+    activo: 1,
+    name: '',
+    brand: '',
+    size: '',
+  });
   const [buttonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
   const headers = { 'Content-Type': 'text/plain' };
