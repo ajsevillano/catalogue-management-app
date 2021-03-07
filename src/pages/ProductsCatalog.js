@@ -47,7 +47,10 @@ const ProductsCatalog = () => {
 
   return (
     <>
-      <Modal modalOpen={modalOpen} content={<AddNewProduct />} />
+      <Modal
+        modalOpen={modalOpen}
+        content={<AddNewProduct setModalOpen={setModalOpen} />}
+      />
       <Header title={'Productos'} button={'secundary'} />
       <section id="main" className="wrapper">
         <Searchbar />

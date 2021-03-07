@@ -6,7 +6,7 @@ import Checkbox from '../forms/Checkbox';
 import Button from '../buttons/Button';
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const AddNewProduct = () => {
+const AddNewProduct = ({ setModalOpen }) => {
   //States
   const [formValues, setFormValues] = useState({ type: 'vinos', activo: 1 });
   const [buttonLoading, setButtonLoading] = useState(false);
@@ -57,6 +57,11 @@ const AddNewProduct = () => {
     });
     console.log(e.target.checked);
   }
+
+  function handleCancelButton() {
+    setModalOpen(false);
+  }
+
   return sentForm == true ? (
     <h1>Producto añadido</h1>
   ) : (
@@ -103,6 +108,7 @@ const AddNewProduct = () => {
             text={'Cancelar'}
             inlineStyle={{ marginRight: '20px' }}
             icon={faTimes}
+            handleOnClick={handleCancelButton}
           />
           <Button
             button={'primary'}
