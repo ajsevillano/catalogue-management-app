@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Button from '../buttons/Button';
 import axios from 'axios';
 //Font awesome
-import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCloudUploadAlt, faSave } from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({
   id,
@@ -161,8 +161,8 @@ const Form = ({
           buttonLoading={buttonLoading}
           type="submit"
           value="Submit"
-          icon={faCloudUploadAlt}
-          size={'sm'}
+          icon={faSave}
+          size={'lg'}
           text={'Actualizar el producto'}
           button={'primary'}
         ></Button>
