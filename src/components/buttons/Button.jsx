@@ -1,5 +1,5 @@
 /** Button UI Component, logic to be removed
- * @param {Object} icon A font awesome. Check https://fontawesome.com/icons for types.
+ * @param {Object} icon A font awesome icon. Check https://fontawesome.com/icons for types.
  * @param {string} size Defines the font awesome size of the icon
  * @param {string} text Defines the text in the button
  * @param {state} buttonLoading Change the icon to a spinner while the update is executed

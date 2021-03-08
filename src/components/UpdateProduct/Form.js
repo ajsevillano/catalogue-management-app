@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '../buttons/Button';
 import axios from 'axios';
 //Font awesome
-import { faCloudUploadAlt, faSave } from '@fortawesome/free-solid-svg-icons';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({
   id,
@@ -16,7 +16,6 @@ const Form = ({
   notify,
 }) => {
   const [buttonLoading, setButtonLoading] = useState(false);
-
   const [formValues, setFormValues] = useState({
     id: id,
     type: type,
