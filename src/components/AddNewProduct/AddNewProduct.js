@@ -3,6 +3,7 @@ import axios from 'axios';
 
 //Components
 import Checkbox from '../forms/Checkbox';
+import Input from '../forms/Inputs/Input';
 import Button from '../buttons/Button';
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -76,15 +77,30 @@ const AddNewProduct = ({ setModalOpen }) => {
       <form onSubmit={addProduct}>
         <div className="input-container">
           <label htmlFor="name">Nombre que se mostrará en la web</label>
-          <input type="text" name="name" onChange={(e) => handleChange(e)} />
+          <Input
+            type={'text'}
+            name={'name'}
+            defaultValue={''}
+            handleChange={handleChange}
+          />
         </div>
         <div className="input-container">
           <label htmlFor="brand">Marca del producto</label>
-          <input type="text" name="brand" onChange={(e) => handleChange(e)} />
+          <Input
+            type={'text'}
+            name={'brand'}
+            defaultValue={''}
+            handleChange={handleChange}
+          />
         </div>
         <div className="input-container">
           <label htmlFor="size">Tamaño del producto</label>
-          <input type="text" name="size" onChange={(e) => handleChange(e)} />
+          <Input
+            type={'text'}
+            name={'size'}
+            defaultValue={''}
+            handleChange={handleChange}
+          />
         </div>
         <div className="input-container">
           <label htmlFor="type">Tipo de producto</label>

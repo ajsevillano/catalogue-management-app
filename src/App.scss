@@ -15,10 +15,10 @@ $primary-color: #00c85a;
 
 // Components styles Catalogue
 @import './components/Searchbar/Searchbar';
-@import './components/Catalogue/Table';
-@import './components/Catalogue/TableRow';
-@import './components/Catalogue/TableRownoresults';
-@import './components/Catalogue/TableRowSkeleton';
+@import './components/ProductsCatalogue/Table';
+@import './components/ProductsCatalogue/TableRow';
+@import './components/ProductsCatalogue/TableRownoresults';
+@import './components/ProductsCatalogue/TableRowSkeleton';
 @import './components/Modal/Modal';
 
 // Pages styles
