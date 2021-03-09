@@ -4,6 +4,9 @@ import axios from 'axios';
 //Font awesome
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
+//Components
+import Input from '../forms/Inputs/Input';
+
 const Form = ({
   id,
   type,
@@ -107,11 +110,11 @@ const Form = ({
           </div>
           <div className="name-holder">
             <label htmlFor="name">Nombre que se mostrará en la web</label>
-            <input
-              type="text"
-              name="name"
-              onChange={(e) => handleChange(e)}
+            <Input
+              type={'text'}
+              name={'name'}
               defaultValue={formValues.name}
+              handleChange={handleChange}
             />
           </div>
         </div>
@@ -119,11 +122,11 @@ const Form = ({
         <div className="second-row">
           <div className="brand-holder">
             <label htmlFor="marca">Marca del producto</label>
-            <input
-              type="text"
-              name="brand"
-              onChange={(e) => handleChange(e)}
+            <Input
+              type={'text'}
+              name={'brand'}
               defaultValue={formValues.brand}
+              handleChange={handleChange}
             />
           </div>
           <div className="type-holder">
@@ -149,11 +152,11 @@ const Form = ({
         </div>
         <div className="name-holder">
           <label htmlFor="size">Tamaño del producto</label>
-          <input
-            type="text"
-            name="size"
+          <Input
+            type={'text'}
+            name={'size'}
             defaultValue={formValues.size}
-            onChange={(e) => handleChange(e)}
+            handleChange={handleChange}
           />
         </div>
         <Button
