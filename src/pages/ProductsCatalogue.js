@@ -42,7 +42,7 @@ const ProductsCatalogue = () => {
       setProductsData(products.data);
       setLoading(false);
       return products;
-    }, 250);
+    }, 150);
   }, [fetchUrl]);
 
   return (
