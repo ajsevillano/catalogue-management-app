@@ -6,6 +6,7 @@ import Checkbox from '../forms/Checkbox';
 import Input from '../forms/Inputs/Input';
 import Button from '../buttons/Button';
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
+import ModalPicture from '../../assets/img/add-product.jpg';
 
 const AddNewProduct = ({ setModalOpen }) => {
   //States
@@ -70,75 +71,82 @@ const AddNewProduct = ({ setModalOpen }) => {
   }
 
   return sentForm == true ? (
-    <h1>Producto añadido</h1>
+    <div className="modal-content">
+      <h1>Producto añadido</h1>
+    </div>
   ) : (
     <>
-      <h1>Añadir nuevo producto</h1>
-      <form onSubmit={addProduct}>
-        <div className="input-container">
-          <label htmlFor="name">Nombre que se mostrará en la web</label>
-          <Input
-            type={'text'}
-            name={'name'}
-            defaultValue={''}
-            handleChange={handleChange}
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="brand">Marca del producto</label>
-          <Input
-            type={'text'}
-            name={'brand'}
-            defaultValue={''}
-            handleChange={handleChange}
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="size">Tamaño del producto</label>
-          <Input
-            type={'text'}
-            name={'size'}
-            defaultValue={''}
-            handleChange={handleChange}
-          />
-        </div>
-        <div className="input-container">
-          <label htmlFor="type">Tipo de producto</label>
-          <select name="type" onChange={(e) => handleChange(e)}>
-            <option value="vinos">Vinos</option>
-            <option value="cervezas">Cervezas</option>
-            <option value="refrescos">Refrescos</option>
-            <option value="lacteos">Lacteos</option>
-            <option value="aguas">Aguas</option>
-            <option value="licores">Licores</option>
-            <option value="otros">Otros</option>
-          </select>
-        </div>
-        <div className="checkbox-container">
-          <label htmlFor="status">¿El producto está activo?</label>
-          <div className="checkbox-box">
-            <Checkbox
-              status={formValues.activo}
-              setFormValues={setFormValues}
-              handleCheckBox={handleCheckBox}
+      <div className="modal-img">
+        <img src={ModalPicture} alt="Modal picture" />
+      </div>
+      <div className="modal-content">
+        <h1>Añadir nuevo producto</h1>
+        <form onSubmit={addProduct}>
+          <div className="input-container">
+            <label htmlFor="name">Nombre que se mostrará en la web</label>
+            <Input
+              type={'text'}
+              name={'name'}
+              defaultValue={''}
+              handleChange={handleChange}
             />
           </div>
-        </div>
-        <div className="button-container">
-          <Button
-            button={'secundary'}
-            text={'Cancelar'}
-            inlineStyle={{ marginRight: '20px' }}
-            icon={faTimes}
-            handleOnClick={handleCancelButton}
-          />
-          <Button
-            button={'primary'}
-            text={'Añadir producto'}
-            icon={faPaperPlane}
-          />
-        </div>
-      </form>
+          <div className="input-container">
+            <label htmlFor="brand">Marca del producto</label>
+            <Input
+              type={'text'}
+              name={'brand'}
+              defaultValue={''}
+              handleChange={handleChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="size">Tamaño del producto</label>
+            <Input
+              type={'text'}
+              name={'size'}
+              defaultValue={''}
+              handleChange={handleChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="type">Tipo de producto</label>
+            <select name="type" onChange={(e) => handleChange(e)}>
+              <option value="vinos">Vinos</option>
+              <option value="cervezas">Cervezas</option>
+              <option value="refrescos">Refrescos</option>
+              <option value="lacteos">Lacteos</option>
+              <option value="aguas">Aguas</option>
+              <option value="licores">Licores</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+          <div className="checkbox-container">
+            <label htmlFor="status">¿El producto está activo?</label>
+            <div className="checkbox-box">
+              <Checkbox
+                status={formValues.activo}
+                setFormValues={setFormValues}
+                handleCheckBox={handleCheckBox}
+              />
+            </div>
+          </div>
+          <div className="button-container">
+            <Button
+              button={'secundary'}
+              text={'Cancelar'}
+              inlineStyle={{ marginRight: '20px' }}
+              icon={faTimes}
+              handleOnClick={handleCancelButton}
+            />
+            <Button
+              button={'primary'}
+              text={'Añadir producto'}
+              icon={faPaperPlane}
+            />
+          </div>
+        </form>
+      </div>
     </>
   );
 };
