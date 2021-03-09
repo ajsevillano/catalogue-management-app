@@ -8,11 +8,11 @@ import Button from '../buttons/Button';
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ModalPicture from '../../assets/img/add-product.jpg';
 
-import Lottie from 'react-lottie';
+//Lottie animation helper and json import
+import LottieAnimation from '../../utils/Lottie';
 import * as success from '../../assets/animations/success.json';
 
 const AddNewProduct = ({ setModalOpen }) => {
-  //States
   const [formValues, setFormValues] = useState({
     type: 'vinos',
     activo: 1,
@@ -24,7 +24,6 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const headers = { 'Content-Type': 'text/plain' };
 
-  //Methods
   function addProduct(e) {
     e.preventDefault();
     setButtonLoading(true);
@@ -73,20 +72,9 @@ const AddNewProduct = ({ setModalOpen }) => {
     setModalOpen(false);
   }
 
-  const defaultOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: success.default,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   return sentForm == true ? (
     <div className="modal-content">
-      <div>
-        <Lottie options={defaultOptions} height={120} width={120} />
-      </div>
+      <LottieAnimation animationName={success} height={120} width={120} />
       <h1>Producto añadido</h1>
     </div>
   ) : (
