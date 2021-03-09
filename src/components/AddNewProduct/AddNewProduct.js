@@ -8,6 +8,9 @@ import Button from '../buttons/Button';
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ModalPicture from '../../assets/img/add-product.jpg';
 
+import Lottie from 'react-lottie';
+import * as success from '../../assets/animations/success.json';
+
 const AddNewProduct = ({ setModalOpen }) => {
   //States
   const [formValues, setFormValues] = useState({
@@ -70,8 +73,20 @@ const AddNewProduct = ({ setModalOpen }) => {
     setModalOpen(false);
   }
 
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: success.default,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return sentForm == true ? (
     <div className="modal-content">
+      <div>
+        <Lottie options={defaultOptions} height={120} width={120} />
+      </div>
       <h1>Producto añadido</h1>
     </div>
   ) : (
