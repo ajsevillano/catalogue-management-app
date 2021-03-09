@@ -4,7 +4,7 @@ import axios from 'axios';
 //Components
 import Header from '../components/header/Header';
 import Form from '../components/UpdateProduct/Form';
-import Tablerownoresults from '../components/Catalogue/TableRownoresults';
+import Tablerownoresults from '../components/ProductsCatalogue/TableRownoresults';
 
 //Toastify components
 import { ToastContainer, toast } from 'react-toastify';

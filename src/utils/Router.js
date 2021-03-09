@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Home from '../pages/ProductsCatalog';
+import Home from '../pages/ProductsCatalogue';
 import UpdateProduct from '../pages/UpdateProduct';
 
 const AppRouter = () => {

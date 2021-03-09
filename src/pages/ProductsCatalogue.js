@@ -4,13 +4,13 @@ import axios from 'axios';
 //Components
 import Header from '../components/header/Header';
 import Searchbar from '../components/Searchbar/Searchbar';
-import TableCatalog from '../components/Catalogue/Table';
+import TableCatalog from '../components/ProductsCatalogue/Table';
 import AddProductBar from '../components/Addproductbar/AddProductBar';
 import Menubar from '../components/Menubar/Menubar';
 import Modal from '../components/Modal/Modal';
 import AddNewProduct from '../components/AddNewProduct/AddNewProduct';
 
-const ProductsCatalog = () => {
+const ProductsCatalogue = () => {
   const [orderText, setOrderText] = useState('Más recientes');
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -78,4 +78,4 @@ const ProductsCatalog = () => {
   );
 };
 
-export default ProductsCatalog;
+export default ProductsCatalogue;
