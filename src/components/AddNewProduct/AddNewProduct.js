@@ -21,6 +21,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   });
   const [buttonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
+  const [fetchError, setFetcherror] = useState(false);
   const headers = { 'Content-Type': 'text/plain' };
 
   function addProduct(e) {
@@ -45,6 +46,8 @@ const AddNewProduct = ({ setModalOpen }) => {
           console.log(response);
         },
         (error) => {
+          setSentForm(true);
+          setFetcherror(true);
           console.log(error);
         }
       );
@@ -70,8 +73,12 @@ const AddNewProduct = ({ setModalOpen }) => {
     setModalOpen(false);
   }
 
-  return sentForm == true ? (
-    <Success />
+  return sentForm ? (
+    !fetchError ? (
+      <Success />
+    ) : (
+      <Error />
+    )
   ) : (
     <>
       <div className="modal-img">
