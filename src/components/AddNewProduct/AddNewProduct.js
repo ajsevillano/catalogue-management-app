@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
+import ModalPicture from '../../assets/img/add-product.jpg';
+
 //Components
 import Checkbox from '../forms/Checkbox';
 import Input from '../forms/Inputs/Input';
 import Button from '../buttons/Button';
-import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
-import ModalPicture from '../../assets/img/add-product.jpg';
-
-//Lottie animation helper and json import
-import LottieAnimation from '../../utils/Lottie';
-import * as success from '../../assets/animations/success.json';
+import Success from './Success';
+import Error from './Error';
 
 const AddNewProduct = ({ setModalOpen }) => {
   const [formValues, setFormValues] = useState({
@@ -27,7 +26,6 @@ const AddNewProduct = ({ setModalOpen }) => {
   function addProduct(e) {
     e.preventDefault();
     setButtonLoading(true);
-    console.log('en progreso');
     axios
       .post(
         'https://dev.ajsevillano.com/products',
@@ -73,10 +71,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   }
 
   return sentForm == true ? (
-    <div className="modal-content">
-      <LottieAnimation animationName={success} height={120} width={120} />
-      <h1>Producto añadido</h1>
-    </div>
+    <Success />
   ) : (
     <>
       <div className="modal-img">
