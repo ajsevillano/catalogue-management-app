@@ -80,7 +80,10 @@ const AddNewProduct = ({ setModalOpen }) => {
         productName={formValues.name}
       />
     ) : (
-      <Error />
+      <Error
+        handleCancelButton={handleCancelButton}
+        productName={formValues.name}
+      />
     )
   ) : (
     <>

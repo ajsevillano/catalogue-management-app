@@ -72,6 +72,30 @@
   }
 }
 
+.modal-content-error {
+  flex: 1;
+  margin: 25px 35px 25px 35px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    color: #0c1322;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+  }
+  span {
+    color: #e84343;
+  }
+  p {
+    color: #e84343;
+    margin-bottom: 30px;
+  }
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
