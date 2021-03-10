@@ -75,7 +75,10 @@ const AddNewProduct = ({ setModalOpen }) => {
 
   return sentForm ? (
     !fetchError ? (
-      <Success handleCancelButton={handleCancelButton} />
+      <Success
+        handleCancelButton={handleCancelButton}
+        productName={formValues.name}
+      />
     ) : (
       <Error />
     )

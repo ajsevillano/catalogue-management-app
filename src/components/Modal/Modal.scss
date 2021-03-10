@@ -22,16 +22,6 @@
   //Animation
   -webkit-animation: fadeIn 0.5s;
   animation: fadeIn 0.5s;
-
-  h1 {
-    color: #0c1322;
-    font-weight: 600;
-    font-size: 1.625rem;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    position: relative;
-    border-bottom: 1px solid $primary-color;
-  }
 }
 
 .modal-img {
@@ -51,6 +41,35 @@
   flex: 1;
   margin: 25px 35px 0 35px;
   height: auto;
+  h1 {
+    color: #0c1322;
+    font-weight: 600;
+    font-size: 1.625rem;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    border-bottom: 1px solid $primary-color;
+  }
+}
+
+.modal-content-success {
+  flex: 1;
+  margin: 25px 35px 25px 35px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    color: #0c1322;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    -webkit-animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s;
+  }
+  span {
+    color: $primary-color;
+  }
 }
 
 @-webkit-keyframes fadeIn {
