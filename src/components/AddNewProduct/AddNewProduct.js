@@ -100,6 +100,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               name={'name'}
               defaultValue={''}
               handleChange={handleChange}
+              required={true}
             />
           </div>
           <div className="input-container">
@@ -109,6 +110,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               name={'brand'}
               defaultValue={''}
               handleChange={handleChange}
+              required={true}
             />
           </div>
           <div className="input-container">
@@ -118,6 +120,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               name={'size'}
               defaultValue={''}
               handleChange={handleChange}
+              required={true}
             />
           </div>
           <div className="input-container">
