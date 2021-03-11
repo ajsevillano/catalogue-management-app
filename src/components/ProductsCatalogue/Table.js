@@ -8,6 +8,7 @@ import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
 import TableRowSkeleton from './TableRowSkeleton';
+import Searchbar from '../Searchbar/Searchbar';
 
 function Table({
   categories,
@@ -16,6 +17,8 @@ function Table({
   setProductsData,
   orderText,
   setOrderText,
+  filter,
+  setFilter,
 }) {
   function updateOrder() {
     const reverseData = [...productsData].reverse();
@@ -25,22 +28,8 @@ function Table({
     );
   }
 
-  const [filter, setFilter] = useState(null);
-  const handleKeyPress = (event) => {
-    setFilter({ ...filter, nombre: event.target.value });
-  };
-
   return (
     <div className="table-catalogue">
-      <div className="search-bar">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Buscar productos..."
-            onChange={handleKeyPress}
-          />
-        </div>
-      </div>
       <div className="table-header">
         <h2>
           {loading === true

@@ -11,6 +11,7 @@ import Modal from '../components/Modal/Modal';
 import AddNewProduct from '../components/AddNewProduct/AddNewProduct';
 
 const ProductsCatalogue = () => {
+  const [filter, setFilter] = useState(null);
   const [orderText, setOrderText] = useState('Más recientes');
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -53,7 +54,7 @@ const ProductsCatalogue = () => {
       />
       <Header title={'Productos'} button={'secundary'} />
       <section id="main" className="wrapper">
-        <Searchbar />
+        <Searchbar filter={filter} setFilter={setFilter} />
         <Menubar
           categories={categories}
           setCategories={setCategories}
@@ -72,6 +73,8 @@ const ProductsCatalogue = () => {
           setLoading={setLoading}
           orderText={orderText}
           setOrderText={setOrderText}
+          filter={filter}
+          setFilter={setFilter}
         />
       </section>
     </>
