@@ -42,6 +42,11 @@ const UpdateProduct = ({ match }) => {
     ).toLocaleString();
   };
 
+  const DefaultImage = (e) => {
+    e.target.src =
+      'http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/iddefault.jpg';
+  };
+
   useEffect(() => {
     inputEl.current.className = 'update-product-container fadein';
     setTimeout(async function fetchData() {
@@ -74,6 +79,7 @@ const UpdateProduct = ({ match }) => {
                 height="208px"
                 src={`http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id${match.params.id}.jpg`}
                 alt=""
+                onError={(e) => DefaultImage(e)}
               ></img>
             </div>
           </div>

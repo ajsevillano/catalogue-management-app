@@ -17,6 +17,10 @@ function TableRow({
 }) {
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
+  const DefaultImage = (e) => {
+    e.target.src =
+      'http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/iddefault.jpg';
+  };
 
   return (
     <Link to={`/updateproduct/${id}`}>
@@ -24,7 +28,8 @@ function TableRow({
         <div className="img-container">
           <img
             src={`http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id${id}.jpg`}
-            alt=""
+            alt={name}
+            onError={(e) => DefaultImage(e)}
           />
         </div>
         <div className="item-id">

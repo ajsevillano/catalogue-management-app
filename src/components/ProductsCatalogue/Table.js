@@ -26,7 +26,7 @@ function Table({
     );
   };
 
-  const init = () => {
+  const filteredProducts = () => {
     return productsData.filter((product) =>
       !filter
         ? product
@@ -45,9 +45,9 @@ function Table({
         <p>
           {loading === true
             ? ''
-            : init().length == 0
+            : filteredProducts().length == 0
             ? 'No hay productos que mostrar'
-            : `total: ${init().length} productos`}
+            : `total: ${filteredProducts().length} productos`}
         </p>
         <p className="sort-order">
           <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
@@ -59,10 +59,10 @@ function Table({
         [...Array(4)].map((undefined, index) => (
           <TableRowSkeleton key={index} />
         ))
-      ) : init().length == 0 ? (
+      ) : filteredProducts().length == 0 ? (
         <Tablerownoresults />
       ) : (
-        init().map((product) => (
+        filteredProducts().map((product) => (
           <TableRow
             key={product.id}
             id={product.id}
