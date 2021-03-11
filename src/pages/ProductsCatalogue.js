@@ -74,7 +74,6 @@ const ProductsCatalogue = () => {
           orderText={orderText}
           setOrderText={setOrderText}
           filter={filter}
-          setFilter={setFilter}
         />
       </section>
     </>

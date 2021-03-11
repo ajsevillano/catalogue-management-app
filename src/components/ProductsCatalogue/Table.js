@@ -8,7 +8,6 @@ import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
 import TableRowSkeleton from './TableRowSkeleton';
-import Searchbar from '../Searchbar/Searchbar';
 
 function Table({
   categories,
@@ -18,7 +17,6 @@ function Table({
   orderText,
   setOrderText,
   filter,
-  setFilter,
 }) {
   function updateOrder() {
     const reverseData = [...productsData].reverse();
@@ -63,11 +61,11 @@ function Table({
           .filter((product) => {
             if (!filter) {
               return product;
-            } else if (
-              product.nombre.toLowerCase().includes(filter.nombre.toLowerCase())
-            ) {
-              return product;
             }
+            const filteredProduct = product.nombre
+              .toLowerCase()
+              .includes(filter.nombre.toLowerCase());
+            return filteredProduct;
           })
           .map((product) => (
             <TableRow
