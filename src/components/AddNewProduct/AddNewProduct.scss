@@ -46,3 +46,9 @@
   margin-bottom: 20px;
   justify-content: flex-end;
 }
+
+.conffetti {
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+}

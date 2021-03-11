@@ -16,8 +16,9 @@
   flex-direction: row;
   background-color: white;
   width: 850px;
-  min-width: 850x;
+  max-width: 85%;
   border-radius: 10px;
+  position: relative;
 
   //Animation
   -webkit-animation: fadeIn 0.5s;
@@ -111,5 +112,25 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+//Mobile styles
+@media screen and (max-width: 768px) {
+  .modal-img {
+    display: none;
+  }
+  .modal-content {
+    h1 {
+      font-size: 1.475rem;
+    }
+  }
+
+  .modal-content-success {
+    h1 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 }
