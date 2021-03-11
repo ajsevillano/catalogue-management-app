@@ -4,7 +4,7 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 function Searchbar({ filter, setFilter }) {
   const handleKeyPress = (event) => {
-    setFilter({ ...filter, nombre: event.target.value });
+    setFilter({ ...filter, search: event.target.value });
   };
 
   return (

@@ -64,7 +64,7 @@ function Table({
             }
             const filteredProduct = product.nombre
               .toLowerCase()
-              .includes(filter.nombre.toLowerCase());
+              .includes(filter.search.toLowerCase());
             return filteredProduct;
           })
           .map((product) => (
