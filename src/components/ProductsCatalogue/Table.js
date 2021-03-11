@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 //Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,8 +25,22 @@ function Table({
     );
   }
 
+  const [filter, setFilter] = useState(null);
+  const handleKeyPress = (event) => {
+    setFilter({ ...filter, nombre: event.target.value });
+  };
+
   return (
     <div className="table-catalogue">
+      <div className="search-bar">
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Buscar productos..."
+            onChange={handleKeyPress}
+          />
+        </div>
+      </div>
       <div className="table-header">
         <h2>
           {loading === true
@@ -56,19 +70,29 @@ function Table({
       ) : productsData.length == 0 ? (
         <Tablerownoresults />
       ) : (
-        productsData.map((product) => (
-          <TableRow
-            key={product.id}
-            id={product.id}
-            name={product.nombre}
-            brand={product.marca}
-            size={product.tamano}
-            status={product.activo}
-            category={product.tipo}
-            lastUpdate={product.last_update}
-            favorite={product.destacado}
-          />
-        ))
+        productsData
+          .filter((product) => {
+            if (!filter) {
+              return product;
+            } else if (
+              product.nombre.toLowerCase().includes(filter.nombre.toLowerCase())
+            ) {
+              return product;
+            }
+          })
+          .map((product) => (
+            <TableRow
+              key={product.id}
+              id={product.id}
+              name={product.nombre}
+              brand={product.marca}
+              size={product.tamano}
+              status={product.activo}
+              category={product.tipo}
+              lastUpdate={product.last_update}
+              favorite={product.destacado}
+            />
+          ))
       )}
     </div>
   );
