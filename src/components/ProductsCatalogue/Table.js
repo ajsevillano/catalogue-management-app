@@ -18,13 +18,21 @@ function Table({
   setOrderText,
   filter,
 }) {
-  function updateOrder() {
+  const updateOrder = () => {
     const reverseData = [...productsData].reverse();
     setProductsData(reverseData);
     setOrderText(
       orderText == 'Más recientes' ? 'Más antiguos' : 'Más recientes'
     );
-  }
+  };
+
+  const init = () => {
+    return productsData.filter((product) =>
+      !filter
+        ? product
+        : product.nombre.toLowerCase().includes(filter.search.toLowerCase())
+    );
+  };
 
   return (
     <div className="table-catalogue">
@@ -37,9 +45,9 @@ function Table({
         <p>
           {loading === true
             ? ''
-            : productsData.length == 0
+            : init().length == 0
             ? 'No hay productos que mostrar'
-            : `total: ${productsData.length} productos`}
+            : `total: ${init().length} productos`}
         </p>
         <p className="sort-order">
           <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
@@ -48,38 +56,25 @@ function Table({
         </p>
       </div>
       {loading === true ? (
-        <>
-          <TableRowSkeleton />
-          <TableRowSkeleton />
-          <TableRowSkeleton />
-          <TableRowSkeleton />
-        </>
-      ) : productsData.length == 0 ? (
+        [...Array(4)].map((undefined, index) => (
+          <TableRowSkeleton key={index} />
+        ))
+      ) : init().length == 0 ? (
         <Tablerownoresults />
       ) : (
-        productsData
-          .filter((product) => {
-            if (!filter) {
-              return product;
-            }
-            const filteredProduct = product.nombre
-              .toLowerCase()
-              .includes(filter.search.toLowerCase());
-            return filteredProduct;
-          })
-          .map((product) => (
-            <TableRow
-              key={product.id}
-              id={product.id}
-              name={product.nombre}
-              brand={product.marca}
-              size={product.tamano}
-              status={product.activo}
-              category={product.tipo}
-              lastUpdate={product.last_update}
-              favorite={product.destacado}
-            />
-          ))
+        init().map((product) => (
+          <TableRow
+            key={product.id}
+            id={product.id}
+            name={product.nombre}
+            brand={product.marca}
+            size={product.tamano}
+            status={product.activo}
+            category={product.tipo}
+            lastUpdate={product.last_update}
+            favorite={product.destacado}
+          />
+        ))
       )}
     </div>
   );
