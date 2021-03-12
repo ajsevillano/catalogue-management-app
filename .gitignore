@@ -24,3 +24,6 @@ yarn-error.log*
 
 #Add,Commit push script
 cmp.sh
+
+#Catalog Images
+/public/img/Thumbnails

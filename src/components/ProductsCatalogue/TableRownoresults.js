@@ -1,5 +1,4 @@
 import React from 'react';
-import Noresults from '../../assets/img/noData.png';
 import Button from '../buttons/Button';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 

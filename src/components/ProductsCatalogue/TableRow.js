@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
+import DefaultImg from '../../assets/img/iddefault.jpg';
+
 function TableRow({
   id,
   name,
@@ -18,8 +20,7 @@ function TableRow({
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
   const DefaultImage = (e) => {
-    e.target.src =
-      'http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/iddefault.jpg';
+    e.target.setAttribute('src', DefaultImg);
   };
 
   return (
@@ -27,7 +28,7 @@ function TableRow({
       <div className="row">
         <div className="img-container">
           <img
-            src={`http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id${id}.jpg`}
+            src={process.env.PUBLIC_URL + `/img/Thumbnails/id${id}.jpg`}
             alt={name}
             onError={(e) => DefaultImage(e)}
           />
