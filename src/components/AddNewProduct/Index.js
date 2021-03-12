@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { AxiosPost } from '../../utils/ApiRequests';
 
+//Font Awesome Icons
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ModalPicture from '../../assets/img/add-product.jpg';
 
@@ -19,38 +20,25 @@ const AddNewProduct = ({ setModalOpen }) => {
     brand: '',
     size: '',
   });
+
+  const categories = [
+    'vinos',
+    'cervezas',
+    'refrescos',
+    'lacteos',
+    'aguas',
+    'licores',
+    'otros',
+  ];
+
   const [buttonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
-  const headers = { 'Content-Type': 'text/plain' };
 
   function addProduct(e) {
     e.preventDefault();
     setButtonLoading(true);
-    axios
-      .post(
-        'https://dev.ajsevillano.com/products',
-        {
-          tipo: formValues.type,
-          marca: formValues.brand,
-          tamano: formValues.size,
-          nombre: formValues.name,
-          activo: formValues.activo,
-        },
-        { headers }
-      )
-      .then(
-        (response) => {
-          setButtonLoading(false);
-          setSentForm(true);
-          console.log(response);
-        },
-        (error) => {
-          setSentForm(true);
-          setFetcherror(true);
-          console.log(error);
-        }
-      );
+    AxiosPost({ formValues, setButtonLoading, setSentForm, setFetcherror });
   }
 
   function handleChange(e) {
@@ -125,13 +113,9 @@ const AddNewProduct = ({ setModalOpen }) => {
           <div className="input-container">
             <label htmlFor="type">Tipo de producto</label>
             <select name="type" onChange={(e) => handleChange(e)}>
-              <option value="vinos">Vinos</option>
-              <option value="cervezas">Cervezas</option>
-              <option value="refrescos">Refrescos</option>
-              <option value="lacteos">Lacteos</option>
-              <option value="aguas">Aguas</option>
-              <option value="licores">Licores</option>
-              <option value="otros">Otros</option>
+              {categories.map((category) => (
+                <option value={category}>{category}</option>
+              ))}
             </select>
           </div>
           <div className="checkbox-container">
