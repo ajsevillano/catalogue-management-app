@@ -21,6 +21,10 @@
     font-weight: 600;
   }
 
+  input::placeholder {
+    color: $grey-font;
+  }
+
   .icon-faEllipsis {
     color: #d8d6d6;
     margin-right: 8px;
