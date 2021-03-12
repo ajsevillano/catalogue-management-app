@@ -1,5 +1,12 @@
 .search-bar {
   height: 12vh;
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 45px;
+    left: 14px;
+  }
 
   input {
     width: 98%;
@@ -7,18 +14,20 @@
     border: 1px solid #e1e4e8;
     border-radius: 4px;
     outline: none;
-    padding: 14px;
+    padding: 14px 14px 14px 48px;
     font-size: 0.9rem;
     color: #133e35;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    &::placeholder {
-      color: $grey-font;
-    }
   }
 
   .icon-faEllipsis {
-    color: $grey-font;
+    color: #d8d6d6;
+    margin-right: 8px;
+  }
+
+  .icon-search {
+    color: $primary-color;
   }
 }
 

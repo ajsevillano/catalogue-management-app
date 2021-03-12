@@ -5,10 +5,10 @@ import axios from 'axios';
 import Header from '../components/header/Header';
 import Searchbar from '../components/Searchbar/Searchbar';
 import TableCatalog from '../components/ProductsCatalogue/Table';
-import AddProductBar from '../components/Addproductbar/AddProductBar';
+import AddProductBar from '../components/Addproductbar/Index';
 import Menubar from '../components/Menubar/Menubar';
 import Modal from '../components/Modal/Modal';
-import AddNewProduct from '../components/AddNewProduct/AddNewProduct';
+import AddNewProduct from '../components/AddNewProduct/Index';
 
 const ProductsCatalogue = () => {
   const [filter, setFilter] = useState(null);

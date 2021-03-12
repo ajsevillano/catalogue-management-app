@@ -1,12 +1,12 @@
 import React from 'react';
 
 //Lottie animation helper and json import
-import LottieAnimation from '../../utils/Lottie';
-import * as error from '../../assets/animations/error.json';
+import LottieAnimation from '../../../utils/Lottie';
+import * as error from '../../../assets/animations/error.json';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Button from '../buttons/Button';
+import Button from '../../buttons/Button';
 
 const Error = ({ handleCancelButton }) => {
   return (

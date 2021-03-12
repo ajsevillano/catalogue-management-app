@@ -8,8 +8,8 @@ import ModalPicture from '../../assets/img/add-product.jpg';
 import Checkbox from '../forms/Checkbox';
 import Input from '../forms/Inputs/Input';
 import Button from '../buttons/Button';
-import Success from './Success';
-import Error from './Error';
+import Success from './SuccessScreen/Index';
+import Error from './ErrorScreen/Index';
 
 const AddNewProduct = ({ setModalOpen }) => {
   const [formValues, setFormValues] = useState({

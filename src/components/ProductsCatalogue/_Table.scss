@@ -39,12 +39,12 @@
   .sort-order {
     margin-left: auto;
   }
-}
 
-span {
-  &:hover {
-    color: $primary-color;
-    cursor: pointer;
+  span {
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
   }
 }
 

@@ -1,13 +1,13 @@
 import React from 'react';
 
 //Lottie animation helper and json import
-import LottieAnimation from '../../utils/Lottie';
-import * as success from '../../assets/animations/success.json';
-import * as confetti from '../../assets/animations/confetti.json';
+import LottieAnimation from '../../../utils/Lottie';
+import * as success from '../../../assets/animations/success.json';
+import * as confetti from '../../../assets/animations/confetti.json';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Button from '../buttons/Button';
+import Button from '../../buttons/Button';
 
 const Success = ({ handleCancelButton, productName }) => {
   return (
