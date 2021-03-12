@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 //Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,21 +34,29 @@ function Table({
     );
   };
 
+  const ShowCategory = () => {
+    return loading === true
+      ? 'Cargando...'
+      : categories.map((item) => item.isActive == true && item.name);
+  };
+
+  const ShowNumberOfItems = () => {
+    return filteredProducts().length === 0
+      ? 'No hay productos que mostrar'
+      : `total: ${filteredProducts().length} productos`;
+  };
+
+  const generateSkeletonComp = () => {
+    return [...Array(4)].map((undefined, index) => (
+      <TableRowSkeleton key={index} />
+    ));
+  };
+
   return (
     <div className="table-catalogue">
       <div className="table-header">
-        <h2>
-          {loading === true
-            ? 'Cargando...'
-            : categories.map((item) => item.isActive == true && item.name)}
-        </h2>
-        <p>
-          {loading === true
-            ? ''
-            : filteredProducts().length == 0
-            ? 'No hay productos que mostrar'
-            : `total: ${filteredProducts().length} productos`}
-        </p>
+        <h2>{ShowCategory()}</h2>
+        <p>{ShowNumberOfItems()}</p>
         <p className="sort-order">
           <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
           ordenar por <span onClick={updateOrder}>{orderText}</span>
@@ -56,10 +64,8 @@ function Table({
         </p>
       </div>
       {loading === true ? (
-        [...Array(4)].map((undefined, index) => (
-          <TableRowSkeleton key={index} />
-        ))
-      ) : filteredProducts().length == 0 ? (
+        generateSkeletonComp()
+      ) : filteredProducts().length === 0 ? (
         <Tablerownoresults />
       ) : (
         filteredProducts().map((product) => (

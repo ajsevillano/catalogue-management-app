@@ -66,7 +66,6 @@ const AddNewProduct = ({ setModalOpen }) => {
       ...formValues,
       [e.target.name]: statusValue,
     });
-    console.log(e.target.checked);
   }
 
   function handleCancelButton() {
@@ -96,8 +95,8 @@ const AddNewProduct = ({ setModalOpen }) => {
           <div className="input-container">
             <label htmlFor="name">Nombre que se mostrará en la web</label>
             <Input
-              type={'text'}
-              name={'name'}
+              type="text"
+              name="name"
               defaultValue={''}
               handleChange={handleChange}
               required={true}
@@ -106,8 +105,8 @@ const AddNewProduct = ({ setModalOpen }) => {
           <div className="input-container">
             <label htmlFor="brand">Marca del producto</label>
             <Input
-              type={'text'}
-              name={'brand'}
+              type="text"
+              name="brand"
               defaultValue={''}
               handleChange={handleChange}
               required={true}
@@ -116,8 +115,8 @@ const AddNewProduct = ({ setModalOpen }) => {
           <div className="input-container">
             <label htmlFor="size">Tamaño del producto</label>
             <Input
-              type={'text'}
-              name={'size'}
+              type="text"
+              name="size"
               defaultValue={''}
               handleChange={handleChange}
               required={true}
@@ -147,15 +146,15 @@ const AddNewProduct = ({ setModalOpen }) => {
           </div>
           <div className="button-container">
             <Button
-              button={'secundary'}
-              text={'Cancelar'}
+              button="secundary"
+              text="Cancelar"
               inlineStyle={{ marginRight: '20px' }}
               icon={faTimes}
               handleOnClick={handleCancelButton}
             />
             <Button
-              button={'primary'}
-              text={'Añadir producto'}
+              button="primary"
+              text="Añadir producto"
               icon={faPaperPlane}
             />
           </div>

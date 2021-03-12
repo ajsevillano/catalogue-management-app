@@ -28,7 +28,7 @@ export default function Button({
         disabled={buttonLoading}
       >
         <FontAwesomeIcon
-          spin={buttonLoading ? true : false}
+          spin={buttonLoading && true}
           icon={buttonLoading ? faSpinner : icon}
           size={size}
         />
