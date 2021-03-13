@@ -146,12 +146,31 @@
   }
 }
 
-// //Mobile styles
-// @media screen and (max-width: 768px) {
-//   .last-edited {
-//     display: none;
-//   }
-//   .categoria {
-//     display: none;
-//   }
-// }
+//Mobile styles
+@media screen and (max-width: 768px) {
+  .row-skeleton {
+    .last-edited-skeleton {
+      display: none;
+    }
+
+    .item-id-skeleton {
+      display: none;
+    }
+
+    //Brand row
+    .brand-skeleton,
+    .categoria-skeleton {
+      display: none;
+    }
+
+    .checkbox-skeleton {
+      display: none;
+    }
+
+    .h2-name-skeleton {
+      min-width: 170px;
+      min-height: 20px;
+      width: 170px;
+    }
+  }
+}
