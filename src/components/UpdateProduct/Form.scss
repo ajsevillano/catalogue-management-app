@@ -66,3 +66,14 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .second-row {
+    flex-direction: column;
+
+    .brand-holder,
+    .type-holder {
+      margin-right: 0 !important;
+    }
+  }
+}
