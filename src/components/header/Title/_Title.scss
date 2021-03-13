@@ -43,3 +43,10 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .title-container {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
