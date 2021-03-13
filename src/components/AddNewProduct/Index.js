@@ -42,9 +42,16 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [fetchError, setFetcherror] = useState(false);
 
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
-  const HandleCheckbox = (e) => handleCheckBoxChange(e, setFormValues, formValues);
+  const HandleCheckbox = (e) =>
+    handleCheckBoxChange(e, setFormValues, formValues);
   const addTheNewProduct = (e) =>
-    handleAddProduct(e, formValues, setButtonLoading, setSentForm, setFetcherror);
+    handleAddProduct(
+      e,
+      formValues,
+      setButtonLoading,
+      setSentForm,
+      setFetcherror
+    );
 
   function handleCancelButton() {
     setModalOpen(false);
@@ -52,9 +59,15 @@ const AddNewProduct = ({ setModalOpen }) => {
 
   return sentForm ? (
     !fetchError ? (
-      <Success handleCancelButton={handleCancelButton} productName={formValues.name} />
+      <Success
+        handleCancelButton={handleCancelButton}
+        productName={formValues.name}
+      />
     ) : (
-      <Error handleCancelButton={handleCancelButton} productName={formValues.name} />
+      <Error
+        handleCancelButton={handleCancelButton}
+        productName={formValues.name}
+      />
     )
   ) : (
     <>
@@ -122,7 +135,11 @@ const AddNewProduct = ({ setModalOpen }) => {
               icon={faTimes}
               handleOnClick={handleCancelButton}
             />
-            <Button button="primary" text="Añadir producto" icon={faPaperPlane} />
+            <Button
+              button="primary"
+              text="Añadir producto"
+              icon={faPaperPlane}
+            />
           </div>
         </form>
       </div>

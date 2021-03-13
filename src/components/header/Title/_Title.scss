@@ -22,6 +22,8 @@
     border-radius: 20px;
     padding: 7px;
     font-size: 13px;
+    -webkit-animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s;
   }
 
   .active {
@@ -48,5 +50,23 @@
   .title-container {
     align-items: flex-start;
     justify-content: space-between;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
   }
 }
