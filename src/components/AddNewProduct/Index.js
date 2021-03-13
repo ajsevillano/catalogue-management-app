@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { AxiosPost } from '../../utils/ApiRequests';
+
+//Helpers & Logic
+import {
+  HandleInputChanges,
+  handleCheckBoxChange,
+  handleAddProduct,
+} from './AddNewProduct.utils';
 
 //Font Awesome Icons
 import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -35,26 +41,17 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
 
-  function addProduct(e) {
-    e.preventDefault();
-    setButtonLoading(true);
-    AxiosPost({ formValues, setButtonLoading, setSentForm, setFetcherror });
-  }
-
-  function handleChange(e) {
-    setFormValues({
-      ...formValues,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function handleCheckBox(e) {
-    const statusValue = e.target.checked == true ? 1 : 0;
-    setFormValues({
-      ...formValues,
-      [e.target.name]: statusValue,
-    });
-  }
+  const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
+  const HandleCheckbox = (e) =>
+    handleCheckBoxChange(e, setFormValues, formValues);
+  const addTheNewProduct = (e) =>
+    handleAddProduct(
+      e,
+      formValues,
+      setButtonLoading,
+      setSentForm,
+      setFetcherror
+    );
 
   function handleCancelButton() {
     setModalOpen(false);
@@ -79,14 +76,14 @@ const AddNewProduct = ({ setModalOpen }) => {
       </div>
       <div className="modal-content">
         <h1>Añadir nuevo producto</h1>
-        <form onSubmit={addProduct}>
+        <form onSubmit={addTheNewProduct}>
           <div className="input-container">
             <label htmlFor="name">Nombre que se mostrará en la web</label>
             <Input
               type="text"
               name="name"
               defaultValue={''}
-              handleChange={handleChange}
+              handleChange={HandleChanges}
               required={true}
             />
           </div>
@@ -96,7 +93,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               type="text"
               name="brand"
               defaultValue={''}
-              handleChange={handleChange}
+              handleChange={HandleChanges}
               required={true}
             />
           </div>
@@ -106,15 +103,17 @@ const AddNewProduct = ({ setModalOpen }) => {
               type="text"
               name="size"
               defaultValue={''}
-              handleChange={handleChange}
+              handleChange={HandleChanges}
               required={true}
             />
           </div>
           <div className="input-container">
             <label htmlFor="type">Tipo de producto</label>
-            <select name="type" onChange={(e) => handleChange(e)}>
-              {categories.map((category) => (
-                <option value={category}>{category}</option>
+            <select name="type" onChange={HandleChanges}>
+              {categories.map((category, index) => (
+                <option key={index} value={category}>
+                  {category}
+                </option>
               ))}
             </select>
           </div>
@@ -124,7 +123,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               <Checkbox
                 status={formValues.activo}
                 setFormValues={setFormValues}
-                handleCheckBox={handleCheckBox}
+                handleCheckBox={HandleCheckbox}
               />
             </div>
           </div>
