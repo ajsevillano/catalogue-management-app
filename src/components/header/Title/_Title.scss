@@ -50,6 +50,14 @@
   .title-container {
     align-items: flex-start;
     justify-content: space-between;
+
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  .active {
+    display: none;
   }
 }
 
