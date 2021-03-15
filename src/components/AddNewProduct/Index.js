@@ -82,7 +82,6 @@ const AddNewProduct = ({ setModalOpen }) => {
             <Input
               type="text"
               name="name"
-              defaultValue={''}
               handleChange={HandleChanges}
               required={true}
             />
@@ -92,7 +91,6 @@ const AddNewProduct = ({ setModalOpen }) => {
             <Input
               type="text"
               name="brand"
-              defaultValue={''}
               handleChange={HandleChanges}
               required={true}
             />
@@ -102,7 +100,6 @@ const AddNewProduct = ({ setModalOpen }) => {
             <Input
               type="text"
               name="size"
-              defaultValue={''}
               handleChange={HandleChanges}
               required={true}
             />
