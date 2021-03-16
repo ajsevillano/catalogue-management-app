@@ -77,7 +77,7 @@ const UpdateProduct = ({ match }) => {
               <img
                 width="208px"
                 height="208px"
-                src={`http://gestion.uniondistribuidora.com/images/catalogo/Thumbnails/id${match.params.id}.jpg`}
+                src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${match.params.id}.jpg`}
                 alt=""
                 onError={(e) => DefaultImage(e)}
               ></img>
