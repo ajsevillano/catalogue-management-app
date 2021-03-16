@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 //Helpers & Logic
 import {
@@ -57,6 +58,26 @@ const AddNewProduct = ({ setModalOpen }) => {
     setModalOpen(false);
   }
 
+  const SelectFile = (e) => {
+    const imagefile = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', imagefile);
+    axios
+      .post('http://api.uniondistribuidora.com/img', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+      .then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
   return sentForm ? (
     !fetchError ? (
       <Success
@@ -85,6 +106,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               handleChange={HandleChanges}
               required={true}
             />
+            <input type="file" name="file" onChange={SelectFile} />
           </div>
           <div className="input-container">
             <label htmlFor="brand">Marca del producto</label>
