@@ -26,7 +26,7 @@ export function AxiosPost({
         const lastId = response.data.lastID;
         setButtonLoading(false);
         const formData = new FormData();
-        formData.append('file', uploadPicture, `${lastId}.${fileExtension}`);
+        formData.append('file', uploadPicture, `id${lastId}.${fileExtension}`);
         axios
           .post('http://api.uniondistribuidora.com/img', formData, {
             headers: {
