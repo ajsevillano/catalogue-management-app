@@ -91,6 +91,7 @@ const AddNewProduct = ({ setModalOpen }) => {
             />
             <input
               type="file"
+              accept=".jpg"
               name="file"
               onChange={(e) => SelectFile(e, setuploadPicture)}
             />

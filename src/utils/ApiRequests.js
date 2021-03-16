@@ -38,7 +38,7 @@ export function AxiosPost({
               `id${lastId}.${fileExtension}`
             );
             axios
-              .post('http://api.uniondistribuidora.com/img', formData, {
+              .post('https://dev.ajsevillano.com/img', formData, {
                 headers: {
                   'Content-Type': 'multipart/form-data',
                 },
