@@ -7,12 +7,19 @@
 
 import React from 'react';
 
-const Input = ({ type, name, handleChange, defaultValue, required }) => {
-  console.log(type);
+const Input = ({
+  type,
+  name,
+  handleChange,
+  defaultValue,
+  required,
+  accept,
+}) => {
   return (
     <input
       type={type}
       name={name}
+      accept={accept}
       onChange={(e) => handleChange(e)}
       defaultValue={defaultValue}
       required={required}
