@@ -44,6 +44,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
 
+  const SelectTheFile = (e) => SelectFile(e, setuploadPicture);
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
   const HandleCheckbox = (e) =>
     handleCheckBoxChange(e, setFormValues, formValues);
@@ -89,11 +90,14 @@ const AddNewProduct = ({ setModalOpen }) => {
               handleChange={HandleChanges}
               required={true}
             />
-            <input
+            <label htmlFor="file">
+              La imagen debe ser en formato <strong>jpg</strong>
+            </label>
+            <Input
               type="file"
               accept=".jpg"
               name="file"
-              onChange={(e) => SelectFile(e, setuploadPicture)}
+              handleChange={SelectTheFile}
             />
           </div>
           <div className="input-container">
