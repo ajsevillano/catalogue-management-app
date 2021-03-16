@@ -6,6 +6,7 @@ import {
   HandleInputChanges,
   handleCheckBoxChange,
   handleAddProduct,
+  SelectFile,
 } from './AddNewProduct.utils';
 
 //Font Awesome Icons
@@ -41,6 +42,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [buttonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
+  const [uploadPicture, setuploadPicture] = useState(null);
 
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
   const HandleCheckbox = (e) =>
@@ -51,32 +53,13 @@ const AddNewProduct = ({ setModalOpen }) => {
       formValues,
       setButtonLoading,
       setSentForm,
-      setFetcherror
+      setFetcherror,
+      uploadPicture
     );
 
   function handleCancelButton() {
     setModalOpen(false);
   }
-
-  const SelectFile = (e) => {
-    const imagefile = e.target.files[0];
-    const formData = new FormData();
-    formData.append('file', imagefile, 'FutureID.jpg');
-    axios
-      .post('http://api.uniondistribuidora.com/img', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
-      .then(
-        (response) => {
-          console.log(response);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  };
 
   return sentForm ? (
     !fetchError ? (
@@ -106,7 +89,11 @@ const AddNewProduct = ({ setModalOpen }) => {
               handleChange={HandleChanges}
               required={true}
             />
-            <input type="file" name="file" onChange={SelectFile} />
+            <input
+              type="file"
+              name="file"
+              onChange={(e) => SelectFile(e, setuploadPicture)}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="brand">Marca del producto</label>

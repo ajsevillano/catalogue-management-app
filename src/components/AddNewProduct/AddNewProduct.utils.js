@@ -20,13 +20,25 @@ export function handleAddProduct(
   formValues,
   setButtonLoading,
   setSentForm,
-  setFetcherror
+  setFetcherror,
+  uploadPicture
 ) {
   e.preventDefault();
   setButtonLoading(true);
-  AxiosPost({ formValues, setButtonLoading, setSentForm, setFetcherror });
+
+  AxiosPost({
+    formValues,
+    setButtonLoading,
+    setSentForm,
+    setFetcherror,
+    uploadPicture,
+  });
 }
 
 export function handleCancelButton(setModalOpen) {
   setModalOpen(false);
 }
+
+export const SelectFile = (e, setuploadPicture) => {
+  setuploadPicture(e.target.files[0]);
+};

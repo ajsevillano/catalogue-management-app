@@ -5,6 +5,7 @@ export function AxiosPost({
   setButtonLoading,
   setSentForm,
   setFetcherror,
+  uploadPicture,
 }) {
   const headers = { 'Content-Type': 'text/plain' };
   axios
@@ -21,6 +22,7 @@ export function AxiosPost({
     )
     .then(
       (response) => {
+        console.log(uploadPicture);
         setButtonLoading(false);
         setSentForm(true);
         console.log(response);
