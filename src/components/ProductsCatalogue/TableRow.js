@@ -28,7 +28,7 @@ function TableRow({
       <div className="row">
         <div className="img-container">
           <img
-            src={process.env.PUBLIC_URL + `/img/Thumbnails/id${id}.jpg`}
+            src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${id}.jpg`}
             alt={name}
             onError={(e) => DefaultImage(e)}
           />
