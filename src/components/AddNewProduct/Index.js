@@ -61,7 +61,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   const SelectFile = (e) => {
     const imagefile = e.target.files[0];
     const formData = new FormData();
-    formData.append('file', imagefile);
+    formData.append('file', imagefile, 'FutureID.jpg');
     axios
       .post('http://api.uniondistribuidora.com/img', formData, {
         headers: {
