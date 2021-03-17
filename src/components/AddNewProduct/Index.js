@@ -43,11 +43,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
-  const [isInputEmpty, setisInputEmpty] = useState({
-    name: null,
-    brand: null,
-    size: null,
-  });
+  const [isInputEmpty, setisInputEmpty] = useState({});
 
   const SelectTheFile = (e) => SelectFile(e, setuploadPicture);
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
@@ -60,7 +56,8 @@ const AddNewProduct = ({ setModalOpen }) => {
       setButtonLoading,
       setSentForm,
       setFetcherror,
-      uploadPicture
+      uploadPicture,
+      isInputEmpty
     );
 
   function handleCancelButton() {

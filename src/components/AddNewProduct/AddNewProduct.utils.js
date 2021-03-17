@@ -21,10 +21,12 @@ export function handleAddProduct(
   setButtonLoading,
   setSentForm,
   setFetcherror,
-  uploadPicture
+  uploadPicture,
+  isInputEmpty
 ) {
   e.preventDefault();
   setButtonLoading(true);
+  // isInputEmpty.filter();
 
   AxiosPost({
     formValues,
@@ -45,18 +47,17 @@ export const SelectFile = (e, setuploadPicture) => {
 
 export const onBlurEvent = (e, isInputEmpty, setisInputEmpty) => {
   if (!e.target.value) {
+    // setisInputEmpty(...isInputEmpty, { name: 'name', empty: false });
+    e.target.className = 'inputError';
     setisInputEmpty({
       ...isInputEmpty,
       [e.target.name]: true,
     });
-    e.target.className = 'inputError';
-    console.log(e.target);
   } else {
+    e.target.className = 'inputOk';
     setisInputEmpty({
       ...isInputEmpty,
       [e.target.name]: false,
     });
-    e.target.className = 'inputOk';
-    console.log(e.target);
   }
 };
