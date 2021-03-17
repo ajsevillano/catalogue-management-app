@@ -43,11 +43,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
-  const [isInputEmpty, setisInputEmpty] = useState({
-    name: true,
-    brand: true,
-    size: true,
-  });
+  const [isInputEmpty, setisInputEmpty] = useState({});
 
   const SelectTheFile = (e) => SelectFile(e, setuploadPicture);
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
@@ -92,6 +88,9 @@ const AddNewProduct = ({ setModalOpen }) => {
         <form onSubmit={addTheNewProduct}>
           <div className="input-container">
             <label htmlFor="name">Nombre que se mostrará en la web</label>
+            {isInputEmpty.name === true && (
+              <p className="minimsg">Falta los datos</p>
+            )}
             <Input
               type="text"
               name="name"

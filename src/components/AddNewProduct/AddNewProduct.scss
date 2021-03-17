@@ -12,6 +12,7 @@
     -webkit-box-shadow: -1px -2px 13px -4px #fedfdf;
     box-shadow: -1px -2px 13px -4px #fedfdf;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #fcf0f0;
   }
 
   .inputOk {
@@ -33,6 +34,11 @@
     color: #133e35;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+  }
+
+  .minimsg {
+    font-size: 0.8rem;
+    color: #e84343;
   }
 }
 
