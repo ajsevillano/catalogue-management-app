@@ -24,17 +24,22 @@ export function handleAddProduct(
   uploadPicture,
   isInputEmpty
 ) {
+  const filterTrueEmptyValues = Object.values(isInputEmpty).filter(
+    (value) => value === true
+  );
   e.preventDefault();
   setButtonLoading(true);
-  // isInputEmpty.filter();
 
-  AxiosPost({
-    formValues,
-    setButtonLoading,
-    setSentForm,
-    setFetcherror,
-    uploadPicture,
-  });
+  const CheckEmptyInputs =
+    filterTrueEmptyValues.length === 0
+      ? AxiosPost({
+          formValues,
+          setButtonLoading,
+          setSentForm,
+          setFetcherror,
+          uploadPicture,
+        })
+      : window.alert('Aun faltan datos por rellenar');
 }
 
 export function handleCancelButton(setModalOpen) {
@@ -47,7 +52,6 @@ export const SelectFile = (e, setuploadPicture) => {
 
 export const onBlurEvent = (e, isInputEmpty, setisInputEmpty) => {
   if (!e.target.value) {
-    // setisInputEmpty(...isInputEmpty, { name: 'name', empty: false });
     e.target.className = 'inputError';
     setisInputEmpty({
       ...isInputEmpty,

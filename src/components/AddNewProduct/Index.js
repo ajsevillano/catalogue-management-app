@@ -43,7 +43,11 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
-  const [isInputEmpty, setisInputEmpty] = useState({});
+  const [isInputEmpty, setisInputEmpty] = useState({
+    name: true,
+    brand: true,
+    size: true,
+  });
 
   const SelectTheFile = (e) => SelectFile(e, setuploadPicture);
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
