@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useRef } from 'react';
 
 //Helpers & Logic
 import {
@@ -7,6 +6,7 @@ import {
   handleCheckBoxChange,
   handleAddProduct,
   SelectFile,
+  onBlurEvent,
 } from './AddNewProduct.utils';
 
 //Font Awesome Icons
@@ -43,6 +43,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
+  const [isInputEmpty, setisInputEmpty] = useState(null);
 
   const SelectTheFile = (e) => SelectFile(e, setuploadPicture);
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
@@ -61,6 +62,9 @@ const AddNewProduct = ({ setModalOpen }) => {
   function handleCancelButton() {
     setModalOpen(false);
   }
+  const inputEl = useRef(null);
+  const HandleOnblur = (e) =>
+    onBlurEvent(e, isInputEmpty, setisInputEmpty, inputEl);
 
   return sentForm ? (
     !fetchError ? (
@@ -89,6 +93,8 @@ const AddNewProduct = ({ setModalOpen }) => {
               name="name"
               handleChange={HandleChanges}
               required={true}
+              HandleOnblur={HandleOnblur}
+              inputRef={inputEl}
             />
             <label htmlFor="file">
               La imagen debe ser en formato <strong>jpg</strong>

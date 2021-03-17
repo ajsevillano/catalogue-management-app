@@ -14,6 +14,8 @@ const Input = ({
   defaultValue,
   required,
   accept,
+  HandleOnblur,
+  inputRef,
 }) => {
   return (
     <input
@@ -23,6 +25,8 @@ const Input = ({
       onChange={(e) => handleChange(e)}
       defaultValue={defaultValue}
       required={required}
+      onBlur={HandleOnblur && ((e) => HandleOnblur(e))}
+      ref={inputRef}
     />
   );
 };

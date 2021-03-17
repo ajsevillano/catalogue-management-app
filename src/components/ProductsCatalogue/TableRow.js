@@ -30,6 +30,7 @@ function TableRow({
           <img
             src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${id}.jpg`}
             alt={name}
+            key={id}
             onError={(e) => DefaultImage(e)}
           />
         </div>

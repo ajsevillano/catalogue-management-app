@@ -42,3 +42,12 @@ export function handleCancelButton(setModalOpen) {
 export const SelectFile = (e, setuploadPicture) => {
   setuploadPicture(e.target.files[0]);
 };
+
+export const onBlurEvent = (e, isInputEmpty, setisInputEmpty, inputEl) => {
+  if (!e.target.value) {
+    setisInputEmpty(true);
+    inputEl.current.className = 'inputError';
+  } else {
+    setisInputEmpty(false);
+  }
+};
