@@ -49,5 +49,6 @@ export const onBlurEvent = (e, isInputEmpty, setisInputEmpty, inputEl) => {
     inputEl.current.className = 'inputError';
   } else {
     setisInputEmpty(false);
+    inputEl.current.className = 'inputOk';
   }
 };

@@ -8,7 +8,17 @@
   }
 
   .inputError {
-    border: 1px solid red;
+    border: 1px solid #f0b6b6;
+    -webkit-box-shadow: -1px -2px 13px -4px #fedfdf;
+    box-shadow: -1px -2px 13px -4px #fedfdf;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .inputOk {
+    border: 1px solid $primary-color;
+    -webkit-box-shadow: -1px -2px 13px -4px #e6fedf;
+    box-shadow: -1px -2px 13px -4px #e6fedf;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
 
   input,
