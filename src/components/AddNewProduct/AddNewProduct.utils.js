@@ -43,12 +43,20 @@ export const SelectFile = (e, setuploadPicture) => {
   setuploadPicture(e.target.files[0]);
 };
 
-export const onBlurEvent = (e, isInputEmpty, setisInputEmpty, inputEl) => {
+export const onBlurEvent = (e, isInputEmpty, setisInputEmpty) => {
   if (!e.target.value) {
-    setisInputEmpty(true);
-    inputEl.current.className = 'inputError';
+    setisInputEmpty({
+      ...isInputEmpty,
+      [e.target.name]: true,
+    });
+    e.target.className = 'inputError';
+    console.log(e.target);
   } else {
-    setisInputEmpty(false);
-    inputEl.current.className = 'inputOk';
+    setisInputEmpty({
+      ...isInputEmpty,
+      [e.target.name]: false,
+    });
+    e.target.className = 'inputOk';
+    console.log(e.target);
   }
 };

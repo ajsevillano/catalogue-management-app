@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 //Helpers & Logic
 import {
@@ -43,7 +43,11 @@ const AddNewProduct = ({ setModalOpen }) => {
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
-  const [isInputEmpty, setisInputEmpty] = useState(null);
+  const [isInputEmpty, setisInputEmpty] = useState({
+    name: null,
+    brand: null,
+    size: null,
+  });
 
   const SelectTheFile = (e) => SelectFile(e, setuploadPicture);
   const HandleChanges = (e) => HandleInputChanges(e, setFormValues, formValues);
@@ -62,9 +66,8 @@ const AddNewProduct = ({ setModalOpen }) => {
   function handleCancelButton() {
     setModalOpen(false);
   }
-  const inputEl = useRef(null);
-  const HandleOnblur = (e) =>
-    onBlurEvent(e, isInputEmpty, setisInputEmpty, inputEl);
+
+  const HandleOnblur = (e) => onBlurEvent(e, isInputEmpty, setisInputEmpty);
 
   return sentForm ? (
     !fetchError ? (
@@ -94,7 +97,6 @@ const AddNewProduct = ({ setModalOpen }) => {
               handleChange={HandleChanges}
               required={true}
               HandleOnblur={HandleOnblur}
-              inputRef={inputEl}
             />
             <label htmlFor="file">
               La imagen debe ser en formato <strong>jpg</strong>
@@ -112,6 +114,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               type="text"
               name="brand"
               handleChange={HandleChanges}
+              HandleOnblur={HandleOnblur}
               required={true}
             />
           </div>
@@ -121,6 +124,7 @@ const AddNewProduct = ({ setModalOpen }) => {
               type="text"
               name="size"
               handleChange={HandleChanges}
+              HandleOnblur={HandleOnblur}
               required={true}
             />
           </div>
