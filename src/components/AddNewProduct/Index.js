@@ -56,8 +56,7 @@ const AddNewProduct = ({ setModalOpen }) => {
       setButtonLoading,
       setSentForm,
       setFetcherror,
-      uploadPicture,
-      isInputEmpty
+      uploadPicture
     );
 
   function handleCancelButton() {
@@ -89,14 +88,14 @@ const AddNewProduct = ({ setModalOpen }) => {
           <div className="input-container">
             <label htmlFor="name">Nombre que se mostrará en la web</label>
             {isInputEmpty.name === true && (
-              <p className="minimsg">Falta los datos</p>
+              <p className="minimsg">Por favor, introduce un nombre</p>
             )}
             <Input
               type="text"
               name="name"
               handleChange={HandleChanges}
-              required={true}
               HandleOnblur={HandleOnblur}
+              required={true}
             />
             <label htmlFor="file">
               La imagen debe ser en formato <strong>jpg</strong>
@@ -110,6 +109,11 @@ const AddNewProduct = ({ setModalOpen }) => {
           </div>
           <div className="input-container">
             <label htmlFor="brand">Marca del producto</label>
+            {isInputEmpty.brand === true && (
+              <p className="minimsg">
+                Por favor, introduce la marca del producto
+              </p>
+            )}
             <Input
               type="text"
               name="brand"
@@ -120,6 +124,11 @@ const AddNewProduct = ({ setModalOpen }) => {
           </div>
           <div className="input-container">
             <label htmlFor="size">Tamaño del producto</label>
+            {isInputEmpty.size === true && (
+              <p className="minimsg">
+                Por favor,introduce el tamaño del producto
+              </p>
+            )}
             <Input
               type="text"
               name="size"

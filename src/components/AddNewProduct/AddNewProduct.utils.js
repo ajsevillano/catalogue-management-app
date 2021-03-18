@@ -21,17 +21,13 @@ export function handleAddProduct(
   setButtonLoading,
   setSentForm,
   setFetcherror,
-  uploadPicture,
-  isInputEmpty
+  uploadPicture
 ) {
-  const filterTrueEmptyValues = Object.values(isInputEmpty).filter(
-    (value) => value === true
-  );
   e.preventDefault();
   setButtonLoading(true);
 
   const CheckEmptyInputs =
-    filterTrueEmptyValues.length === 0
+    formValues['name'] && formValues['brand'] && formValues['size']
       ? AxiosPost({
           formValues,
           setButtonLoading,
