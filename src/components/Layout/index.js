@@ -1,10 +1,10 @@
 import Header from '../header/Index';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title, button }) => {
   return (
     <>
       <div>
-        <Header />
+        <Header title={title} button={button} />
       </div>
       <main>{children}</main>
     </>
