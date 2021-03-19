@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import axios from 'axios';
 
-//Components
-import Header from '../components/header/Header';
+import Layout from '../components/Layout/index';
 import Searchbar from '../components/Searchbar/Searchbar';
 import TableCatalog from '../components/ProductsCatalogue/Table';
 import NewProductBar from '../components/NewProductBar/Index';
@@ -45,14 +45,12 @@ const ProductsCatalogue = () => {
       return products;
     }, 150);
   }, [fetchUrl]);
-
   return (
-    <>
+    <Layout>
       <Modal
         modalOpen={modalOpen}
         content={<AddNewProduct setModalOpen={setModalOpen} />}
       />
-      <Header title={'Productos'} button={'secundary'} />
       <section id="main" className="wrapper">
         <Searchbar filter={filter} setFilter={setFilter} />
         <Menubar
@@ -76,7 +74,7 @@ const ProductsCatalogue = () => {
           filter={filter}
         />
       </section>
-    </>
+    </Layout>
   );
 };
 
