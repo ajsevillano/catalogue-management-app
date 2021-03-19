@@ -43,7 +43,7 @@
   margin: 25px 35px 0 35px;
   height: auto;
   h1 {
-    color: #0c1322;
+    color: $h1-font-color;
     font-weight: 600;
     font-size: 1.625rem;
     padding-bottom: 15px;
@@ -68,7 +68,7 @@
     color: $primary-color;
   }
   h1 {
-    color: #0c1322;
+    color: $h1-font-color;
     font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 40px;
@@ -80,7 +80,7 @@
 .modal-content-error {
   span,
   p {
-    color: #e84343;
+    color: $red-font;
   }
   p {
     margin-bottom: 20px;
@@ -88,7 +88,7 @@
     animation: fadeIn 0.5s;
   }
   h1 {
-    color: #0c1322;
+    color: $h1-font-color;
     font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 10px;

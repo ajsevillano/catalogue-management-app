@@ -1,7 +1,9 @@
 //Color Variables
 $grey-font: #9fa8b2;
-$dark-font: #0c1322;
+$h1-font-color: #0c1322;
 $primary-color: #00c85a;
+$headers-color: #eff2f6;
+$red-font: #e84343;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -42,7 +44,7 @@ $primary-color: #00c85a;
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: $dark-font;
+  color: $h1-font-color;
 }
 
 .App {

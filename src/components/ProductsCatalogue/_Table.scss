@@ -10,14 +10,14 @@
 }
 
 .table-header {
-  background-color: #eff2f6;
+  background-color: $headers-color;
   width: 100%;
   padding: 20px;
   display: flex;
   align-items: flex-start;
 
   h2 {
-    color: $dark-font;
+    color: $h1-font-color;
     font-weight: 600;
     font-size: 1rem;
   }
@@ -51,7 +51,7 @@
 //Mobile styles
 @media screen and (max-width: 768px) {
   .table-header {
-    background-color: #eff2f6;
+    background-color: $headers-color;
     width: 100%;
     padding: 20px;
     display: flex;
@@ -60,7 +60,7 @@
     justify-content: center;
 
     h2 {
-      color: $dark-font;
+      color: $h1-font-color;
       font-weight: 600;
       font-size: 1.2rem;
     }

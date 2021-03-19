@@ -15,9 +15,9 @@ a {
   align-items: center;
   background-color: white;
   padding: 25px 20px;
-  border-left: 1px solid #eff2f6;
-  border-bottom: 1px solid #eff2f6;
-  border-right: 1px solid #eff2f6;
+  border-left: 1px solid $headers-color;
+  border-bottom: 1px solid $headers-color;
+  border-right: 1px solid $headers-color;
 
   &:hover {
     background-color: #f8f9fa;
@@ -33,7 +33,7 @@ a {
   }
 
   h2 {
-    color: $dark-font;
+    color: $h1-font-color;
     font-weight: 600;
     font-size: 1rem;
   }
@@ -93,7 +93,7 @@ a {
   }
   .status-off {
     background-color: #fedfdf;
-    color: #e84343;
+    color: $red-font;
     font-weight: 600;
   }
 }
