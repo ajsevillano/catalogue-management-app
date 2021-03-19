@@ -15,10 +15,11 @@
 
   .bell-icon {
     color: $grey-font;
-    margin: 0 10px 5px auto;
+    margin: 0 10px 0 auto;
   }
 
-  p {
+  .logo {
     color: $primary-color;
+    font-weight: 700;
   }
 }

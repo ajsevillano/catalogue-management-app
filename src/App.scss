@@ -26,7 +26,8 @@ $primary-color: #00c85a;
 @import './components/AddNewProduct/AddNewProduct';
 
 // UI Components
-//Buttons
+//Layout
+@import './components/Layout/Layout'; //Buttons
 @import './components/forms/button/Button';
 
 //Forms
@@ -49,19 +50,4 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.main {
-  width: 100%;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 80rem;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
 }
