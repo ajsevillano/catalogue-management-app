@@ -6,7 +6,7 @@ import Profilepicture from '../../../assets/img/profile.jpg';
 function Profile() {
   return (
     <div className="profile">
-      <p>Gestión 3.0</p>
+      <p>Product Management App (Beta)</p>
       <FontAwesomeIcon className="bell-icon" icon={faBell} size="lg" />
       <img src={Profilepicture} alt="Profile picture" />
     </div>
