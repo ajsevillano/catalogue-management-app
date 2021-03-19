@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Button from '../button/Index';
+import Button from '../forms/button/Index';
 import axios from 'axios';
 //Font awesome
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Input from '../forms/Inputs/Input';
+import Input from '../forms/Inputs/Index';
 
 const Form = ({
   id,

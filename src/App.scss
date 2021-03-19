@@ -27,10 +27,10 @@ $primary-color: #00c85a;
 
 // UI Components
 //Buttons
-@import './components/button/Button';
+@import './components/forms/button/Button';
 
 //Forms
-@import './components/forms/Checkbox';
+@import './components/forms/Checkbox/Checkbox';
 
 //General styles
 * {

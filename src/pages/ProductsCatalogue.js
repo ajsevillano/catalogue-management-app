@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Layout from '../components/Layout/index';
-import Searchbar from '../components/Searchbar/Searchbar';
+import Searchbar from '../components/Searchbar/Index';
 import TableCatalog from '../components/ProductsCatalogue/Table';
 import NewProductBar from '../components/NewProductBar/Index';
-import Menubar from '../components/Menubar/Menubar';
-import Modal from '../components/Modal/Modal';
+import Menubar from '../components/Menubar/Index';
+import Modal from '../components/Modal/Index';
 import AddNewProduct from '../components/AddNewProduct/Index';
 
 const ProductsCatalogue = () => {

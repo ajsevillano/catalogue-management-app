@@ -5,8 +5,8 @@
  */
 
 import MenuNav from '../header/MenuNav/Index';
-import Title from './Title/Title';
-import Profile from './Profile/Profile';
+import Title from './Title/Index';
+import Profile from './Profile/Index';
 
 function Header({ status, title, button }) {
   return (
