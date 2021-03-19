@@ -1,9 +1,16 @@
 import Layout from '../components/Layout/index';
 
+//Lottie animation helper and json import
+import LottieAnimation from '../utils/Lottie';
+import * as notFound from '../assets/animations/404NotFound.json';
+
 const NotFound404 = () => {
   return (
     <Layout button={'secundary'}>
-      <div>Oh no! Página no encontrada, algo salió mal</div>
+      <h1>Página no encontrada</h1>
+      <div>
+        <LottieAnimation animationName={notFound} height={320} width={650} />
+      </div>
     </Layout>
   );
 };
