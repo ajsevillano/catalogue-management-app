@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 //Components
-import Header from '../components/header/Index';
+import Layout from '../components/Layout/index';
 import Form from '../components/UpdateProduct/Form';
 import Tablerownoresults from '../components/ProductsCatalogue/TableRownoresults';
 
@@ -61,13 +61,12 @@ const UpdateProduct = ({ match }) => {
   }, [fetchUrl]);
 
   return (
-    <>
+    <Layout
+      title={productData.map((item) => item.nombre)}
+      status={productData.map((item) => item.activo)}
+      button={'primary'}
+    >
       <ToastContainer />
-      <Header
-        title={productData.map((item) => item.nombre)}
-        status={productData.map((item) => item.activo)}
-        button={'primary'}
-      />
       <section id="main" className="wrapper">
         <div ref={inputEl} className="update-product-container hidden">
           <div className="update-product-side-menu">
@@ -110,7 +109,7 @@ const UpdateProduct = ({ match }) => {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

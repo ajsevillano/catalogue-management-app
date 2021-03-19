@@ -13,12 +13,8 @@ const MenuNav = () => {
           <p
             className={category.isActive == true ? 'isActive' : ''}
             key={index}
-            // onClick={
-            //   category.isActive ? undefined : () => MenuSelectHandler(category)
-            // }
           >
-            {' '}
-            <Link to={category.link}>{category.name}</Link>
+            <Link to={category.name}>{category.name}</Link>
           </p>
         ))}
       </nav>
