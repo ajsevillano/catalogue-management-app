@@ -51,29 +51,28 @@ const ProductsCatalogue = () => {
         modalOpen={modalOpen}
         content={<AddNewProduct setModalOpen={setModalOpen} />}
       />
-      <section id="main" className="wrapper">
-        <Searchbar filter={filter} setFilter={setFilter} />
-        <Menubar
-          categories={categories}
-          setCategories={setCategories}
-          setFetchUrl={setFetchUrl}
-          setLoading={setLoading}
-          orderText={orderText}
-          setOrderText={setOrderText}
-        />
-        <NewProductBar handleOnClick={handleOnClick} />
-        <TableCatalog
-          categories={categories}
-          loading={loading}
-          setFetchUrl={setFetchUrl}
-          productsData={productsData}
-          setProductsData={setProductsData}
-          setLoading={setLoading}
-          orderText={orderText}
-          setOrderText={setOrderText}
-          filter={filter}
-        />
-      </section>
+
+      <Searchbar filter={filter} setFilter={setFilter} />
+      <Menubar
+        categories={categories}
+        setCategories={setCategories}
+        setFetchUrl={setFetchUrl}
+        setLoading={setLoading}
+        orderText={orderText}
+        setOrderText={setOrderText}
+      />
+      <NewProductBar handleOnClick={handleOnClick} />
+      <TableCatalog
+        categories={categories}
+        loading={loading}
+        setFetchUrl={setFetchUrl}
+        productsData={productsData}
+        setProductsData={setProductsData}
+        setLoading={setLoading}
+        orderText={orderText}
+        setOrderText={setOrderText}
+        filter={filter}
+      />
     </Layout>
   );
 };

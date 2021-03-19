@@ -6,7 +6,9 @@ const Layout = ({ children, title, button }) => {
       <div>
         <Header title={title} button={button} />
       </div>
-      <main>{children}</main>
+      <section id="main" className="wrapper">
+        {children}
+      </section>
     </>
   );
 };
