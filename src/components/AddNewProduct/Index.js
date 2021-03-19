@@ -16,7 +16,7 @@ import ModalPicture from '../../assets/img/add-product.jpg';
 //Components
 import Checkbox from '../forms/Checkbox';
 import Input from '../forms/Inputs/Input';
-import Button from '../buttons/Button';
+import Button from '../button/Index';
 import Success from './SuccessScreen/Index';
 import Error from './ErrorScreen/Index';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../buttons/Button';
+import Button from '../button/Index';
 import axios from 'axios';
 //Font awesome
 import { faSave } from '@fortawesome/free-solid-svg-icons';

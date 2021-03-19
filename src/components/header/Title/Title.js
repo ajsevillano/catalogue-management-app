@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../buttons/Button';
+import Button from '../../button/Index';
 import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../buttons/Button';
+import Button from '../button/Index';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 //Lottie animation helper and json import

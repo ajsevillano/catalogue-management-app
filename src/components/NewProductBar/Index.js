@@ -2,7 +2,7 @@ import React from 'react';
 //Font awesome
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 //Components
-import Button from '../buttons/Button';
+import Button from '../button/Index';
 
 function AddProductbar({ handleOnClick }) {
   return (
