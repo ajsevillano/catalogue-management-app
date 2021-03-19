@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 //Components
-import Header from '../components/header/Header';
+import Header from '../components/header/Index';
 import Form from '../components/UpdateProduct/Form';
 import Tablerownoresults from '../components/ProductsCatalogue/TableRownoresults';
 
