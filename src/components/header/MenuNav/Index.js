@@ -14,7 +14,7 @@ const MenuNav = () => {
             className={category.isActive == true ? 'isActive' : ''}
             key={index}
           >
-            <Link to={category.name}>{category.name}</Link>
+            <Link to={category.link}>{category.name}</Link>
           </p>
         ))}
       </nav>
