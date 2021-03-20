@@ -37,6 +37,11 @@ const ProductsCatalogue = () => {
   //Fetch data when page loads or fetchUrl change,
   // add 150ms to debounce the fetch call.
   useEffect(() => {
+    const username = '3z9kQ87nmaY9W';
+    const password = 'aLoviWpJJg*bGQ2';
+    const token = Buffer.from(`${username}:${password}`, 'utf8').toString(
+      'base64'
+    );
     setTimeout(async function fetchData() {
       setLoading(true);
       const products = await axios.get(fetchUrl);
