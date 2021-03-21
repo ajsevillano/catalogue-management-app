@@ -3,7 +3,10 @@ import { faEllipsisV, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Searchbar = ({ filter, setFilter }) => {
   const handleKeyPress = (event) => {
-    setFilter({ ...filter, search: event.target.value });
+    //Debounce timer of 1 sec
+    setTimeout(() => {
+      setFilter({ ...filter, search: event.target.value });
+    }, 500);
   };
 
   return (
