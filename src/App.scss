@@ -17,10 +17,10 @@ $red-font: #e84343;
 
 // Components styles Catalogue
 @import './components/Searchbar/Searchbar';
-@import './components/ProductsCatalogue/Table';
-@import './components/ProductsCatalogue/TableRow';
-@import './components/ProductsCatalogue/TableRownoresults';
-@import './components/ProductsCatalogue/TableRowSkeleton';
+@import './components/Table/Table';
+@import './components/Table/TableRow';
+@import './components/Table/TableRownoresults';
+@import './components/Table/TableRowSkeleton';
 @import './components/Modal/Modal';
 
 // Pages styles

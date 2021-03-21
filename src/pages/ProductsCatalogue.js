@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import Layout from '../components/Layout/index';
 import Searchbar from '../components/Searchbar/Index';
-import TableCatalog from '../components/ProductsCatalogue/Table';
+import TableCatalog from '../components/Table/Table';
 import NewProductBar from '../components/NewProductBar/Index';
 import Menubar from '../components/Menubar/Index';
 import Modal from '../components/Modal/Index';
