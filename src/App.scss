@@ -12,7 +12,7 @@ $red-font: #e84343;
 @import './components/Menubar/Menubar';
 @import './components/header/Title/Title';
 @import './components/header/Profile/Profile';
-@import './components/NewProductBar/NewProdcutBar';
+@import './components/NewProductBar/NewProductBar';
 @import './components/UpdateProduct/Form';
 
 // Components styles Catalogue
@@ -35,21 +35,4 @@ $red-font: #e84343;
 //Forms
 @import './components/forms/Checkbox/Checkbox';
 
-//General styles
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: $h1-font-color;
-}
-
-.App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}

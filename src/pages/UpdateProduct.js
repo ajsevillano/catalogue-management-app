@@ -100,7 +100,6 @@ const UpdateProduct = ({ match }) => {
                   fetchUrl={fetchUrl}
                   setFetchUrl={setFetchUrl}
                   notify={notify}
-                  ToastContainer={ToastContainer}
                 />
               ))
             ) : (
