@@ -9,7 +9,7 @@ import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
 import TableRowSkeleton from './TableRowSkeleton';
 
-function Table({
+const Table = ({
   categories,
   loading,
   productsData,
@@ -17,7 +17,7 @@ function Table({
   orderText,
   setOrderText,
   filter,
-}) {
+}) => {
   const updateOrder = () => {
     const reverseData = [...productsData].reverse();
     setProductsData(reverseData);
@@ -84,6 +84,6 @@ function Table({
       )}
     </div>
   );
-}
+};
 
 export default Table;

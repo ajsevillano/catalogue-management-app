@@ -6,7 +6,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import LottieAnimation from '../../utils/Lottie';
 import * as notFound from '../../assets/animations/empty.json';
 
-function TableRownoresults() {
+const TableRownoresults = () => {
   return (
     <div className="row-noresults">
       <LottieAnimation animationName={notFound} height={120} width={120} />
@@ -23,6 +23,6 @@ function TableRownoresults() {
       />
     </div>
   );
-}
+};
 
 export default TableRownoresults;

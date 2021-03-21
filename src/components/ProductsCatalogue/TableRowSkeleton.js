@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-function TableRowSkeleton() {
+const TableRowSkeleton = () => {
   return (
     <div className="row-skeleton">
       <div className="img-container">
@@ -37,6 +37,6 @@ function TableRowSkeleton() {
       />
     </div>
   );
-}
+};
 
 export default TableRowSkeleton;

@@ -1,4 +1,4 @@
-import { AxiosPost } from '../../utils/ApiRequests';
+import AxiosPost from '../../utils/ApiRequests';
 
 export function HandleInputChanges(e, setFormValues, formValues) {
   setFormValues({

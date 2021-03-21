@@ -7,7 +7,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 import DefaultImg from '../../assets/img/iddefault.jpg';
 
-function TableRow({
+const TableRow = ({
   id,
   name,
   brand,
@@ -16,7 +16,7 @@ function TableRow({
   category,
   lastUpdate,
   favorite,
-}) {
+}) => {
   //Format the date from timestamp to human-friendly date string
   const formattedTime = new Date(lastUpdate * 1000).toLocaleString();
   const DefaultImage = (e) => {
@@ -65,6 +65,6 @@ function TableRow({
       </div>
     </Link>
   );
-}
+};
 
 export default TableRow;

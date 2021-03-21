@@ -8,7 +8,7 @@ import MenuNav from '../header/MenuNav/Index';
 import Title from './Title/Index';
 import Profile from './Profile/Index';
 
-function Header({ status, title, button }) {
+const Header = ({ status, title, button }) => {
   return (
     <section id="header" className="header">
       <div className="wrapper">
@@ -18,6 +18,6 @@ function Header({ status, title, button }) {
       </div>
     </section>
   );
-}
+};
 
 export default Header;

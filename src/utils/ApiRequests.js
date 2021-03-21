@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-export function AxiosPost({
+const AxiosPost = ({
   formValues,
   setButtonLoading,
   setSentForm,
   setFetcherror,
   uploadPicture,
-}) {
+}) => {
   const headers = { 'Content-Type': 'text/plain' };
   axios
     .post(
@@ -60,4 +60,6 @@ export function AxiosPost({
         console.log(error);
       }
     );
-}
+};
+
+export default AxiosPost;

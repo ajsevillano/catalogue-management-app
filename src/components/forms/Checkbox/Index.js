@@ -1,6 +1,4 @@
-import React from 'react';
-
-function Checkbox({ status, handleCheckBox }) {
+const Checkbox = ({ status, handleCheckBox }) => {
   return (
     <>
       <label className="switch">
@@ -14,6 +12,6 @@ function Checkbox({ status, handleCheckBox }) {
       </label>
     </>
   );
-}
+};
 
 export default Checkbox;

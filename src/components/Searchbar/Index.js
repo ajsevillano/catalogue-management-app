@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-function Searchbar({ filter, setFilter }) {
+const Searchbar = ({ filter, setFilter }) => {
   const handleKeyPress = (event) => {
     setFilter({ ...filter, search: event.target.value });
   };
@@ -27,6 +26,6 @@ function Searchbar({ filter, setFilter }) {
       </div>
     </div>
   );
-}
+};
 
 export default Searchbar;

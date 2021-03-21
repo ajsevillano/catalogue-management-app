@@ -8,11 +8,10 @@
  * @param {function} handleOnClick Callback function, defines onclick button functionality
  */
 
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-export default function Button({
+const Button = ({
   icon,
   size,
   text,
@@ -20,7 +19,7 @@ export default function Button({
   button,
   inlineStyle,
   handleOnClick,
-}) {
+}) => {
   return (
     <div className={`Button-${button}`} style={inlineStyle}>
       <button
@@ -37,4 +36,6 @@ export default function Button({
       </button>
     </div>
   );
-}
+};
+
+export default Button;
