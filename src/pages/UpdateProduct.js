@@ -100,7 +100,9 @@ const UpdateProduct = ({ match }) => {
         <div ref={inputEl} className="update-product-container hidden">
           <div className="update-product-side-menu">
             <h1>Imágen</h1>
-            <p>Esta es la imagen del producto</p>
+            <p>
+              El formato de la img debe ser <strong>JPG</strong>
+            </p>
             <div className="img-container">
               <img
                 width="200px"
