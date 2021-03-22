@@ -7,8 +7,8 @@ import Form from '../components/UpdateProduct/Index';
 import Tablerownoresults from '../components/Table/TableRownoresults';
 
 //Toastify components
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import Toast from '../utils/Toast';
 
 const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
@@ -18,21 +18,7 @@ const UpdateProduct = ({ match }) => {
     `https://dev.ajsevillano.com/products/${match.params.id}`,
   ]);
 
-  //Toastify conf and notification
-  toast.configure();
-  const notify = () =>
-    toast.success(
-      `Producto ${productData.map((item) => item.nombre)} actualizado`,
-      {
-        position: 'top-center',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-      }
-    );
+  const notify = () => Toast(productData);
 
   const formattedTime = () => {
     return new Date(
