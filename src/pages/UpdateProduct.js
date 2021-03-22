@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+
+//Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 //Components
 import Layout from '../components/Layout/index';
@@ -10,8 +13,6 @@ import Tablerownoresults from '../components/Table/TableRownoresults';
 //Toastify components
 import { ToastContainer } from 'react-toastify';
 import Toast from '../utils/Toast';
-import Button from '../components/forms/button/Index';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
@@ -22,6 +23,28 @@ const UpdateProduct = ({ match }) => {
   ]);
 
   const notify = () => Toast(productData);
+
+  const SelectFile = (e) => {
+    const fileExtension = e.target.files[0].name.split('.').pop();
+    const imgId = match.params.id;
+    const formData = new FormData();
+    formData.append('file', e.target.files[0], `id${imgId}.${fileExtension}`);
+    axios
+      .post('https://dev.ajsevillano.com/img', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      })
+      .then(
+        (response) => {
+          console.log(response);
+          setFetchUrl([fetchUrl]);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
 
   const formattedTime = () => {
     return new Date(
@@ -65,15 +88,21 @@ const UpdateProduct = ({ match }) => {
               <img
                 width="200px"
                 height="208px"
+                key={Date.now()}
                 src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${match.params.id}.jpg`}
                 alt=""
                 onError={(e) => DefaultImage(e)}
               ></img>
               <div className="file-input">
-                <input type="file" id="file" className="file" />
+                <input
+                  type="file"
+                  id="file"
+                  className="file"
+                  onChange={SelectFile}
+                />
                 <label htmlFor="file">
                   <FontAwesomeIcon icon={faCamera} size="lg" />{' '}
-                  &nbsp;&nbsp;Actualizar Imagen
+                  &nbsp;&nbsp;Actualizar Imagen {match.params.id}
                 </label>
               </div>
             </div>
