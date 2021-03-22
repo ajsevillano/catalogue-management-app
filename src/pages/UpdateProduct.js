@@ -3,7 +3,11 @@ import axios from 'axios';
 
 //Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCamera,
+  faSpider,
+  faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 
 //Components
 import Layout from '../components/Layout/index';
@@ -16,6 +20,8 @@ import Toast from '../utils/Toast';
 
 const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
+  const labelEl = useRef(null);
+  const [buttonLoading, setButtonLoading] = useState(false);
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
   const [fetchUrl, setFetchUrl] = useState([
@@ -34,10 +40,18 @@ const UpdateProduct = ({ match }) => {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
+        onUploadProgress: (ProgressEvent) => {
+          setButtonLoading(true);
+          labelEl.current.innerText = `Actualizando ... ${Math.round(
+            (ProgressEvent.loaded / ProgressEvent.total) * 100
+          )} %`;
+        },
       })
       .then(
         (response) => {
-          console.log(response);
+          setButtonLoading(false);
+          labelEl.current.innerText = `Actualizar Imagen`;
+          Toast(productData);
           setFetchUrl([fetchUrl]);
         },
         (error) => {
@@ -82,8 +96,8 @@ const UpdateProduct = ({ match }) => {
       <section id="main" className="wrapper">
         <div ref={inputEl} className="update-product-container hidden">
           <div className="update-product-side-menu">
-            <h1>Imágenes</h1>
-            <p>Productoid2.jpg / 240kb</p>
+            <h1>Imágen</h1>
+            <p>Esta es la imagen del producto</p>
             <div className="img-container">
               <img
                 width="200px"
@@ -101,9 +115,17 @@ const UpdateProduct = ({ match }) => {
                   className="file"
                   onChange={SelectFile}
                 />
-                <label htmlFor="file">
-                  <FontAwesomeIcon icon={faCamera} size="lg" />{' '}
-                  &nbsp;&nbsp;Actualizar Imagen {match.params.id}
+                <label
+                  htmlFor="file"
+                  className={buttonLoading ? 'disabled' : undefined}
+                >
+                  <FontAwesomeIcon
+                    icon={buttonLoading ? faSpinner : faCamera}
+                    spin={buttonLoading}
+                    size="lg"
+                  />{' '}
+                  &nbsp;&nbsp;
+                  <span ref={labelEl}>Actualizar Imagen</span>
                 </label>
               </div>
             </div>
