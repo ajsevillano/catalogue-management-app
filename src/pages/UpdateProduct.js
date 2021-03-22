@@ -49,9 +49,10 @@ const UpdateProduct = ({ match }) => {
       })
       .then(
         (response) => {
+          const Uploadtype = 'img';
           setButtonLoading(false);
           labelEl.current.innerText = `Actualizar Imagen`;
-          Toast(productData);
+          Toast(productData, Uploadtype);
           setFetchUrl([fetchUrl]);
         },
         (error) => {
