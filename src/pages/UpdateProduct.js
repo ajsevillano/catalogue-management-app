@@ -88,8 +88,9 @@ const UpdateProduct = ({ match }) => {
               <img
                 width="200px"
                 height="208px"
-                key={Date.now()}
-                src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${match.params.id}.jpg`}
+                src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${
+                  match.params.id
+                }.jpg?v=${Date.now()}`}
                 alt=""
                 onError={(e) => DefaultImage(e)}
               ></img>
