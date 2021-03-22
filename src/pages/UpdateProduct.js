@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //Components
 import Layout from '../components/Layout/index';
@@ -9,6 +10,8 @@ import Tablerownoresults from '../components/Table/TableRownoresults';
 //Toastify components
 import { ToastContainer } from 'react-toastify';
 import Toast from '../utils/Toast';
+import Button from '../components/forms/button/Index';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
@@ -60,12 +63,19 @@ const UpdateProduct = ({ match }) => {
             <p>Productoid2.jpg / 240kb</p>
             <div className="img-container">
               <img
-                width="208px"
+                width="200px"
                 height="208px"
                 src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${match.params.id}.jpg`}
                 alt=""
                 onError={(e) => DefaultImage(e)}
               ></img>
+              <div className="file-input">
+                <input type="file" id="file" className="file" />
+                <label htmlFor="file">
+                  <FontAwesomeIcon icon={faCamera} size="lg" />{' '}
+                  &nbsp;&nbsp;Actualizar Imagen
+                </label>
+              </div>
             </div>
           </div>
           <div className="update-product-main-content">

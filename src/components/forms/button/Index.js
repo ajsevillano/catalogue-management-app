@@ -31,7 +31,7 @@ const Button = ({
           icon={buttonLoading ? faSpinner : icon}
           size={size}
         />
-        {'  '}
+        &nbsp;&nbsp;
         {buttonLoading ? 'Actualizando...' : text}
       </button>
     </div>
