@@ -55,6 +55,7 @@ const UpdateProduct = ({ match }) => {
           setFetchUrl([fetchUrl]);
         },
         (error) => {
+          setButtonLoading(false);
           labelEl.current.innerText = `Actualizar Imagen`;
           ToastError();
         }
