@@ -1,8 +1,7 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Toast = (productData) => {
-  //Toastify conf and notification
+export const Toast = (productData) => {
   toast.configure();
   toast.success(
     `Producto ${productData.map((item) => item.nombre)} actualizado`,
@@ -18,4 +17,15 @@ const Toast = (productData) => {
   );
 };
 
-export default Toast;
+export const ToastError = () => {
+  toast.configure();
+  toast.error(`¡Error! No se pudo actualizar el producto`, {
+    position: 'top-center',
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    progress: undefined,
+  });
+};

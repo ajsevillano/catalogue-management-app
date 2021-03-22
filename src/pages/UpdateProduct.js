@@ -16,7 +16,7 @@ import Tablerownoresults from '../components/Table/TableRownoresults';
 
 //Toastify components
 import { ToastContainer } from 'react-toastify';
-import Toast from '../utils/Toast';
+import { Toast, ToastError } from '../utils/Toast';
 
 const UpdateProduct = ({ match }) => {
   const inputEl = useRef(null);
@@ -55,7 +55,8 @@ const UpdateProduct = ({ match }) => {
           setFetchUrl([fetchUrl]);
         },
         (error) => {
-          console.log(error);
+          labelEl.current.innerText = `Actualizar Imagen`;
+          ToastError();
         }
       );
   };
