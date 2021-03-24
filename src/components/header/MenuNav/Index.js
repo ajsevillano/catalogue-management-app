@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const MenuNav = () => {
-  const [categories] = useState([
-    { name: 'Todos los productos', link: '/', isActive: true },
+  const [categories, setCategories] = useState([
+    { name: 'Todos los productos', link: '/', isActive: false },
     { name: 'Todos los negocios', link: '/negocios', isActive: false },
   ]);
+  const location = useLocation().pathname;
+
   return (
     <div className="menubar">
       <nav>
