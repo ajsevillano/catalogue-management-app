@@ -84,7 +84,7 @@
   opacity: 0.5;
 }
 
-.file-input label {
+.label-file {
   display: flex;
   justify-content: center;
   font-size: 0.8rem;
@@ -101,8 +101,7 @@
   transition: all 0.3s ease;
 }
 
-input:hover + label,
-input:focus + label {
+.label-file:hover {
   background-color: #00d768;
   -webkit-box-shadow: -4px 11px 15px -5px rgba(0, 215, 104, 0.31);
   box-shadow: -4px 11px 15px -5px rgba(0, 215, 104, 0.31);
