@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router';
 import axios from 'axios';
 
 //Font Awesome
@@ -18,21 +19,22 @@ import Tablerownoresults from '../components/Table/TableRownoresults';
 import { ToastContainer } from 'react-toastify';
 import { Toast, ToastError } from '../utils/Toast';
 
-const UpdateProduct = ({ match }) => {
+const UpdateProduct = () => {
+  const params = useParams();
   const inputEl = useRef(null);
   const labelEl = useRef(null);
   const [buttonLoading, setButtonLoading] = useState(false);
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
   const [fetchUrl, setFetchUrl] = useState([
-    `https://dev.ajsevillano.com/products/${match.params.id}`,
+    `https://dev.ajsevillano.com/products/${params.id}`,
   ]);
 
   const notify = () => Toast(productData);
 
   const SelectFile = (e) => {
     const fileExtension = e.target.files[0].name.split('.').pop();
-    const imgId = match.params.id;
+    const imgId = params.id;
     const formData = new FormData();
     formData.append('file', e.target.files[0], `id${imgId}.${fileExtension}`);
     axios
@@ -108,7 +110,7 @@ const UpdateProduct = ({ match }) => {
                 width="200px"
                 height="208px"
                 src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${
-                  match.params.id
+                  params.id
                 }.jpg?v=${Date.now()}`}
                 alt=""
                 onError={(e) => DefaultImage(e)}
@@ -145,7 +147,7 @@ const UpdateProduct = ({ match }) => {
               productData.map((item, index) => (
                 <Form
                   key={index}
-                  id={match.params.id}
+                  id={params.id}
                   type={item.tipo}
                   brand={item.marca}
                   size={item.tamano}

@@ -12,10 +12,15 @@ const AppRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/updateproduct" exact component={UpdateProduct} />
-        <Route path="/updateproduct/:id" component={UpdateProduct} />
-        <Route component={NotFound404} />
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/updateproduct/:id">
+          <UpdateProduct />
+        </Route>
+        <Route>
+          <NotFound404 />
+        </Route>
       </Switch>
     </Router>
   );
