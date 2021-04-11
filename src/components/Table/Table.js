@@ -1,5 +1,3 @@
-import React from 'react';
-
 //Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';

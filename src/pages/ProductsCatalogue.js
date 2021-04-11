@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
 
+//Components
 import Layout from '../components/Layout/index';
 import Searchbar from '../components/Searchbar/Index';
 import TableCatalog from '../components/Table/Table';
