@@ -5,7 +5,9 @@ import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 //Components
 import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
-import TableRowSkeleton from './TableRowSkeleton';
+
+//Utils
+import { generateSkeletonComp } from './Table.utils';
 
 const Table = ({
   categories,
@@ -33,21 +35,15 @@ const Table = ({
   };
 
   const ShowCategory = () => {
-    return loading === true
-      ? 'Cargando...'
-      : categories.map((item) => item.isActive == true && item.name);
+    return !loading
+      ? categories.map((item) => item.isActive && item.name)
+      : 'Cargando...';
   };
 
   const ShowNumberOfItems = () => {
     return filteredProducts().length === 0
       ? 'No hay productos que mostrar'
       : `total: ${filteredProducts().length} productos`;
-  };
-
-  const generateSkeletonComp = () => {
-    return [...Array(4)].map((undefined, index) => (
-      <TableRowSkeleton key={index} />
-    ));
   };
 
   return (
