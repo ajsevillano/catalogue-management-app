@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 //Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-import DefaultImg from '../../assets/img/iddefault.jpg';
+import DefaultImg from '../../../assets/img/iddefault.jpg';
 
 const TableRow = ({
   id,
