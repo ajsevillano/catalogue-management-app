@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Pages
 import Home from '../pages/ProductsCatalogue';
+import CustomersCatalogue from '../pages/CustomersCatalogue';
 import UpdateProduct from '../pages/UpdateProduct';
 import NotFound404 from '../pages/NotFound404';
 
@@ -14,6 +15,9 @@ const AppRouter = () => {
       <Switch>
         <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="/negocios" exact>
+          <CustomersCatalogue />
         </Route>
         <Route path="/updateproduct/:id">
           <UpdateProduct />
