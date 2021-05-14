@@ -5,3 +5,15 @@ export const generateSkeletonComp = () => {
     <TableRowSkeleton key={index} />
   ));
 };
+
+export const ShowNumberOfItems = (filteredProducts) => {
+  return filteredProducts().length === 0
+    ? 'No hay productos que mostrar'
+    : `total: ${filteredProducts().length} productos`;
+};
+
+export const ShowCategory = (loading, categories) => {
+  return !loading
+    ? categories.map((item) => item.isActive && item.name)
+    : 'Cargando...';
+};

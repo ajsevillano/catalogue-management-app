@@ -7,7 +7,11 @@ import TableRow from './TableRow';
 import Tablerownoresults from './TableRownoresults';
 
 //Utils
-import { generateSkeletonComp } from './Table.utils';
+import {
+  generateSkeletonComp,
+  ShowNumberOfItems,
+  ShowCategory,
+} from './Table.utils';
 
 const Table = ({
   categories,
@@ -34,23 +38,11 @@ const Table = ({
     );
   };
 
-  const ShowCategory = () => {
-    return !loading
-      ? categories.map((item) => item.isActive && item.name)
-      : 'Cargando...';
-  };
-
-  const ShowNumberOfItems = () => {
-    return filteredProducts().length === 0
-      ? 'No hay productos que mostrar'
-      : `total: ${filteredProducts().length} productos`;
-  };
-
   return (
     <div className="table-catalogue">
       <div className="table-header">
-        <h2>{ShowCategory()}</h2>
-        <p>{ShowNumberOfItems()}</p>
+        <h2>{ShowCategory(loading, categories)}</h2>
+        <p>{ShowNumberOfItems(filteredProducts)}</p>
         <p className="sort-order">
           <FontAwesomeIcon className="faCog" icon={faCog} size="1x" />
           ordenar por <span onClick={updateOrder}>{orderText}</span>
