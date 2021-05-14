@@ -19,8 +19,8 @@ $red-font: #e84343;
 @import './components/Searchbar/Searchbar';
 @import './components/Table/Table';
 @import './components/Table/TableRow/TableRow';
-@import './components/Table/TableRownoresults';
-@import './components/Table/TableRowSkeleton';
+@import './components/Table/NoResultsScreen/NoResultsScreen';
+@import './components/Table/SkeletonRows/SkeletonRows';
 @import './components/Modal/Modal';
 
 // Pages styles

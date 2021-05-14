@@ -1,4 +1,3 @@
-import React from 'react';
 //Font awesome
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 //Components

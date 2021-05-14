@@ -1,11 +1,11 @@
-import Button from '../forms/button/Index';
+import Button from '../../forms/button/Index';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 //Lottie animation helper and json import
-import LottieAnimation from '../../utils/Lottie';
-import * as notFound from '../../assets/animations/empty.json';
+import LottieAnimation from '../../../utils/Lottie';
+import * as notFound from '../../../assets/animations/empty.json';
 
-const TableRownoresults = () => {
+const NoResultsScreen = () => {
   return (
     <div className="row-noresults">
       <LottieAnimation animationName={notFound} height={120} width={120} />
@@ -24,4 +24,4 @@ const TableRownoresults = () => {
   );
 };
 
-export default TableRownoresults;
+export default NoResultsScreen;

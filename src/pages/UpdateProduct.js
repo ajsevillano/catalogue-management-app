@@ -15,7 +15,7 @@ import {
 //Components
 import Layout from '../components/Layout/index';
 import Form from '../components/UpdateProduct/Index';
-import Tablerownoresults from '../components/Table/TableRownoresults';
+import NoResultsScreen from '../components/Table/NoResultsScreen';
 
 //Toastify components
 import { ToastContainer } from 'react-toastify';
@@ -161,7 +161,7 @@ const UpdateProduct = () => {
                 />
               ))
             ) : (
-              <Tablerownoresults />
+              <NoResultsScreen />
             )}
           </div>
         </div>

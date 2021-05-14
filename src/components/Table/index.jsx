@@ -4,7 +4,7 @@ import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
 
 //Components
 import TableRow from './TableRow';
-import Tablerownoresults from './TableRownoresults';
+import NoResultsScreen from './NoResultsScreen';
 
 //Utils
 import {
@@ -52,7 +52,7 @@ const Table = ({
       {loading ? (
         generateSkeletonComp()
       ) : filteredProducts().length === 0 ? (
-        <Tablerownoresults />
+        <NoResultsScreen />
       ) : (
         filteredProducts().map((product) => (
           <TableRow
