@@ -49,7 +49,7 @@ const Table = ({
           <FontAwesomeIcon className="sort" icon={faSort} size="sm" />
         </p>
       </div>
-      {loading === true ? (
+      {loading ? (
         generateSkeletonComp()
       ) : filteredProducts().length === 0 ? (
         <Tablerownoresults />
