@@ -46,7 +46,7 @@ const CustomersCatalogue = () => {
     }, 150);
   }, [fetchUrl]);
   return (
-    <Layout title="Negocios" button={'secundary'}>
+    <Layout title="Negocios" button="secundary">
       <Modal
         modalOpen={modalOpen}
         content={<AddNewProduct setModalOpen={setModalOpen} />}

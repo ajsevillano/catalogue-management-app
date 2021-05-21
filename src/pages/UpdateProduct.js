@@ -97,7 +97,7 @@ const UpdateProduct = () => {
     <Layout
       title={productData.map((item) => item.nombre)}
       status={productData.map((item) => item.activo)}
-      button={'primary'}
+      button="primary"
     >
       <ToastContainer />
       <section id="main" className="wrapper">
