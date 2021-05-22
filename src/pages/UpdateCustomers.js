@@ -6,7 +6,11 @@ import axios from 'axios';
 
 //Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCamera,
+  faSpider,
+  faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 
 //Components
 import Layout from '../components/Layout/index';
