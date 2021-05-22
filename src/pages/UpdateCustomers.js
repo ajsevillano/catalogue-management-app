@@ -29,7 +29,7 @@ const UpdateProduct = () => {
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
   const [fetchUrl, setFetchUrl] = useState([
-    `https://dev.ajsevillano.com/products/${params.id}`,
+    `https://dev.ajsevillano.com/customers/${params.id}`,
   ]);
 
   const notify = () => Toast(productData);
@@ -82,7 +82,7 @@ const UpdateProduct = () => {
 
   useEffect(() => {
     inputEl.current.className = 'update-product-container fadein';
-    setTimeout(async function fetchData() {
+    setTimeout(async () => {
       try {
         const product = await axios.get(fetchUrl);
         setProductData(product.data);
