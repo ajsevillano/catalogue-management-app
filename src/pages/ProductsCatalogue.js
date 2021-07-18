@@ -10,6 +10,9 @@ import Menubar from '../components/Menubar/Index';
 import Modal from '../components/Modal/Index';
 import AddNewProduct from '../components/AddNewProduct/Index';
 
+//Data
+import {productCategories} from '../data/categories'
+
 const ProductsCatalogue = () => {
   const [filter, setFilter] = useState(null);
   const [orderText, setOrderText] = useState('Más recientes');
@@ -19,16 +22,7 @@ const ProductsCatalogue = () => {
   const [fetchUrl, setFetchUrl] = useState(
     'https://dev.ajsevillano.com/products'
   );
-  const [categories, setCategories] = useState([
-    { name: 'Todos', isActive: true },
-    { name: 'Vinos', isActive: false },
-    { name: 'Cervezas', isActive: false },
-    { name: 'Refrescos', isActive: false },
-    { name: 'Lacteos', isActive: false },
-    { name: 'Aguas', isActive: false },
-    { name: 'Licores', isActive: false },
-    { name: 'Otros', isActive: false },
-  ]);
+  const [categories, setCategories] = useState(productCategories);
 
   const handleOnClick = () => {
     setModalOpen(true);

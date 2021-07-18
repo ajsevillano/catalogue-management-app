@@ -14,6 +14,6 @@ export const ShowNumberOfItems = (filteredProducts) => {
 
 export const ShowCategory = (loading, categories) => {
   return !loading
-    ? categories.map((item) => item.isActive && item.name)
+    ? categories?.map((item) => item.isActive && item.name)
     : 'Cargando...';
 };

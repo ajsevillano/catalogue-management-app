@@ -32,7 +32,7 @@ const Menubar = ({
   return (
     <div className="menubar">
       <nav>
-        {categories.map((category, index) => (
+        {categories?.map((category, index) => (
           <p
             className={category.isActive == true ? 'isActive' : ''}
             key={index}
