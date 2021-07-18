@@ -7,8 +7,8 @@ import Searchbar from '../components/Searchbar/Index';
 import TableCatalog from '../components/Table';
 import NewProductBar from '../components/NewProductBar/Index';
 import Menubar from '../components/Menubar/Index';
-import Modal from '../components/Modal/Index';
-import AddNewProduct from '../components/AddNewProduct/Index';
+import Modal from '../components/Modal';
+import AddNewProduct from '../components/AddNewProduct';
 
 const CustomersCatalogue = () => {
   const [filter, setFilter] = useState(null);

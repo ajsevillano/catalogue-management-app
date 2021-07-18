@@ -1,13 +1,10 @@
-import React, { useRef } from 'react';
+import AddNewProduct from '../AddNewProduct';
 
-const Modal = ({ content, modalOpen }) => {
-  if (!modalOpen) {
-    return null;
-  }
+const Modal = ({setModalOpen }) => {
 
   return (
     <div className="modal-container">
-      <div className="modal-box">{content}</div>
+      <div className="modal-box"><AddNewProduct setModalOpen={setModalOpen}/></div>
     </div>
   );
 };

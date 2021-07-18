@@ -7,8 +7,7 @@ import Searchbar from '../components/Searchbar/Index';
 import TableCatalog from '../components/Table';
 import NewProductBar from '../components/NewProductBar/Index';
 import Menubar from '../components/Menubar/Index';
-import Modal from '../components/Modal/Index';
-import AddNewProduct from '../components/AddNewProduct/Index';
+import Modal from '../components/Modal';
 
 //Data
 import {productCategories} from '../data/categories'
@@ -41,11 +40,9 @@ const ProductsCatalogue = () => {
   }, [fetchUrl]);
   return (
     <Layout title="Productos" button="secundary">
-      <Modal
-        modalOpen={modalOpen}
-        content={<AddNewProduct setModalOpen={setModalOpen} />}
-      />
 
+      {modalOpen && <Modal setModalOpen={setModalOpen}/>}
+ 
       <Searchbar filter={filter} setFilter={setFilter} />
       <Menubar
         categories={categories}
