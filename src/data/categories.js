@@ -7,4 +7,4 @@ const productCategories = [
   { name: 'Aguas', isActive: false },
   { name: 'Licores', isActive: false },
   { name: 'Otros', isActive: false },
-]
+];

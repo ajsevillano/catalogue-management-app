@@ -13,6 +13,8 @@ import {
   ShowCategory,
 } from './Table.utils';
 
+import DefaultImg from '../../assets/img/iddefault.jpg';
+
 const Table = ({
   categories,
   loading,
@@ -38,6 +40,15 @@ const Table = ({
     );
   };
 
+  const DefaultImage = (e) => {
+    e.target.setAttribute('src', DefaultImg);
+  };
+
+  //Format the date from timestamp to human-friendly date string
+  const formattedTime = (lastUpdate) => {
+    return new Date(lastUpdate * 1000).toLocaleString();
+  };
+
   return (
     <div className="table-catalogue">
       <div className="table-header">
@@ -58,14 +69,31 @@ const Table = ({
           <TableRow
             key={product.id}
             id={product.id}
-            name={product.nombre}
-            brand={product.marca}
-            size={product.tamano}
             status={product.activo}
-            category={product.tipo}
-            lastUpdate={product.last_update}
             favorite={product.destacado}
-          />
+          >
+            <div className="img-container">
+              <img
+                src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${product.id}.jpg`}
+                alt={product.nombre}
+                key={product.id}
+                onError={(e) => DefaultImage(e)}
+              />
+            </div>
+            <div className="item-id">
+              <h2>ID</h2>
+              <p>#{product.id}</p>
+            </div>
+            <div className="name">
+              <h2>{product.nombre}</h2> <p>{product.tamano}</p>
+            </div>
+            <p className="brand">{product.marca}</p>
+            <p className="categoria">{product.tipo}</p>
+            <div className="last-edited">
+              <h2>Última edición</h2>
+              <p>{formattedTime(product.last_update)}</p>
+            </div>
+          </TableRow>
         ))
       )}
     </div>

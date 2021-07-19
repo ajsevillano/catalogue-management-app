@@ -4,13 +4,13 @@ import axios from 'axios';
 //Components
 import Layout from '../components/Layout/index';
 import Searchbar from '../components/Searchbar/Index';
-import TableCatalog from '../components/Table';
+import Table from '../components/Table';
 import NewProductBar from '../components/NewProductBar/Index';
 import Menubar from '../components/Menubar/Index';
 import Modal from '../components/Modal';
 
 //Data
-import {productCategories} from '../data/categories'
+import { productCategories } from '../data/categories';
 
 const ProductsCatalogue = () => {
   const [filter, setFilter] = useState(null);
@@ -21,7 +21,7 @@ const ProductsCatalogue = () => {
   const [fetchUrl, setFetchUrl] = useState(
     'https://dev.ajsevillano.com/products'
   );
-  const [categories, setCategories] = useState(productCategories);
+  const [categories, setCategories] = useState([]);
 
   const handleOnClick = () => {
     setModalOpen(true);
@@ -35,14 +35,15 @@ const ProductsCatalogue = () => {
       const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       setLoading(false);
+      setCategories(productCategories);
       return products;
     }, 150);
   }, [fetchUrl]);
+  console.log(categories);
   return (
     <Layout title="Productos" button="secundary">
+      {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
-      {modalOpen && <Modal setModalOpen={setModalOpen}/>}
- 
       <Searchbar filter={filter} setFilter={setFilter} />
       <Menubar
         categories={categories}
@@ -53,7 +54,7 @@ const ProductsCatalogue = () => {
         setOrderText={setOrderText}
       />
       <NewProductBar handleOnClick={handleOnClick} />
-      <TableCatalog
+      <Table
         categories={categories}
         loading={loading}
         setFetchUrl={setFetchUrl}
