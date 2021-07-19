@@ -1,4 +1,4 @@
-const productCategories = [
+export const productCategories = [
   { name: 'Todos', isActive: true },
   { name: 'Vinos', isActive: false },
   { name: 'Cervezas', isActive: false },
