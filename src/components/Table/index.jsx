@@ -1,6 +1,6 @@
 //Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faSort, faCog, faStar } from '@fortawesome/free-solid-svg-icons';
 
 //Components
 import TableRow from './TableRow';
@@ -66,12 +66,7 @@ const Table = ({
         <NoResultsScreen />
       ) : (
         filteredProducts().map((product) => (
-          <TableRow
-            key={product.id}
-            id={product.id}
-            status={product.activo}
-            favorite={product.destacado}
-          >
+          <TableRow key={product.id} id={product.id}>
             <div className="img-container">
               <img
                 src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${product.id}.jpg`}
@@ -93,6 +88,21 @@ const Table = ({
               <h2>Última edición</h2>
               <p>{formattedTime(product.last_update)}</p>
             </div>
+            <div
+              className={
+                product.activo == 1
+                  ? 'status-container status-on'
+                  : 'status-container status-off'
+              }
+            >
+              <p>{product.activo == 1 ? 'publicado' : 'no publicado'}</p>
+            </div>
+
+            <FontAwesomeIcon
+              className={product.destacado == 1 ? 'star' : 'star-off'}
+              icon={faStar}
+              size="lg"
+            />
           </TableRow>
         ))
       )}
