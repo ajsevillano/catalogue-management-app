@@ -107,7 +107,7 @@ const UpdateProduct = () => {
               <img
                 width="200px"
                 height="208px"
-                src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${
+                src={`https://management-app.ajsevillano.com/img/Thumbnails/id${
                   params.id
                 }.jpg?v=${Date.now()}`}
                 alt=""
