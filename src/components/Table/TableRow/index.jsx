@@ -27,7 +27,7 @@ const TableRow = ({
       <div className="row">
         <div className="img-container">
           <img
-            src={`https://management-app.ajsevillano.com/img/Thumbnails/id${id}.jpg`}
+            src={`https://management-app.ajsevillano.com/img/Thumbnails/id${id}.jpg?v=${Date.now()}`}
             alt={name}
             key={id}
             onError={(e) => DefaultImage(e)}
