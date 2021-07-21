@@ -1,5 +1,6 @@
 RewriteEngine On
-RewriteBase /projects/pim/
+RewriteBase /
 Options -MultiViews
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
+
