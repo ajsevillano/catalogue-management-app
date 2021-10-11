@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 //Data
 import { productCategories } from '../../data/categories';
 
-const Menubar = ({ setFetchUrl, setOrderText }) => {
+const Menubar = ({ setFetchUrl }) => {
   const [categories, setCategories] = useState(productCategories);
   function fetchCategory(category) {
     /* The api only return all the products/customers at the endpoint /products */
@@ -15,14 +15,12 @@ const Menubar = ({ setFetchUrl, setOrderText }) => {
   }
 
   function changeCategoryStatus(category) {
-    const { name, isActive } = category;
-
-    const updateMenu = categories.map((eachCheckBox) => {
-      return eachCheckBox.name === name
-        ? { ...eachCheckBox, isActive: true }
-        : { ...eachCheckBox, isActive: false };
+    const { name } = category;
+    const updateMenu = categories.map((eachMenuItem) => {
+      return eachMenuItem.name === name
+        ? { ...eachMenuItem, isActive: true }
+        : { ...eachMenuItem, isActive: false };
     });
-
     setCategories(updateMenu);
   }
 

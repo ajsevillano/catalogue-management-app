@@ -46,11 +46,7 @@ const ProductsCatalogue = () => {
 
       <Searchbar filter={filter} setFilter={setFilter} />
 
-      <Menubar
-        setFetchUrl={setFetchUrl}
-        orderText={orderText}
-        setOrderText={setOrderText}
-      />
+      <Menubar setFetchUrl={setFetchUrl} orderText={orderText} />
       <NewProductBar handleOnClick={handleOnClick} />
       <Table
         categories={categories}
