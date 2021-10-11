@@ -47,10 +47,7 @@ const CustomersCatalogue = () => {
   }, [fetchUrl]);
   return (
     <Layout title="Negocios" button="secundary">
-      <Modal
-        modalOpen={modalOpen}
-        content={<AddNewProduct setModalOpen={setModalOpen} />}
-      />
+      {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
       <Searchbar filter={filter} setFilter={setFilter} />
       <Menubar
