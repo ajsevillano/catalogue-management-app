@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 //Data
 import { productCategories } from '../../data/categories';
 
-const Menubar = ({ setFetchUrl }) => {
-  const [categories, setCategories] = useState(productCategories);
+const Menubar = ({ setFetchUrl, categories, setCategories }) => {
   function fetchCategory(category) {
     /* The api only return all the products/customers at the endpoint /products */
     const allProducts = `https://dev.ajsevillano.com/products`;

@@ -21,7 +21,7 @@ const ProductsCatalogue = () => {
   const [fetchUrl, setFetchUrl] = useState(
     'https://dev.ajsevillano.com/products'
   );
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(productCategories);
 
   const handleOnClick = () => {
     setModalOpen(true);
@@ -35,7 +35,7 @@ const ProductsCatalogue = () => {
       const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       setLoading(false);
-      setCategories(productCategories);
+
       return products;
     }, 150);
   }, [fetchUrl]);
@@ -46,7 +46,12 @@ const ProductsCatalogue = () => {
 
       <Searchbar filter={filter} setFilter={setFilter} />
 
-      <Menubar setFetchUrl={setFetchUrl} orderText={orderText} />
+      <Menubar
+        setFetchUrl={setFetchUrl}
+        orderText={orderText}
+        categories={categories}
+        setCategories={setCategories}
+      />
       <NewProductBar handleOnClick={handleOnClick} />
       <Table
         categories={categories}
