@@ -45,11 +45,9 @@ const ProductsCatalogue = () => {
       {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
       <Searchbar filter={filter} setFilter={setFilter} />
+
       <Menubar
-        categories={categories}
-        setCategories={setCategories}
         setFetchUrl={setFetchUrl}
-        setLoading={setLoading}
         orderText={orderText}
         setOrderText={setOrderText}
       />

@@ -20,7 +20,7 @@ const CustomersCatalogue = () => {
     'https://dev.ajsevillano.com/customers'
   );
   const [categories, setCategories] = useState([
-    { name: 'Todos', isActive: true },
+    { name: 'Todos', isActive: false },
     { name: 'Vinos', isActive: false },
     { name: 'Cervezas', isActive: false },
     { name: 'Refrescos', isActive: false },

@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Menubar = ({
-  categories,
-  setCategories,
-  setFetchUrl,
+//Data
+import { productCategories } from '../../data/categories';
 
-  setOrderText,
-}) => {
+const Menubar = ({ setFetchUrl, setOrderText }) => {
+  const [categories, setCategories] = useState(productCategories);
   function fetchCategory(category) {
     /* The api only return all the products/customers at the endpoint /products */
     const allProducts = `https://dev.ajsevillano.com/products`;
@@ -18,31 +16,20 @@ const Menubar = ({
 
   function changeCategoryStatus(category) {
     const { name, isActive } = category;
-    const checkIsActive = !isActive
-      ? 'el item no esta activo'
-      : 'el item está activo';
 
-    console.log(checkIsActive);
+    const updateMenu = categories.map((eachCheckBox) => {
+      return eachCheckBox.name === name
+        ? { ...eachCheckBox, isActive: true }
+        : { ...eachCheckBox, isActive: false };
+    });
+
+    setCategories(updateMenu);
   }
 
   function MenuSelectHandler(category) {
-    changeCategoryStatus(category);
     fetchCategory(category);
+    changeCategoryStatus(category);
   }
-  // const MenuSelectHandler = (category) => {
-
-  //   setOrderText('Más recientes');
-
-  //   setCategories(
-  //     categories.map((item) => {
-  //       return (item.isActive === true) & (category.name != item.name)
-  //         ? { ...item, isActive: false }
-  //         : item.name === category.name
-  //         ? { ...item, isActive: true }
-  //         : item;
-  //     })
-  //   );
-  // };
 
   return (
     <div className="menubar">
