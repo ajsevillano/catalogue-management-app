@@ -2,11 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Searchbar = ({ filter, setFilter, categories }) => {
-  const getCategoryName = () => {
-    const filter = categories.filter((data) => data.isActive);
-    const { name } = filter[0];
-    return name;
-  };
+  //Temporaly disabled due a bug with CustomerCatalog categories
+  // const getCategoryName = () => {
+  //   const filter = categories.filter((data) => data.isActive);
+  //   const { name } = filter[0];
+  //   return name;
+  // };
 
   const handleKeyPress = (event) => {
     //Debounce timer of 1 sec
@@ -21,7 +22,8 @@ const Searchbar = ({ filter, setFilter, categories }) => {
         <input
           className="input"
           type="text"
-          placeholder={`Buscar entre ${getCategoryName()}`}
+          // placeholder={`Buscar entre ${getCategoryName()}`}
+          placeholder="buscar entre los productos"
           onChange={handleKeyPress}
         />
         <span>
