@@ -10,7 +10,7 @@ const Searchbar = ({ filter, setFilter, categories }) => {
   // };
 
   const handleKeyPress = (event) => {
-    //Debounce timer of 1 sec
+    //Debounce timer of 0.5 sec
     setTimeout(() => {
       setFilter({ ...filter, search: event.target.value });
     }, 500);

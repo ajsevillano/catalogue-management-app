@@ -8,7 +8,9 @@ import TableCatalog from '../components/Table';
 import NewProductBar from '../components/NewProductBar/Index';
 import Menubar from '../components/Menubar/Index';
 import Modal from '../components/Modal';
-import AddNewProduct from '../components/AddNewProduct';
+
+//Data
+import { customerCategories } from '../data/categories';
 
 const CustomersCatalogue = () => {
   const [filter, setFilter] = useState(null);
@@ -19,16 +21,7 @@ const CustomersCatalogue = () => {
   const [fetchUrl, setFetchUrl] = useState(
     'https://dev.ajsevillano.com/customers'
   );
-  const [categories, setCategories] = useState([
-    { name: 'Todos', isActive: false },
-    { name: 'Vinos', isActive: false },
-    { name: 'Cervezas', isActive: false },
-    { name: 'Refrescos', isActive: false },
-    { name: 'Lacteos', isActive: false },
-    { name: 'Aguas', isActive: false },
-    { name: 'Licores', isActive: false },
-    { name: 'Otros', isActive: false },
-  ]);
+  const [categories, setCategories] = useState(customerCategories);
 
   const handleOnClick = () => {
     setModalOpen(true);

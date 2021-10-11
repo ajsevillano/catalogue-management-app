@@ -8,3 +8,9 @@ export const productCategories = [
   { name: 'Licores', isActive: false },
   { name: 'Otros', isActive: false },
 ];
+
+export const customerCategories = [
+  { name: 'Todos', isActive: false },
+  { name: 'Bares', isActive: false },
+  { name: 'Restaurantes', isActive: false },
+];
