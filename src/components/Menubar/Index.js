@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
-
-//Data
-import { productCategories } from '../../data/categories';
+import React from 'react';
 
 const Menubar = ({ setFetchUrl, categories, setCategories }) => {
   function fetchCategory(category) {

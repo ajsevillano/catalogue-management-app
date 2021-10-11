@@ -35,7 +35,6 @@ const ProductsCatalogue = () => {
       const products = await axios.get(fetchUrl);
       setProductsData(products.data);
       setLoading(false);
-
       return products;
     }, 150);
   }, [fetchUrl]);

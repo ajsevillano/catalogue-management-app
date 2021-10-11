@@ -15,7 +15,7 @@ const Searchbar = ({ filter, setFilter }) => {
         <input
           className="input"
           type="text"
-          placeholder="Buscar productos..."
+          placeholder="Buscar entre todos los productos..."
           onChange={handleKeyPress}
         />
         <span>
