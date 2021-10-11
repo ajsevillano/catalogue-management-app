@@ -43,7 +43,11 @@ const ProductsCatalogue = () => {
     <Layout title="Productos" button="secundary">
       {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
-      <Searchbar filter={filter} setFilter={setFilter} />
+      <Searchbar
+        filter={filter}
+        setFilter={setFilter}
+        categories={categories}
+      />
 
       <Menubar
         setFetchUrl={setFetchUrl}

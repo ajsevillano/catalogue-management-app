@@ -1,7 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const Searchbar = ({ filter, setFilter }) => {
+const Searchbar = ({ filter, setFilter, categories }) => {
+  const getCategoryName = () => {
+    const filter = categories.filter((data) => data.isActive);
+    const { name } = filter[0];
+    return name;
+  };
+
   const handleKeyPress = (event) => {
     //Debounce timer of 1 sec
     setTimeout(() => {
@@ -15,7 +21,7 @@ const Searchbar = ({ filter, setFilter }) => {
         <input
           className="input"
           type="text"
-          placeholder="Buscar entre todos los productos..."
+          placeholder={`Buscar entre ${getCategoryName()}`}
           onChange={handleKeyPress}
         />
         <span>
