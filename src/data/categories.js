@@ -11,6 +11,6 @@ export const productCategories = [
 
 export const customerCategories = [
   { name: 'Todos', isActive: false },
-  { name: 'Bares', isActive: false },
-  { name: 'Restaurantes', isActive: false },
+  { name: 'Bar', isActive: false },
+  { name: 'Restaurante', isActive: false },
 ];

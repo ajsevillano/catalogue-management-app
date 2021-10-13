@@ -7,7 +7,7 @@ import Searchbar from '../components/Searchbar/Index';
 import TableCatalog from '../components/Table';
 import NewProductBar from '../components/NewProductBar/Index';
 import Menubar from '../components/Menubar/Index';
-import Modal from '../components/Modal';
+import Modal from '../components/Modal/';
 
 //Data
 import { customerCategories } from '../data/categories';
@@ -42,12 +42,15 @@ const CustomersCatalogue = () => {
     <Layout title="Negocios" button="secundary">
       {modalOpen && <Modal setModalOpen={setModalOpen} />}
 
-      <Searchbar filter={filter} setFilter={setFilter} />
+      <Searchbar
+        filter={filter}
+        setFilter={setFilter}
+        categories={categories}
+      />
       <Menubar
         categories={categories}
         setCategories={setCategories}
         setFetchUrl={setFetchUrl}
-        setLoading={setLoading}
         orderText={orderText}
         setOrderText={setOrderText}
       />
