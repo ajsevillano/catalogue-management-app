@@ -1,10 +1,11 @@
-import AddNewProduct from '../AddNewProduct';
+import AddNewProduct from '../AddNewProduct/index';
 
-const Modal = ({setModalOpen }) => {
-
+const Modal = ({ setModalOpen }) => {
   return (
     <div className="modal-container">
-      <div className="modal-box"><AddNewProduct setModalOpen={setModalOpen}/></div>
+      <div className="modal-box">
+        <AddNewProduct setModalOpen={setModalOpen} />
+      </div>
     </div>
   );
 };
