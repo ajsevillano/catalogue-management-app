@@ -7,7 +7,7 @@ const Profile = () => {
     <div className="profile">
       <p className="logo">Product Management App (Beta)</p>
       <FontAwesomeIcon className="bell-icon" icon={faBell} size="lg" />
-      <img src={Profilepicture} alt="Profile picture" />
+      <img src={Profilepicture} alt="Profile" />
     </div>
   );
 };

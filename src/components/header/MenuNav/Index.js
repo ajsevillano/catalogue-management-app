@@ -23,14 +23,14 @@ const MenuNav = () => {
       }
     });
     setCategories(newSongs);
-  }, []);
+  }, [categories, location]);
 
   return (
     <div className="menubar">
       <nav>
         {categories.map((category, index) => (
           <p
-            className={category.isActive == true ? 'isActive' : ''}
+            className={category.isActive === true ? 'isActive' : ''}
             key={index}
           >
             <Link to={category.link}>{category.name}</Link>
