@@ -1,4 +1,4 @@
-import Header from '../header/Index';
+import Header from '../header/index';
 
 const Layout = ({ children, title, button, status }) => {
   return (

@@ -15,7 +15,7 @@
     "react-icons": "^4.2.0",
     "react-lottie": "^1.2.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
+    "react-scripts": "4.0.3",
     "react-toastify": "^7.0.3",
     "web-vitals": "^1.1.0"
   },
@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass-watch": "sass --watch components/App/app.scss src/app.css"
+    "sass-watch": "sass --watch src/main.scss src/main.css"
   },
   "eslintConfig": {
     "extends": [

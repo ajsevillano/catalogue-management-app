@@ -1,3 +1,5 @@
+
+
 //Color Variables
 $grey-font: #9fa8b2;
 $h1-font-color: #0c1322;
@@ -8,6 +10,8 @@ $red-font: #e84343;
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 // Components styles header
+
+// @import './header/Header';
 @import './components/header/Header';
 @import './components/Menubar/Menubar';
 @import './components/header/Title/Title';
