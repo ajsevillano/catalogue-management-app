@@ -6,7 +6,7 @@ import * as error from '../../../assets/animations/error.json';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Button from '../../forms/button/Index';
+import Button from '../../forms/button';
 
 const Error = ({ handleCancelButton }) => {
   return (

@@ -1,7 +1,7 @@
 //Font awesome
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 //Components
-import Button from '../forms/button/Index';
+import Button from '../forms/button';
 
 const AddProductbar = ({ handleOnClick }) => {
   return (

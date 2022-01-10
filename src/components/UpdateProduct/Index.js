@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../forms/button/Index';
+import Button from '../forms/button';
 import axios from 'axios';
 //Font awesome
 import { faSave } from '@fortawesome/free-solid-svg-icons';
@@ -78,7 +78,7 @@ const Form = ({
 
   function selectStatusValues() {
     const selectOptions =
-      status == 1 ? (
+      status === 1 ? (
         <>
           <option key={1} value="1">
             Publicado

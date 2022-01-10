@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //Components
-import Layout from '../components/Layout/index';
-import Searchbar from '../components/Searchbar/Index';
+import Layout from '../components/Layout/';
+import Searchbar from '../components/Searchbar/';
 import Table from '../components/Table';
-import NewProductBar from '../components/NewProductBar/Index';
-import Menubar from '../components/Menubar/Index';
-import Modal from '../components/Modal/Index';
+import NewProductBar from '../components/NewProductBar';
+import Menubar from '../components/Menubar';
+import Modal from '../components/Modal';
 
 //Data
 import { productCategories } from '../data/categories';

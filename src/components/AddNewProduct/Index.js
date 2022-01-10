@@ -16,7 +16,7 @@ import ModalPicture from '../../assets/img/add-product.jpg';
 //Components
 import Checkbox from '../forms/Checkbox/Index';
 import Input from '../forms/Inputs/Index';
-import Button from '../forms/button/Index';
+import Button from '../forms/button';
 import Success from './SuccessScreen/Index';
 import Error from './ErrorScreen/Index';
 
@@ -39,7 +39,7 @@ const AddNewProduct = ({ setModalOpen }) => {
     'otros',
   ];
 
-  const [buttonLoading, setButtonLoading] = useState(false);
+  const [setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
@@ -80,7 +80,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   ) : (
     <>
       <div className="modal-img">
-        <img src={ModalPicture} alt="Modal picture" />
+        <img src={ModalPicture} alt="Modal" />
       </div>
       <div className="modal-content">
         <h1>Añadir nuevo producto</h1>

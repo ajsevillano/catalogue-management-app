@@ -9,21 +9,13 @@ const MenuNav = () => {
   const location = useLocation().pathname;
 
   useEffect(() => {
-    const newSongs = categories.map((x) => {
-      if (x.link === location) {
-        return {
-          ...x,
-          isActive: true,
-        };
-      } else {
-        return {
-          ...x,
-          isActive: false,
-        };
-      }
-    });
-    setCategories(newSongs);
-  }, [categories, location]);
+    const changeMenu = categories.map((menu) =>
+      menu.link === location
+        ? { ...menu, isActive: true }
+        : { ...menu, isActive: false }
+    );
+    setCategories(changeMenu);
+  }, []);
 
   return (
     <div className="menubar">
