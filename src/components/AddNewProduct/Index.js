@@ -39,7 +39,7 @@ const AddNewProduct = ({ setModalOpen }) => {
     'otros',
   ];
 
-  const [setButtonLoading] = useState(false);
+  const [ButtonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
