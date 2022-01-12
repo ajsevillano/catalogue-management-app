@@ -14,7 +14,6 @@ import { productCategories } from '../data/categories';
 
 const ProductsCatalogue = () => {
   const [filter, setFilter] = useState(null);
-  const [orderText, setOrderText] = useState('Más recientes');
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -51,7 +50,6 @@ const ProductsCatalogue = () => {
 
       <Menubar
         setFetchUrl={setFetchUrl}
-        orderText={orderText}
         categories={categories}
         setCategories={setCategories}
       />
@@ -63,8 +61,6 @@ const ProductsCatalogue = () => {
         productsData={productsData}
         setProductsData={setProductsData}
         setLoading={setLoading}
-        orderText={orderText}
-        setOrderText={setOrderText}
         filter={filter}
       />
     </Layout>
