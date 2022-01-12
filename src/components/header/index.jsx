@@ -4,7 +4,7 @@
  * @param {string} button Defines the style of the button
  */
 
-import MenuNav from '../header/MenuNav/Index';
+import MenuNav from './MenuNav/Index';
 import Title from './Title/Index';
 import Profile from './Profile/Index';
 
