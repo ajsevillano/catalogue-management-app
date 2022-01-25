@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //Components
-import Layout from '../components/Layout/';
-import Searchbar from '../components/Searchbar/';
+import Layout from '../components/Layout';
+import Searchbar from '../components/Searchbar';
 import Table from '../components/Table';
 import NewProductBar from '../components/NewProductBar';
 import Menubar from '../components/Menubar';
@@ -14,6 +14,7 @@ import { productCategories } from '../data/categories';
 
 const ProductsCatalogue = () => {
   const [filter, setFilter] = useState(null);
+  const [orderText, setOrderText] = useState('Más recientes');
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -50,6 +51,7 @@ const ProductsCatalogue = () => {
 
       <Menubar
         setFetchUrl={setFetchUrl}
+        orderText={orderText}
         categories={categories}
         setCategories={setCategories}
       />
@@ -61,6 +63,8 @@ const ProductsCatalogue = () => {
         productsData={productsData}
         setProductsData={setProductsData}
         setLoading={setLoading}
+        orderText={orderText}
+        setOrderText={setOrderText}
         filter={filter}
       />
     </Layout>

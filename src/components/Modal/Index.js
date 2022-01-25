@@ -1,4 +1,4 @@
-import AddNewProduct from '../AddNewProduct/Index';
+import AddNewProduct from '../AddNewProduct';
 
 const Modal = ({ setModalOpen }) => {
   return (

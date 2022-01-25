@@ -13,8 +13,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Layout from '../components/Layout/index';
-import Form from '../components/UpdateProduct/Index';
+import Layout from '../components/Layout';
+import Form from '../components/UpdateProduct';
 import NoResultsScreen from '../components/Table/NoResultsScreen';
 
 //Toastify components

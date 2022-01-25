@@ -14,11 +14,11 @@ import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ModalPicture from '../../assets/img/add-product.jpg';
 
 //Components
-import Checkbox from '../forms/Checkbox/Index';
-import Input from '../forms/Inputs/Index';
+import Checkbox from '../forms/Checkbox';
+import Input from '../forms/Inputs';
 import Button from '../forms/button';
-import Success from './SuccessScreen/Index';
-import Error from './ErrorScreen/Index';
+import Success from './SuccessScreen';
+import Error from './ErrorScreen';
 
 const AddNewProduct = ({ setModalOpen }) => {
   const [formValues, setFormValues] = useState({
@@ -39,7 +39,7 @@ const AddNewProduct = ({ setModalOpen }) => {
     'otros',
   ];
 
-  const [ButtonLoading, setButtonLoading] = useState(false);
+  const [buttonLoading, setButtonLoading] = useState(false);
   const [sentForm, setSentForm] = useState(false);
   const [fetchError, setFetcherror] = useState(false);
   const [uploadPicture, setuploadPicture] = useState(null);
@@ -80,7 +80,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   ) : (
     <>
       <div className="modal-img">
-        <img src={ModalPicture} alt="Modal" />
+        <img src={ModalPicture} alt="Modal picture" />
       </div>
       <div className="modal-content">
         <h1>Añadir nuevo producto</h1>

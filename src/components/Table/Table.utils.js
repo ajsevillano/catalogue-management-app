@@ -1,4 +1,4 @@
-import TableRowSkeleton from './SkeletonRows/index.jsx';
+import TableRowSkeleton from './SkeletonRows';
 
 export const generateSkeletonComp = () => {
   return [...Array(4)].map((undefined, index) => (

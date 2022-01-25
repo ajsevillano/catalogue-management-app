@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AppRouter from '../../utils/Router';
-import '../../main.scss';
+import AppRouter from '../src/utils/Router';
+import './App.scss';
 
 const App = () => {
   return <AppRouter />;

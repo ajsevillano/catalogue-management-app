@@ -9,9 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Layout from '../components/Layout/index';
-import Form from '../components/UpdateProduct/';
-import NoResultsScreen from '../components/Table/NoResultsScreen';
+import Layout from '../components/Layout';
+import Form from '../components/UpdateProduct';
+import NoResultsScreen from '../components/Table';
 
 //Toastify components
 import { ToastContainer } from 'react-toastify';
@@ -123,6 +123,7 @@ const UpdateProduct = () => {
                 <label
                   htmlFor="file"
                   className={buttonLoading ? 'disabled' : undefined}
+                  className="label-file"
                 >
                   <FontAwesomeIcon
                     icon={buttonLoading ? faSpinner : faCamera}
@@ -140,7 +141,7 @@ const UpdateProduct = () => {
             <p>
               Última edición: <span>{formattedTime()}</span>
             </p>
-            {fetchError !== 400 ? (
+            {fetchError != 400 ? (
               productData.map((item, index) => (
                 <Form
                   key={index}

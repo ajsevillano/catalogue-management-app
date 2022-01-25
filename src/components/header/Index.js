@@ -4,9 +4,9 @@
  * @param {string} button Defines the style of the button
  */
 
-import MenuNav from './MenuNav/Index';
-import Title from './Title/Index';
-import Profile from './Profile/Index';
+import MenuNav from './MenuNav';
+import Title from './Title';
+import Profile from './Profile';
 
 const Header = ({ status, title, button }) => {
   return (

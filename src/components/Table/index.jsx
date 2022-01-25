@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 //Font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCog } from '@fortawesome/free-solid-svg-icons';
@@ -20,16 +18,15 @@ const Table = ({
   loading,
   productsData,
   setProductsData,
+  orderText,
+  setOrderText,
   filter,
 }) => {
-  const [orderText, setOrderText] = useState('Más recientes');
-
   const updateOrder = () => {
-    //On click the menu, reverse the products state
     const reverseData = [...productsData].reverse();
     setProductsData(reverseData);
     setOrderText(
-      orderText === 'Más recientes' ? 'Más antiguos' : 'Más recientes'
+      orderText == 'Más recientes' ? 'Más antiguos' : 'Más recientes'
     );
   };
 

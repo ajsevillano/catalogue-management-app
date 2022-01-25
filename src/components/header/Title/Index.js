@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../forms/button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDownload,
@@ -12,20 +12,22 @@ import {
 
 const Title = ({ title, status, button }) => {
   const history = useHistory();
-
+  function handleBackArrow() {
+    history.push('/');
+  }
   return (
     <div className="title-container">
       <div className="title-status">
         {!status ? (
           <h1>{title}</h1>
-        ) : status.length === 0 ? (
+        ) : status.length == 0 ? (
           <h1>Loading...</h1>
-        ) : status === 1 ? (
+        ) : status == 1 ? (
           <>
             <FontAwesomeIcon
               className="arrow"
               icon={faArrowLeft}
-              onClick={() => history.push('/')}
+              onClick={handleBackArrow}
             />
             <h1>{title}</h1>
             <p className="active">
@@ -37,7 +39,7 @@ const Title = ({ title, status, button }) => {
             <FontAwesomeIcon
               className="arrow"
               icon={faArrowLeft}
-              onClick={() => history.push('/')}
+              onClick={handleBackArrow}
             />
             <h1>{title}</h1>
             <p className="inactive">
@@ -46,7 +48,7 @@ const Title = ({ title, status, button }) => {
           </>
         )}
       </div>
-      {button === 'primary' ? (
+      {button == 'primary' ? (
         <Button icon={faSave} size={'lg'} text={'Guardar'} button={button} />
       ) : (
         <Button

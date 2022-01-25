@@ -9,12 +9,20 @@ const MenuNav = () => {
   const location = useLocation().pathname;
 
   useEffect(() => {
-    const changeMenu = categories.map((menu) =>
-      menu.link === location
-        ? { ...menu, isActive: true }
-        : { ...menu, isActive: false }
-    );
-    setCategories(changeMenu);
+    const newSongs = categories.map((x) => {
+      if (x.link === location) {
+        return {
+          ...x,
+          isActive: true,
+        };
+      } else {
+        return {
+          ...x,
+          isActive: false,
+        };
+      }
+    });
+    setCategories(newSongs);
   }, []);
 
   return (
@@ -22,7 +30,7 @@ const MenuNav = () => {
       <nav>
         {categories.map((category, index) => (
           <p
-            className={category.isActive === true ? 'isActive' : ''}
+            className={category.isActive == true ? 'isActive' : ''}
             key={index}
           >
             <Link to={category.link}>{category.name}</Link>

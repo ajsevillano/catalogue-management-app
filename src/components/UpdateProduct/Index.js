@@ -5,7 +5,7 @@ import axios from 'axios';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Input from '../forms/Inputs/Index';
+import Input from '../forms/Inputs';
 
 const Form = ({
   id,
@@ -78,7 +78,7 @@ const Form = ({
 
   function selectStatusValues() {
     const selectOptions =
-      status === 1 ? (
+      status == 1 ? (
         <>
           <option key={1} value="1">
             Publicado

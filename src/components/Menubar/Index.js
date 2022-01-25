@@ -5,7 +5,7 @@ const Menubar = ({ setFetchUrl, categories, setCategories }) => {
     /* The api only return all the products/customers at the endpoint /products */
     const allProducts = `https://dev.ajsevillano.com/products`;
     const productsByCategory = `https://dev.ajsevillano.com/products?category=${category.name}`;
-    return category.name === 'Todos'
+    return category.name == 'Todos'
       ? setFetchUrl(allProducts)
       : setFetchUrl(productsByCategory);
   }
@@ -30,7 +30,7 @@ const Menubar = ({ setFetchUrl, categories, setCategories }) => {
       <nav>
         {categories?.map((category, index) => (
           <p
-            className={category.isActive === true ? 'isActive' : undefined}
+            className={category.isActive == true ? 'isActive' : undefined}
             key={index}
             onClick={() => MenuSelectHandler(category)}
           >
