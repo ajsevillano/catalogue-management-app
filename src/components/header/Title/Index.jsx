@@ -12,9 +12,7 @@ import {
 
 const Title = ({ title, status, button }) => {
   const history = useHistory();
-  function handleBackArrow() {
-    history.push('/');
-  }
+
   return (
     <div className="title-container">
       <div className="title-status">
@@ -27,7 +25,7 @@ const Title = ({ title, status, button }) => {
             <FontAwesomeIcon
               className="arrow"
               icon={faArrowLeft}
-              onClick={handleBackArrow}
+              onClick={() => history.push('/')}
             />
             <h1>{title}</h1>
             <p className="active">
@@ -39,7 +37,7 @@ const Title = ({ title, status, button }) => {
             <FontAwesomeIcon
               className="arrow"
               icon={faArrowLeft}
-              onClick={handleBackArrow}
+              onClick={() => history.push('/')}
             />
             <h1>{title}</h1>
             <p className="inactive">

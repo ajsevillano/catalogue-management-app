@@ -48,16 +48,16 @@ const TableRow = ({
         </div>
         <div
           className={
-            status == 1
+            status === 1
               ? 'status-container status-on'
               : 'status-container status-off'
           }
         >
-          <p>{status == 1 ? 'publicado' : 'no publicado'}</p>
+          <p>{status === 1 ? 'publicado' : 'no publicado'}</p>
         </div>
 
         <FontAwesomeIcon
-          className={favorite == 1 ? 'star' : 'star-off'}
+          className={favorite === 1 ? 'star' : 'star-off'}
           icon={faStar}
           size="lg"
         />
