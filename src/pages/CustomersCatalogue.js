@@ -7,7 +7,7 @@ import Searchbar from '../components/Searchbar/';
 import TableCatalog from '../components/Table';
 import NewProductBar from '../components/NewProductBar';
 import Menubar from '../components/Menubar';
-import Modal from '../components/Modal/';
+import Modal from '../components/Modal';
 
 //Data
 import { customerCategories } from '../data/categories';
