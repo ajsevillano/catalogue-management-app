@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //Components
-import Layout from '../components/Layout/';
-import Searchbar from '../components/Searchbar/';
+import Layout from '../components/Layout';
+import Searchbar from '../components/Searchbar';
 import TableCatalog from '../components/Table';
 import NewProductBar from '../components/NewProductBar';
 import Menubar from '../components/Menubar';
