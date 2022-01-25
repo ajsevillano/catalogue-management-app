@@ -53,6 +53,7 @@ const AddNewProduct = ({ setModalOpen }) => {
     handleAddProduct(
       e,
       formValues,
+      buttonLoading,
       setButtonLoading,
       setSentForm,
       setFetcherror,
@@ -80,7 +81,7 @@ const AddNewProduct = ({ setModalOpen }) => {
   ) : (
     <>
       <div className="modal-img">
-        <img src={ModalPicture} alt="Modal picture" />
+        <img src={ModalPicture} alt="Modal" />
       </div>
       <div className="modal-content">
         <h1>Añadir nuevo producto</h1>

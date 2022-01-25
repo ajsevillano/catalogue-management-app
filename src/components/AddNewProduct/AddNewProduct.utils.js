@@ -8,7 +8,7 @@ export function HandleInputChanges(e, setFormValues, formValues) {
 }
 
 export function handleCheckBoxChange(e, setFormValues, formValues) {
-  const statusValue = e.target.checked == true ? 1 : 0;
+  const statusValue = e.target.checked ? 1 : 0;
   setFormValues({
     ...formValues,
     [e.target.name]: statusValue,
@@ -18,6 +18,7 @@ export function handleCheckBoxChange(e, setFormValues, formValues) {
 export function handleAddProduct(
   e,
   formValues,
+  buttonLoading,
   setButtonLoading,
   setSentForm,
   setFetcherror,
@@ -26,16 +27,15 @@ export function handleAddProduct(
   e.preventDefault();
   setButtonLoading(true);
 
-  const CheckEmptyInputs =
-    formValues['name'] && formValues['brand'] && formValues['size']
-      ? AxiosPost({
-          formValues,
-          setButtonLoading,
-          setSentForm,
-          setFetcherror,
-          uploadPicture,
-        })
-      : window.alert('Aun faltan datos por rellenar');
+  formValues['name'] && formValues['brand'] && formValues['size']
+    ? AxiosPost({
+        formValues,
+        setButtonLoading,
+        setSentForm,
+        setFetcherror,
+        uploadPicture,
+      })
+    : window.alert('Aun faltan datos por rellenar');
 }
 
 export function handleCancelButton(setModalOpen) {
