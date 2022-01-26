@@ -23,10 +23,6 @@ const ProductsCatalogue = () => {
   );
   const [categories, setCategories] = useState(productCategories);
 
-  const handleOnClick = () => {
-    setModalOpen(true);
-  };
-
   //Fetch data when page loads or fetchUrl change,
   // add 150ms to debounce the fetch call.
   useEffect(() => {
@@ -55,7 +51,7 @@ const ProductsCatalogue = () => {
         categories={categories}
         setCategories={setCategories}
       />
-      <BreadcrumbsBar handleOnClick={handleOnClick} />
+      <BreadcrumbsBar handleOnClick={() => setModalOpen(true)} />
       <Table
         categories={categories}
         loading={loading}
