@@ -8,10 +8,10 @@ $red-font: #e84343;
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 // Components styles header
-@import './components/header/Header';
+@import './components/Header/Header';
 @import './components/ProductsNavBar/ProductsNavBar';
-@import './components/header/Title/Title';
-@import './components/header/Profile/Profile';
+@import './components/Header/Title/Title';
+@import './components/Header/Profile/Profile';
 @import './components/BreadcrumbsBar/BreadcrumbsBar';
 @import './pages/Home/Form/Form';
 
@@ -30,7 +30,7 @@ $red-font: #e84343;
 // UI Components
 //Layout
 @import './components/Layout/Layout'; //Buttons
-@import './components/forms/button/Button';
+@import './components/Forms/Button/Button';
 
 //Forms
-@import './components/forms/Checkbox/Checkbox';
+@import './components/Forms/Checkbox/Checkbox';
