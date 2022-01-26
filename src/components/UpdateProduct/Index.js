@@ -37,8 +37,6 @@ const Form = ({
     { name: 'otros' },
   ]);
 
-  console.log(typeof status);
-
   function handleChange(e) {
     setFormValues({
       ...formValues,

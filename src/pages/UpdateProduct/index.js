@@ -122,7 +122,9 @@ const UpdateProduct = () => {
                 />
                 <label
                   htmlFor="file"
-                  className={`label-file ${buttonLoading ? 'disabled' : undefined}`}
+                  className={`label-file ${
+                    buttonLoading ? 'disabled' : undefined
+                  }`}
                 >
                   <FontAwesomeIcon
                     icon={buttonLoading ? faSpinner : faCamera}

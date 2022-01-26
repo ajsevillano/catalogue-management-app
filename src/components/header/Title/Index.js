@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../forms/button';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDownload,
@@ -20,9 +20,9 @@ const Title = ({ title, status, button }) => {
       <div className="title-status">
         {!status ? (
           <h1>{title}</h1>
-        ) : status.length == 0 ? (
+        ) : status.length === 0 ? (
           <h1>Loading...</h1>
-        ) : status == 1 ? (
+        ) : status[0] === '1' ? (
           <>
             <FontAwesomeIcon
               className="arrow"
@@ -48,7 +48,7 @@ const Title = ({ title, status, button }) => {
           </>
         )}
       </div>
-      {button == 'primary' ? (
+      {button === 'primary' ? (
         <Button icon={faSave} size={'lg'} text={'Guardar'} button={button} />
       ) : (
         <Button

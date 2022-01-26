@@ -8,11 +8,11 @@ const TableRowSkeleton = () => {
         <div className="img-skeleton"></div>
       </div>
       <div className="item-id-skeleton">
-        <h2 className="h2-item-id-skeleton"></h2>
+        <div className="h2-item-id-skeleton"></div>
         <p className="p-item-id-skeleton"></p>
       </div>
       <div className="name-skeleton">
-        <h2 className="h2-name-skeleton"></h2>
+        <div className="h2-name-skeleton"></div>
         <p className="p-name-skeleton"></p>
       </div>
       <div className="brand-skeleton">
@@ -22,7 +22,7 @@ const TableRowSkeleton = () => {
         <p className="p-categoria-skeleton"></p>
       </div>
       <div className="last-edited-skeleton">
-        <h2 className="h2-last-edited-skeleton"></h2>
+        <div className="h2-last-edited-skeleton"></div>
         <p className="p-last-edited-skeleton"></p>
       </div>
       <div className="checkbox-container">
