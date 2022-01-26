@@ -1,12 +1,12 @@
 //Font awesome
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-//Components
+
 import Button from '../Forms/Button';
 
-const NewProductBar = ({ handleOnClick }) => {
+const BreadcrumbsBar = ({ handleOnClick }) => {
   return (
     <div className="sort-bar">
-      <p>Inicio - Productos</p>
+      <p>Inicio &gt; Productos</p>
       <Button
         handleOnClick={handleOnClick}
         icon={faPlus}
@@ -18,4 +18,4 @@ const NewProductBar = ({ handleOnClick }) => {
   );
 };
 
-export default NewProductBar;
+export default BreadcrumbsBar;

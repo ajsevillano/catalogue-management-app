@@ -6,8 +6,8 @@ import Layout from '../../components/Layout';
 import Searchbar from '../../components/Searchbar';
 import Table from '../../components/Table';
 import Modal from '../../components/Modal';
-import NewProductBar from '../../components/NewProductBar';
 import Menubar from '../../components/Menubar';
+import BreadcrumbsBar from '../../components/BreadcrumbsBar';
 
 //Data
 import { productCategories } from '../../data/categories';
@@ -55,7 +55,7 @@ const ProductsCatalogue = () => {
         categories={categories}
         setCategories={setCategories}
       />
-      <NewProductBar handleOnClick={handleOnClick} />
+      <BreadcrumbsBar handleOnClick={handleOnClick} />
       <Table
         categories={categories}
         loading={loading}
