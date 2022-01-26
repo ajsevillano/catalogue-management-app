@@ -4,10 +4,10 @@ import axios from 'axios';
 //Components
 import Layout from '../../components/Layout';
 import Table from '../../components/Table';
-import Modal from '../../components/Modal';
 import BreadcrumbsBar from '../../components/BreadcrumbsBar';
 import ProductsNavBar from '../../components/ProductsNavBar';
 import Searchbar from '../../components/Searchbar';
+import Modal from '../../components/Modal';
 
 //Data
 import { productCategories } from '../../data/categories';
