@@ -5,9 +5,9 @@ import axios from 'axios';
 import Layout from '../../components/Layout';
 import Searchbar from '../../components/Searchbar';
 import Table from '../../components/Table';
-import Menubar from '../../components/Menubar';
 import Modal from '../../components/Modal';
 import NewProductBar from '../../components/NewProductBar';
+import Menubar from '../../components/Menubar';
 
 //Data
 import { productCategories } from '../../data/categories';
