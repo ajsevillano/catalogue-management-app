@@ -3,10 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Pages
-import Home from '../pages/ProductsCatalogue';
-import CustomersCatalogue from '../pages/CustomersCatalogue';
+import Home from '../pages/Home';
 import UpdateProduct from '../pages/UpdateProduct';
-import NotFound404 from '../pages/NotFound404';
+import NotFound404 from '../pages/Error404';
 
 const AppRouter = () => {
   // <Router basename={'/projects/pim'}> Production path
@@ -15,9 +14,6 @@ const AppRouter = () => {
       <Switch>
         <Route path="/" exact>
           <Home />
-        </Route>
-        <Route path="/negocios" exact>
-          <CustomersCatalogue />
         </Route>
         <Route path="/updateproduct/:id">
           <UpdateProduct />

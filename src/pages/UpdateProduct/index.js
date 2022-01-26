@@ -6,20 +6,16 @@ import axios from 'axios';
 
 //Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCamera,
-  faSpider,
-  faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Layout from '../components/Layout';
-import Form from '../components/UpdateProduct';
-import NoResultsScreen from '../components/Table/NoResultsScreen';
+import Layout from '../../components/Layout';
+import Form from '../../components/UpdateProduct';
+import NoResultsScreen from '../../components/Table';
 
 //Toastify components
 import { ToastContainer } from 'react-toastify';
-import { Toast, ToastError } from '../utils/Toast';
+import { Toast, ToastError } from '../../utils/Toast';
 
 const UpdateProduct = () => {
   const params = useParams();
@@ -29,7 +25,7 @@ const UpdateProduct = () => {
   const [productData, setProductData] = useState([]);
   const [fetchError, setFetchError] = useState([]);
   const [fetchUrl, setFetchUrl] = useState([
-    `https://dev.ajsevillano.com/customers/${params.id}`,
+    `https://dev.ajsevillano.com/products/${params.id}`,
   ]);
 
   const notify = () => Toast(productData);
@@ -82,7 +78,7 @@ const UpdateProduct = () => {
 
   useEffect(() => {
     inputEl.current.className = 'update-product-container fadein';
-    setTimeout(async () => {
+    setTimeout(async function fetchData() {
       try {
         const product = await axios.get(fetchUrl);
         setProductData(product.data);
@@ -111,7 +107,7 @@ const UpdateProduct = () => {
               <img
                 width="200px"
                 height="208px"
-                src={`https://www.ajsevillano.com/projects/pim/img/Thumbnails/id${
+                src={`https://imgdata.ajsevillano.com/uniondistribuidora/img/Thumbnails/id${
                   params.id
                 }.jpg?v=${Date.now()}`}
                 alt=""
@@ -126,8 +122,7 @@ const UpdateProduct = () => {
                 />
                 <label
                   htmlFor="file"
-                  className={buttonLoading ? 'disabled' : undefined}
-                  className="label-file"
+                  className={`label-file ${buttonLoading ? 'disabled' : undefined}`}
                 >
                   <FontAwesomeIcon
                     icon={buttonLoading ? faSpinner : faCamera}
@@ -145,7 +140,7 @@ const UpdateProduct = () => {
             <p>
               Última edición: <span>{formattedTime()}</span>
             </p>
-            {fetchError != 400 ? (
+            {fetchError !== 400 ? (
               productData.map((item, index) => (
                 <Form
                   key={index}

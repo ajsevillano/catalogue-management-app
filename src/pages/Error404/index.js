@@ -1,8 +1,8 @@
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
 //Lottie animation helper and json import
-import LottieAnimation from '../utils/Lottie';
-import * as notFound from '../assets/animations/404NotFound.json';
+import LottieAnimation from '../../utils/Lottie';
+import * as notFound from '../../assets/animations/404NotFound.json';
 
 const NotFound404 = () => {
   return (

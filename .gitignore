@@ -27,3 +27,6 @@ acp.sh
 
 #Catalog Images
 /public/img/Thumbnails
+
+#Css map
+*.css.map
