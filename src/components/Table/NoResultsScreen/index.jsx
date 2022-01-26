@@ -1,4 +1,4 @@
-import Button from '../../forms/button';
+import Button from '../../Forms/Button';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 //Lottie animation helper and json import

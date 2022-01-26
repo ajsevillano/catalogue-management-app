@@ -14,9 +14,9 @@ import { faPaperPlane, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ModalPicture from '../../assets/img/add-product.jpg';
 
 //Components
-import Checkbox from '../forms/Checkbox';
-import Input from '../forms/Inputs';
-import Button from '../forms/button';
+import Checkbox from '../Forms/Checkbox';
+import Input from '../Forms/Inputs';
+import Button from '../Forms/Button';
 import Success from './SuccessScreen';
 import Error from './ErrorScreen';
 

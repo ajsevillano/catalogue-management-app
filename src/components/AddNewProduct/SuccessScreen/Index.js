@@ -7,7 +7,7 @@ import * as confetti from '../../../assets/animations/confetti.json';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 //Components
-import Button from '../../forms/button';
+import Button from '../../Forms/Button';
 
 const Success = ({ handleCancelButton, productName }) => {
   return (

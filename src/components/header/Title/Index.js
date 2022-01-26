@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../forms/button';
+import Button from '../../Forms/Button';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
