@@ -18,9 +18,7 @@ const ProductsCatalogue = () => {
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-  const [fetchUrl, setFetchUrl] = useState(
-    'https://dev.ajsevillano.com/products'
-  );
+  const [fetchUrl, setFetchUrl] = useState(process.env.REACT_APP_API_URL);
   const [categories, setCategories] = useState(productCategories);
 
   //Fetch data when page loads or fetchUrl change,

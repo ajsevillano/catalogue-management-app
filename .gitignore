@@ -30,3 +30,6 @@ acp.sh
 
 #Css map
 *.css.map
+
+#Env
+.env
