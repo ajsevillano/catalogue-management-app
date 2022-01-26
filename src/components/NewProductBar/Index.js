@@ -3,7 +3,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 //Components
 import Button from '../forms/button';
 
-const AddProductbar = ({ handleOnClick }) => {
+const NewProductBar = ({ handleOnClick }) => {
   return (
     <div className="sort-bar">
       <p>Inicio - Productos</p>
@@ -18,4 +18,4 @@ const AddProductbar = ({ handleOnClick }) => {
   );
 };
 
-export default AddProductbar;
+export default NewProductBar;
