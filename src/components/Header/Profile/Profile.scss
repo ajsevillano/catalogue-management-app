@@ -1,0 +1,25 @@
+.profile {
+  flex: 1;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+
+    border: 2px solid white;
+  }
+
+  .bell-icon {
+    color: $grey-font;
+    margin: 0 10px 0 auto;
+  }
+
+  .logo {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
