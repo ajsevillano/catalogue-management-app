@@ -26,7 +26,7 @@ const Table = ({
     const reverseData = [...productsData].reverse();
     setProductsData(reverseData);
     setOrderText(
-      orderText == 'Más recientes' ? 'Más antiguos' : 'Más recientes'
+      orderText === 'Más recientes' ? 'Más antiguos' : 'Más recientes'
     );
   };
 
