@@ -10,7 +10,7 @@ import { faCamera, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 //Components
 import Layout from '../../components/Layout';
-import Form from '../Home/Form';
+import Form from './Form';
 import NoResultsScreen from '../../components/Table';
 
 //Toastify components
