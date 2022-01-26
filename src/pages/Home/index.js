@@ -6,8 +6,8 @@ import Layout from '../../components/Layout';
 import Searchbar from '../../components/Searchbar';
 import Table from '../../components/Table';
 import Modal from '../../components/Modal';
-import Menubar from '../../components/Menubar';
 import BreadcrumbsBar from '../../components/BreadcrumbsBar';
+import ProductsNavBar from '../../components/ProductsNavBar';
 
 //Data
 import { productCategories } from '../../data/categories';
@@ -49,7 +49,7 @@ const ProductsCatalogue = () => {
         categories={categories}
       />
 
-      <Menubar
+      <ProductsNavBar
         setFetchUrl={setFetchUrl}
         orderText={orderText}
         categories={categories}

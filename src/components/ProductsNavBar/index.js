@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Menubar = ({ setFetchUrl, categories, setCategories }) => {
+const ProductsNavBar = ({ setFetchUrl, categories, setCategories }) => {
   function fetchCategory(category) {
     /* The api only return all the products/customers at the endpoint /products */
     const allProducts = `https://dev.ajsevillano.com/products`;
@@ -42,4 +40,4 @@ const Menubar = ({ setFetchUrl, categories, setCategories }) => {
   );
 };
 
-export default Menubar;
+export default ProductsNavBar;
