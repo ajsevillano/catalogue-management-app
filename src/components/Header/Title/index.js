@@ -22,7 +22,7 @@ const Title = ({ title, status, button }) => {
           <h1>{title}</h1>
         ) : status.length === 0 ? (
           <h1>Loading...</h1>
-        ) : status[0] === '1' ? (
+        ) : status[0] === 1 ? (
           <>
             <FontAwesomeIcon
               className="arrow"

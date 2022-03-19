@@ -78,7 +78,7 @@ const Form = ({
 
   function selectStatusValues() {
     const selectOptions =
-      status === '1' ? (
+      status === 1 ? (
         <>
           <option key={1} value="1">
             Publicado
