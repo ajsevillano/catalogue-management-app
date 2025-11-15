@@ -1,70 +1,221 @@
-# Getting Started with Create React App
+# Catalogue Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación React moderna para la gestión completa de catálogos de productos con interfaz intuitiva y funcionalidades avanzadas.
 
-## Available Scripts
+> [!WARNING]
+> **Migración a Next.js en progreso** - Este proyecto funcional será migrado próximamente a Next.js para mejorar el rendimiento, SEO y capacidades full-stack. La versión actual de React seguirá siendo funcional durante el período de transición.
 
-In the project directory, you can run:
+## 🚀 Características
 
-### `npm start`
+- ✅ **Gestión completa de productos** (CRUD)
+- 🔍 **Búsqueda y filtrado** avanzado
+- 📱 **Diseño responsivo** con React
+- 🗂️ **Organización por categorías**
+- ⚡ **SPA** con React Router
+- 🎨 **Interfaz moderna** y intuitiva
+- 🔄 **Estado reactivo** con hooks
+- 📊 **Visualización de datos** optimizada
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🛠️ Tecnologías
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Frontend**: React 18+
+- **Routing**: React Router DOM
+- **Estado**: React Hooks (useState, useEffect, useContext)
+- **Estilos**: CSS3/SCSS
+- **Build**: Create React App / Vite
+- **Deployment**: Netlify
 
-### `npm test`
+## 📁 Estructura del Proyecto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/         # Componentes React reutilizables
+│   ├── Header/         # Componente de cabecera
+│   ├── ProductCard/    # Tarjeta de producto
+│   ├── ProductForm/    # Formulario de productos
+│   ├── SearchBar/      # Barra de búsqueda
+│   └── Modal/          # Componente modal
+├── pages/              # Páginas de la aplicación
+│   ├── Home/           # Página principal
+│   ├── Products/       # Listado de productos
+│   ├── AddProduct/     # Agregar producto
+│   └── EditProduct/    # Editar producto
+├── hooks/              # Custom hooks
+├── context/            # Context API para estado global
+├── services/           # Servicios de API
+├── utils/              # Utilidades y helpers
+├── styles/             # Estilos globales
+└── assets/             # Recursos estáticos
+```
 
-### `npm run build`
+## 🚀 Instalación y Uso
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerrequisitos
+```bash
+Node.js >= 16.0.0
+npm >= 8.0.0
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instalación
+```bash
+# Clonar el repositorio
+git clone https://github.com/ajsevillano/catalogue-management-app.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Navegar al directorio
+cd catalogue-management-app
 
-### `npm run eject`
+# Instalar dependencias
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Scripts Disponibles
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Iniciar servidor de desarrollo
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Construir para producción
+npm run build
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Ejecutar tests
+npm test
 
-## Learn More
+# Analizar bundle
+npm run analyze
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Linter
+npm run lint
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌐 Desarrollo Local
 
-### Code Splitting
+```bash
+# Iniciar la aplicación en modo desarrollo
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+La aplicación se abrirá en [http://localhost:3000](http://localhost:3000)
 
-### Analyzing the Bundle Size
+## 🏗️ Build y Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Build de producción
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+### Deployment en Netlify
+```bash
+# Instalar Netlify CLI
+npm install -g netlify-cli
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Deploy
+netlify deploy --prod --dir=build
+```
 
-### Advanced Configuration
+## ⚙️ Configuración
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Variables de entorno
+Crear archivo `.env` en la raíz:
 
-### Deployment
+```env
+REACT_APP_API_URL=http://localhost:3001/api
+REACT_APP_APP_NAME=Catalogue Management
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Configuración de API
+Configurar endpoints en `src/services/api.js`
 
-### `npm run build` fails to minify
+## 🎯 Funcionalidades Principales
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Gestión de Productos
+- **Crear**: Formulario completo para nuevos productos
+- **Listar**: Grid/Lista con paginación
+- **Actualizar**: Edición con validación
+- **Eliminar**: Con confirmación de usuario
+
+### Catálogo
+- **Búsqueda**: Búsqueda en tiempo real
+- **Filtros**: Por categoría, precio, disponibilidad
+- **Ordenamiento**: Múltiples criterios
+- **Paginación**: Navegación eficiente
+
+### Interfaz de Usuario
+- **Responsive Design**: Adaptable a todos los dispositivos
+- **Loading States**: Indicadores de carga
+- **Error Handling**: Manejo de errores elegante
+- **Notificaciones**: Feedback visual al usuario
+
+## 🧪 Testing
+
+```bash
+# Ejecutar tests unitarios
+npm test
+
+# Ejecutar tests con coverage
+npm test -- --coverage
+
+# Ejecutar tests en modo watch
+npm test -- --watch
+```
+
+## 📦 Dependencias Principales
+
+```json
+{
+  "react": "^17.0.1",
+  "react-dom": "^17.0.1",
+  "react-router-dom": "^5.2.0",
+  "axios": "^1.3.0"
+}
+```
+
+## 🎨 Estructura de Componentes
+
+```jsx
+App
+├── Header
+├── Router
+│   ├── Home
+│   ├── ProductList
+│   │   ├── SearchBar
+│   │   ├── ProductCard
+│   │   └── Pagination
+│   ├── ProductForm
+│   └── ProductEdit
+└── Footer
+```
+
+## 🤝 Contribución
+
+1. Fork del proyecto
+2. Crear rama feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit cambios (`git commit -am 'Add: nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Crear Pull Request
+
+### Convenciones de código
+- Usar hooks de React
+- Componentes funcionales
+- PropTypes para validación
+- ESLint + Prettier
+
+## 📱 Compatibilidad
+
+- ✅ React 17+
+- ✅ Navegadores modernos (Chrome, Firefox, Safari, Edge)
+- ✅ Dispositivos móviles y tablets
+- ✅ Progressive Web App ready
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver `LICENSE` para más detalles.
+
+## 📞 Soporte
+
+- **Issues**: [GitHub Issues](https://github.com/ajsevillano/catalogue-management-app/issues)
+- **Documentación**: [Wiki del proyecto](https://github.com/ajsevillano/catalogue-management-app/wiki)
+- **Demo**: [Ver demo en vivo](https://catalogue-management-portal.netlify.app/)
+
+---
+
+⭐ **¡Dale una estrella si te gusta el proyecto!** ⭐
