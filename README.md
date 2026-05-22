@@ -1,18 +1,27 @@
-# Catalogue Management App
+<div align="center">
 
-A single-page React application for managing a product catalogue. Supports full
-CRUD operations, image uploads, category filtering and real-time search.
+# catalogue-management-app
 
-## Features
+[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?logo=netlify&logoColor=white)](https://catalogue-management-portal.netlify.app/) [![React](https://img.shields.io/badge/React-17-61DAFB?logo=react&logoColor=white)](https://reactjs.org/) [![Version](https://img.shields.io/badge/version-0.1.0-blue)](package.json)
 
-- Browse all products in a sortable table
-- Real-time search and category filtering
-- Add new products via modal form with optional image upload
-- Edit existing products on a dedicated page
-- Lottie animations for loading, success and error states
-- Toast notifications for user feedback
+**🗂️ Manage your product catalogue with full CRUD, instant search, and image uploads — all in one place 🚀**
 
-## Tech Stack
+[Live Demo](https://catalogue-management-portal.netlify.app/) · [Getting Started](#-getting-started) · [Tech Stack](#-tech-stack)
+
+</div>
+
+---
+
+## ✨ Features
+
+- 📋 Browse all products in a sortable table
+- 🔍 Real-time search and category filtering
+- ➕ Add new products via modal form with optional image upload
+- ✏️ Edit existing products on a dedicated page
+- 🎬 Lottie animations for loading, success and error states
+- 🔔 Toast notifications for user feedback
+
+## 🛠️ Tech Stack
 
 | Layer | Tech |
 |-------|------|
@@ -24,27 +33,31 @@ CRUD operations, image uploads, category filtering and real-time search.
 | Notifications | React Toastify |
 | Deployment | Netlify |
 
-## Routes
+## 🚀 Getting Started
 
-| Path | View |
-|------|------|
-| `/` | Products list |
-| `/updateproduct/:id` | Edit product |
-
-## Getting Started
+**1. Install dependencies**
 
 ```bash
 npm install
-npm start
 ```
 
-The app expects a `REACT_APP_API_URL` environment variable pointing to the products API.
+**2. Set up environment**
+
+Create a `.env` file at the project root:
 
 ```env
 REACT_APP_API_URL=https://your-api.com/products
 ```
 
-## Scripts
+**3. Start the dev server**
+
+```bash
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+## 📜 Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -53,7 +66,13 @@ REACT_APP_API_URL=https://your-api.com/products
 | `npm test` | Run tests |
 | `npm run sass` | Watch and compile SCSS |
 
-## Live Demo
+## 🗺️ Routes
 
-[catalogue-management-portal.netlify.app](https://catalogue-management-portal.netlify.app/)
+| Path | View |
+|------|------|
+| `/` | Products list |
+| `/updateproduct/:id` | Edit product |
 
+## 🌐 Live Demo
+
+Try it live: [catalogue-management-portal.netlify.app](https://catalogue-management-portal.netlify.app/)
