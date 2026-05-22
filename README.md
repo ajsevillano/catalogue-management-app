@@ -8,6 +8,10 @@
 
 [Live Demo](https://catalogue-management-portal.netlify.app/) · [Getting Started](#-getting-started) · [Tech Stack](#-tech-stack)
 
+<br/>
+
+![App screenshot](screenshots/demo.png)
+
 </div>
 
 ---
